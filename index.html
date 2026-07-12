@@ -253,6 +253,12 @@
   .ad-slot ins {
     margin: 0 auto;
   }
+  /* Only add breathing room around the ad once Google actually fills it.
+     Unfilled/loading slots (no data-ad-status="filled") stay flush with
+     zero extra space, so the page looks the same as before ads existed. */
+  .ad-slot ins[data-ad-status="filled"] {
+    margin: 20px auto;
+  }
   .page { display: none; }
   .page.active { display: block; }
   .static-page h2 {
