@@ -253,10 +253,20 @@
   .ad-slot ins {
     margin: 0 auto;
   }
-  /* Only add breathing room around the ad once Google actually fills it.
-     Unfilled/loading slots (no data-ad-status="filled") stay flush with
-     zero extra space, so the page looks the same as before ads existed. */
-  .ad-slot ins[data-ad-status="filled"] {
+  /* Google reserves layout space for the ad (via inline height/width styles)
+     as soon as adsbygoogle.push() runs, even before it knows whether the
+     account is approved or the ad will actually fill. Force that reserved
+     space to collapse with !important (which beats inline styles), and
+     only let it expand once Google confirms a real fill. */
+  .ad-slot ins.adsbygoogle {
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .ad-slot ins.adsbygoogle[data-ad-status="filled"] {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
     margin: 20px auto;
   }
   .page { display: none; }
