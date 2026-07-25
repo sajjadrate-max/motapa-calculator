@@ -4,11 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Motapa Calculator - Free BMI, BMR, TDEE, Calorie & Weight Loss Calculator</title>
-<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets[span_1](start_span)[span_1](end_span).">
+<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets. Auto-select a diet plan (including Pakistani/desi dishes like biryani, daal chawal), log your food diary as you eat, track weekly weight progress with a graph, and get a daily walking plan. Available in Urdu, English, and 85+ languages.[span_1](start_span)[span_1](end_span)">
+<meta name="keywords" content="BMI Calculator,BMR Calculator,TDEE Calculator,Weight Loss Calculator,Calorie Calculator,Pakistani Diet Plan,Food Diary,Exercise Calculator,Healthy Weight Calculator,Weight Tracker,weight loss calculator,calorie calculator,diet plan,food diary,weight progress tracker,biryani calories,Urdu calorie calculator,macros calculator[span_2](start_span)[span_2](end_span)">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a1128">
+<meta property="og:title" content="Weight Loss & Calorie Calculator - Diet Plan, Food Diary & Progress Tracker">
+<meta property="og:description" content="Get your daily calorie, protein, fat, and carb targets, an auto-generated diet plan (with desi dishes like biryani & daal chawal), a food diary, weekly weight progress graph, and a walking plan - free, in Urdu and 85+ languages.[span_3](start_span)[span_3](end_span)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://motapacalculator.com/">
+<meta property="og:site_name" content="Motapa Calculator">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motapa Calculator - Free BMI, BMR, TDEE & Calorie Calculator">
+<meta name="twitter:description" content="Calculate BMI, BMR, TDEE and get your personalized weight loss plan for free.[span_4](start_span)[span_4](end_span)">
+<meta name="twitter:url" content="https://motapacalculator.com/">
+
+<meta name="author" content="Motapa Calculator Team">
+<meta name="application-name" content="Motapa Calculator">
+<meta name="apple-mobile-web-app-title" content="Motapa Calculator">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="content-language" content="en">
+<meta name="language" content="English">
+<meta name="copyright" content="Motapa Calculator">
+<meta name="designer" content="Motapa Calculator">
+<meta name="owner" content="Motapa Calculator">
+<meta name="rating" content="General">
+<meta name="distribution" content="Global">
 
 <link rel="canonical" href="https://motapacalculator.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230a1128'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E⚖️%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Motapa Calculator",
+  "url": "https://motapacalculator.com/",
+  "description": "Free BMI, BMR, TDEE, Calorie and Weight Loss Calculator",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motapa Calculator"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Motapa Calculator",
+  "url":"https://motapacalculator.com/",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Any",
+  "browserRequirements":"Requires JavaScript",
+  "description":"Free BMI, BMR, TDEE, Calorie and Weight Loss Calculator[span_5](start_span)[span_5](end_span).",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  }
+}
+</script>
 
 <style>
   @font-face {
@@ -17,7 +79,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
@@ -40,7 +102,7 @@
     text-align: center;
     background: linear-gradient(90deg, #e8c766, #d4af37 50%, #e8c766);
     -webkit-background-clip: text; background-clip: text; color: #d4af37;
-    font-size: 30px; margin-bottom: 6px; padding-top: 4px;
+    font-size: 30px; margin-bottom: 6px; padding-top: 4px; letter-spacing: 0.5px;
   }
   .subtitle { text-align: center; color: #b8a888; font-size: 15px; margin-bottom: 20px; }
   .share-prompt { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 0 20px; text-align: center; }
@@ -49,7 +111,7 @@
   .card {
     background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
     border: 1px solid #d4af3744; border-radius: 16px; padding: 22px; margin-bottom: 22px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
   }
   .field { margin-bottom: 16px; }
   label { display: block; color: #d4af37; font-size: 17px; margin-bottom: 6px; }
@@ -59,7 +121,8 @@
   }
   button {
     width: 100%; padding: 16px; background: linear-gradient(145deg, #e6c860, #c9a133);
-    color: #0a1128; border: none; border-radius: 12px; font-size: 19px; font-weight: bold; cursor: pointer;
+    color: #0a1128; border: none; border-radius: 12px; font-size: 19px; font-weight: bold; font-family: inherit; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(212,175,55,0.3);
   }
   #results { display: none; }
   .result-title { color: #d4af37; font-size: 20px; text-align: center; margin-bottom: 15px; border-bottom: 1px solid #d4af3744; padding-bottom: 12px; }
@@ -68,17 +131,17 @@
   .highlight-box { background: linear-gradient(160deg, #182a5e, #14224e); border: 1px solid #d4af3733; border-radius: 12px; padding: 16px; margin: 10px 0; text-align: center; }
   .highlight-box .big { font-size: 30px; color: #d4af37; font-weight: bold; }
   
-  /* اوپر والا نیویگیشن بار */
+  /* اوپری نیویگیشن بار (تمام پیجز کے لیے) */
   .top-nav {
     position: fixed; top: 0; left: 0; right: 0;
     background: #0e1a3d; border-bottom: 1px solid #d4af3744;
     display: flex; justify-content: space-around; padding: 8px 4px; z-index: 100;
   }
   .top-nav-item {
-    display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 11px; cursor: pointer; flex: 1; text-align: center;
+    display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 10px; cursor: pointer; flex: 1; text-align: center;
   }
   .top-nav-item.active { color: #d4af37; }
-  .top-nav-item span { font-size: 16px; }
+  .top-nav-item span { font-size: 15px; }
 
   .lang-select-wrap { text-align: center; margin-bottom: 20px; position: relative; max-width: 300px; margin-left: auto; margin-right: auto; }
   #langDisplay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 18px; font-size: 14px; border-radius: 20px; border: 1px solid #d4af3766; background: #101d42; color: #d4af37; cursor: pointer; width: 100%; }
@@ -98,7 +161,7 @@
 </head>
 <body>
 
-<!-- اوپر کا نیویگیشن بار -->
+<!-- اوپر کا نیویگیشن بار (Home, About, Terms, Privacy, Disclaimer, Contact) -->
 <div class="top-nav">
   <div class="top-nav-item active" onclick="showPage('home', this)"><span>🏠</span>Home</div>
   <div class="top-nav-item" onclick="showPage('about', this)"><span>ℹ️</span>About</div>
@@ -126,7 +189,7 @@
     <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
-  <!-- 1. ہوم پیج (کیلکولیٹر) -->
+  <!-- 1. ہوم پیج (کیلکولیٹر اور مکمل خانے) -->
   <div id="page-home" class="page active">
     <div class="card">
       <div class="field">
@@ -190,39 +253,39 @@
     </div>
   </div>
 
-  <!-- 2. اباؤٹ پیج -->
+  <!-- 2. About پیج -->
   <div id="page-about" class="page">
     <div class="card">
       <h2 style="color:#d4af37; margin-bottom:10px;">About Us</h2>
-      <p style="color:#b8a888; font-size:15px;">Motapa Calculator is designed to help you easily calculate your BMI, BMR, TDEE, and daily calorie targets to achieve your health and fitness goals efficiently.</p>
+      <p style="color:#b8a888; font-size:15px;">Motapa Calculator is a free web tool designed to help you calculate your BMI, BMR, TDEE, and daily calorie targets to achieve your health and fitness goals effortlessly[span_6](start_span)[span_6](end_span).</p>
     </div>
   </div>
 
-  <!-- 3. ٹرمز پیج -->
+  <!-- 3. Terms پیج -->
   <div id="page-terms" class="page">
     <div class="card">
       <h2 style="color:#d4af37; margin-bottom:10px;">Terms & Conditions</h2>
-      <p style="color:#b8a888; font-size:15px;">By using this website, you agree to our terms and conditions. The information provided is for general guidance only.</p>
+      <p style="color:#b8a888; font-size:15px;">By using Motapa Calculator, you agree to our terms. The tools and information provided are for educational and informational purposes only.</p>
     </div>
   </div>
 
-  <!-- 4. پرائیویسی پیج -->
+  <!-- 4. Privacy پیج -->
   <div id="page-privacy" class="page">
     <div class="card">
       <h2 style="color:#d4af37; margin-bottom:10px;">Privacy Policy</h2>
-      <p style="color:#b8a888; font-size:15px;">Your privacy is important to us. We do not store any personal health or weight data on our servers.</p>
+      <p style="color:#b8a888; font-size:15px;">Your privacy is our top priority. We do not store or share any personal health or weight data entered on this website[span_7](start_span)[span_7](end_span).</p>
     </div>
   </div>
 
-  <!-- 5. ڈس کلیمر پیج -->
+  <!-- 5. Disclaimer پیج -->
   <div id="page-disclaimer" class="page">
     <div class="card">
       <h2 style="color:#d4af37; margin-bottom:10px;">Disclaimer</h2>
-      <p style="color:#b8a888; font-size:15px;">This tool provides estimations and should not replace professional medical advice. Always consult a doctor before starting any diet.</p>
+      <p style="color:#b8a888; font-size:15px;">The results provided by this calculator are estimates based on standard nutritional formulas and should not replace professional medical advice.</p>
     </div>
   </div>
 
-  <!-- 6. کانٹیکٹ پیج (جس میں فوری میسج سینڈ نوٹیفکیشن ہے) -->
+  <!-- 6. Contact پیج (فوری میسج سینڈ نوٹیفکیشن کے ساتھ) -->
   <div id="page-contact" class="page">
     <div class="card">
       <h2 style="color:#d4af37; margin-bottom:15px;">Contact Us</h2>
@@ -409,7 +472,7 @@ function shareApp() {
   const titles = {
     ur: "موٹاپا کم کریں - وزن کم کرنے کا کیلکولیٹر اور ڈائری",
     ar: "حاسبة فقدان الوزن - تخسيس وزني وخطة النظام الغذائي",
-    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan[span_2](start_span)[span_2](end_span)"
+    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan[span_8](start_span)[span_8](end_span)"
   };
   
   const shareTitle = titles[currentLang] || titles.en;
@@ -447,7 +510,7 @@ function showPage(pageId, el) {
   if (el) el.classList.add('active');
 }
 
-// کانٹیک트 میسج سینڈ ہونے کا فوری نوٹیفکیشن
+// کانٹیکٹ میسج سینڈ ہونے کا فوری نوٹیفکیشن
 function sendContactMsg() {
   const name = document.getElementById('contactName').value.trim();
   const msg = document.getElementById('contactMsg').value.trim();
@@ -460,11 +523,9 @@ function sendContactMsg() {
   const alertBox = document.getElementById('successAlert');
   alertBox.style.display = 'block';
   
-  // فیلڈز خالی کریں
   document.getElementById('contactName').value = '';
   document.getElementById('contactMsg').value = '';
   
-  // 4 سیکنڈ بعد الرٹ غائب کر دیں
   setTimeout(() => {
     alertBox.style.display = 'none';
   }, 4000);
