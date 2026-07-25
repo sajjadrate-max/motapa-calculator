@@ -21,7 +21,7 @@
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
-    padding: 74px 16px 20px;
+    padding: 74px 16px 30px;
     line-height: 1.6;
   }
   html[dir="rtl"] body { line-height: 1.85; }
@@ -53,7 +53,7 @@
   }
   .field { margin-bottom: 16px; }
   label { display: block; color: #d4af37; font-size: 17px; margin-bottom: 6px; }
-  input[type=number], select {
+  input[type=number], input[type=text], input[type=email], select, textarea {
     width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #d4af3766;
     background: #0a1128; color: #f2e9dc; font-size: 16px; font-family: inherit;
   }
@@ -67,9 +67,19 @@
   .stat .val { color: #d4af37; font-weight: bold; }
   .highlight-box { background: linear-gradient(160deg, #182a5e, #14224e); border: 1px solid #d4af3733; border-radius: 12px; padding: 16px; margin: 10px 0; text-align: center; }
   .highlight-box .big { font-size: 30px; color: #d4af37; font-weight: bold; }
-  .bottom-nav { position: fixed; top: 0; left: 0; right: 0; background: #0e1a3d; border-bottom: 1px solid #d4af3744; display: flex; justify-content: space-around; padding: 8px 2px; z-index: 100; }
-  .nav-item { display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 10.5px; cursor: pointer; flex: 1; }
-  .nav-item.active { color: #d4af37; }
+  
+  /* اوپر والا نیویگیشن بار */
+  .top-nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #0e1a3d; border-bottom: 1px solid #d4af3744;
+    display: flex; justify-content: space-around; padding: 8px 4px; z-index: 100;
+  }
+  .top-nav-item {
+    display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 11px; cursor: pointer; flex: 1; text-align: center;
+  }
+  .top-nav-item.active { color: #d4af37; }
+  .top-nav-item span { font-size: 16px; }
+
   .lang-select-wrap { text-align: center; margin-bottom: 20px; position: relative; max-width: 300px; margin-left: auto; margin-right: auto; }
   #langDisplay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 18px; font-size: 14px; border-radius: 20px; border: 1px solid #d4af3766; background: #101d42; color: #d4af37; cursor: pointer; width: 100%; }
   #langDropdownPanel { display: none; position: absolute; top: 105%; left: 0; right: 0; background: #101d42; border: 1px solid #d4af3766; border-radius: 12px; z-index: 300; padding: 10px; max-height: 320px; flex-direction: column; }
@@ -78,12 +88,27 @@
   #langListItems { overflow-y: auto; max-height: 230px; text-align: left; }
   .lang-item { padding: 8px 10px; font-size: 14px; color: #e8e0d0; border-radius: 6px; cursor: pointer; }
   .lang-item:hover { background: #16255a; }
+  
   .page { display: none; }
   .page.active { display: block; }
+  .success-msg {
+    background: #155724; color: #d4edda; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px; display: none; border: 1px solid #c3e6cb;
+  }
 </style>
 </head>
 <body>
-<div class="container">
+
+<!-- اوپر کا نیویگیشن بار -->
+<div class="top-nav">
+  <div class="top-nav-item active" onclick="showPage('home', this)"><span>🏠</span>Home</div>
+  <div class="top-nav-item" onclick="showPage('about', this)"><span>ℹ️</span>About</div>
+  <div class="top-nav-item" onclick="showPage('terms', this)"><span>📜</span>Terms</div>
+  <div class="top-nav-item" onclick="showPage('privacy', this)"><span>🔒</span>Privacy</div>
+  <div class="top-nav-item" onclick="showPage('disclaimer', this)"><span>⚠️</span>Disclaimer</div>
+  <div class="top-nav-item" onclick="showPage('contact', this)"><span>✉️</span>Contact</div>
+</div>
+
+<div class="container" style="margin-top: 20px;">
   <div class="header-badge">⚖️</div>
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
@@ -101,6 +126,7 @@
     <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
+  <!-- 1. ہوم پیج (کیلکولیٹر) -->
   <div id="page-home" class="page active">
     <div class="card">
       <div class="field">
@@ -163,10 +189,56 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="bottom-nav">
-  <div class="nav-item active" onclick="showPage('home', this)"><div class="nav-icon">🏠</div><span>Home</span></div>
+  <!-- 2. اباؤٹ پیج -->
+  <div id="page-about" class="page">
+    <div class="card">
+      <h2 style="color:#d4af37; margin-bottom:10px;">About Us</h2>
+      <p style="color:#b8a888; font-size:15px;">Motapa Calculator is designed to help you easily calculate your BMI, BMR, TDEE, and daily calorie targets to achieve your health and fitness goals efficiently.</p>
+    </div>
+  </div>
+
+  <!-- 3. ٹرمز پیج -->
+  <div id="page-terms" class="page">
+    <div class="card">
+      <h2 style="color:#d4af37; margin-bottom:10px;">Terms & Conditions</h2>
+      <p style="color:#b8a888; font-size:15px;">By using this website, you agree to our terms and conditions. The information provided is for general guidance only.</p>
+    </div>
+  </div>
+
+  <!-- 4. پرائیویسی پیج -->
+  <div id="page-privacy" class="page">
+    <div class="card">
+      <h2 style="color:#d4af37; margin-bottom:10px;">Privacy Policy</h2>
+      <p style="color:#b8a888; font-size:15px;">Your privacy is important to us. We do not store any personal health or weight data on our servers.</p>
+    </div>
+  </div>
+
+  <!-- 5. ڈس کلیمر پیج -->
+  <div id="page-disclaimer" class="page">
+    <div class="card">
+      <h2 style="color:#d4af37; margin-bottom:10px;">Disclaimer</h2>
+      <p style="color:#b8a888; font-size:15px;">This tool provides estimations and should not replace professional medical advice. Always consult a doctor before starting any diet.</p>
+    </div>
+  </div>
+
+  <!-- 6. کانٹیکٹ پیج (جس میں فوری میسج سینڈ نوٹیفکیشن ہے) -->
+  <div id="page-contact" class="page">
+    <div class="card">
+      <h2 style="color:#d4af37; margin-bottom:15px;">Contact Us</h2>
+      <div class="field">
+        <label>آپ کا نام</label>
+        <input type="text" id="contactName" placeholder="نام درج کریں" />
+      </div>
+      <div class="field">
+        <label>آپ کا پیغام</label>
+        <textarea id="contactMsg" rows="4" placeholder="اپنا پیغام یہاں لکھیں..."></textarea>
+      </div>
+      <button onclick="sendContactMsg()">پیغام بھیجیں</button>
+      <div id="successAlert" class="success-msg">پیغام کامیابی کے ساتھ بھیج دیا گیا ہے! شکریہ۔</div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -366,9 +438,36 @@ function calculate() {
   document.getElementById('results').style.display = 'block';
 }
 
+// پیجز تبدیل کرنے کا فنکشن
 function showPage(pageId, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
+  
+  document.querySelectorAll('.top-nav-item').forEach(nav => nav.classList.remove('active'));
+  if (el) el.classList.add('active');
+}
+
+// کانٹیک트 میسج سینڈ ہونے کا فوری نوٹیفکیشن
+function sendContactMsg() {
+  const name = document.getElementById('contactName').value.trim();
+  const msg = document.getElementById('contactMsg').value.trim();
+  
+  if(!name || !msg) {
+    alert(currentLang === 'ur' ? "براہ کرم نام اور پیغام دونوں درج کریں!" : "Please fill in both name and message!");
+    return;
+  }
+  
+  const alertBox = document.getElementById('successAlert');
+  alertBox.style.display = 'block';
+  
+  // فیلڈز خالی کریں
+  document.getElementById('contactName').value = '';
+  document.getElementById('contactMsg').value = '';
+  
+  // 4 سیکنڈ بعد الرٹ غائب کر دیں
+  setTimeout(() => {
+    alertBox.style.display = 'none';
+  }, 4000);
 }
 
 renderLangList();
