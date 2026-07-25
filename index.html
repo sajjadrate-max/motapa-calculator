@@ -4,14 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Motapa Calculator - Free BMI, BMR, TDEE, Calorie & Weight Loss Calculator</title>
-<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets. Auto-select a diet plan (including Pakistani/desi dishes like biryani, daal chawal), log your food diary as you eat, track weekly weight progress with a graph, and get a daily walking plan. Available in Urdu, English, and 85+ languages.[span_3](start_span)[span_3](end_span)">
-<meta name="keywords" content="BMI Calculator,BMR Calculator,TDEE Calculator,Weight Loss Calculator,Calorie Calculator,Pakistani Diet Plan,Food Diary,Exercise Calculator,Healthy Weight Calculator,Weight Tracker,weight loss calculator,calorie calculator,diet plan,food diary,weight progress tracker,biryani calories,Urdu calorie calculator,macros calculator[span_4](start_span)[span_4](end_span)">
+<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets. Auto-select a diet plan (including Pakistani/desi dishes like biryani, daal chawal), log your food diary as you eat, track weekly weight progress with a graph, and get a daily walking plan. Available in Urdu, English, and 85+ languages.">
+<meta name="keywords" content="BMI Calculator,BMR Calculator,TDEE Calculator,Weight Loss Calculator,Calorie Calculator,Pakistani Diet Plan,Food Diary,Exercise Calculator,Healthy Weight Calculator,Weight Tracker,weight loss calculator,calorie calculator,diet plan,food diary,weight progress tracker,biryani calories,Urdu calorie calculator,macros calculator">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a1128">
+<meta property="og:title" content="Weight Loss & Calorie Calculator - Diet Plan, Food Diary & Progress Tracker">
+<meta property="og:description" content="Get your daily calorie, protein, fat, and carb targets, an auto-generated diet plan (with desi dishes like biryani & daal chawal), a food diary, weekly weight progress graph, and a walking plan - free, in Urdu and 85+ languages.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://motapacalculator.com/">
+<meta property="og:site_name" content="Motapa Calculator">
+<meta property="og:locale" content="en_US">
 
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Motapa Calculator - Free BMI, BMR, TDEE & Calorie Calculator">
+<meta name="twitter:description" content="Calculate BMI, BMR, TDEE and get your personalized weight loss plan for free.">
+<meta name="twitter:url" content="https://motapacalculator.com/">
+
+<meta name="author" content="Motapa Calculator Team">
+<meta name="application-name" content="Motapa Calculator">
+<meta name="apple-mobile-web-app-title" content="Motapa Calculator">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="content-language" content="en">
+<meta name="language" content="English">
+<meta name="copyright" content="Motapa Calculator">
+<meta name="designer" content="Motapa Calculator">
+<meta name="owner" content="Motapa Calculator">
+<meta name="rating" content="General">
+<meta name="distribution" content="Global">
 <link rel="canonical" href="https://motapacalculator.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230a1128'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle'%3E⚖️%3C/text%3E%3C/svg%3E">
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Motapa Calculator",
+  "url": "https://motapacalculator.com/",
+  "description": "Free BMI, BMR, TDEE, Calorie and Weight Loss Calculator",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Motapa Calculator"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Motapa Calculator",
+  "url":"https://motapacalculator.com/",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Any",
+  "browserRequirements":"Requires JavaScript",
+  "description":"Free BMI, BMR, TDEE, Calorie and Weight Loss Calculator.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  }
+}
+</script>
 <style>
   @font-face {
     font-family: 'NotoNastaliq';
@@ -19,11 +77,11 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
-    padding: 74px 16px 30px;
+    padding: 74px 16px 20px;
     line-height: 1.6;
   }
   html[dir="rtl"] body { line-height: 1.85; }
@@ -31,458 +89,962 @@
     font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Segoe UI', sans-serif;
     line-height: 2.15;
   }
-  .container { max-width: 650px; margin: 0 auto; }
+  .container {
+    max-width: 650px;
+    margin: 0 auto;
+  }
   .header-badge {
-    width: 56px; height: 56px; margin: 0 auto 12px;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 12px;
     background: linear-gradient(145deg, #d4af37, #a8842a);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 26px; box-shadow: 0 6px 18px rgba(212,175,55,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 0 6px 18px rgba(212,175,55,0.35);
   }
   h1 {
     text-align: center;
     background: linear-gradient(90deg, #e8c766, #d4af37 50%, #e8c766);
-    -webkit-background-clip: text; background-clip: text; color: #d4af37;
-    font-size: 30px; margin-bottom: 6px; padding-top: 4px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: #d4af37;
+    font-size: 30px;
+    margin-bottom: 6px;
+    padding-top: 4px;
+    letter-spacing: 0.5px;
   }
-  .subtitle { text-align: center; color: #b8a888; font-size: 15px; margin-bottom: 20px; }
-  .share-prompt { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 0 20px; text-align: center; }
-  .share-prompt span { color: #b8a888; font-size: 13px; }
-  .share-btn { width: auto; padding: 6px 16px; margin: 0; font-size: 13px; border-radius: 20px; }
+  .subtitle {
+    text-align: center;
+    color: #b8a888;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .share-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: -16px 0 24px;
+    text-align: center;
+  }
+  .share-prompt span {
+    color: #b8a888;
+    font-size: 13px;
+  }
+  .share-btn {
+    width: auto;
+    padding: 8px 20px;
+    margin: 0;
+    font-size: 14px;
+    border-radius: 20px;
+  }
   .card {
     background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
-    border: 1px solid #d4af3744; border-radius: 16px; padding: 22px; margin-bottom: 22px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    border: 1px solid #d4af3744;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
   }
-  .field { margin-bottom: 16px; }
-  label { display: block; color: #d4af37; font-size: 17px; margin-bottom: 6px; }
+  .card-icon-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .article-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(160deg, #16234f 0%, #101c40 100%);
+    border: 1px solid #d4af3733;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+  }
+  .article-card:hover, .article-card:active {
+    transform: translateY(-2px);
+    border-color: #d4af37aa;
+    box-shadow: 0 6px 16px rgba(212,175,55,0.15);
+  }
+  .article-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212,175,55,0.1);
+    border-radius: 8px;
+  }
+  .article-title {
+    flex: 1;
+    color: #f2e9dc;
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  .article-arrow {
+    color: #d4af37;
+    font-size: 16px;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+  @media (min-width: 480px) {
+    .articles-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .field {
+    margin-bottom: 16px;
+  }
+  label {
+    display: block;
+    color: #d4af37;
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
   input[type=number], input[type=text], input[type=email], select, textarea {
-    width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #d4af3766;
-    background: #0a1128; color: #f2e9dc; font-size: 16px; font-family: inherit;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d4af3766;
+    background: #0a1128;
+    color: #f2e9dc;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
+  textarea { resize: vertical; min-height: 110px; }
+  input[type=number]:focus, input[type=text]:focus, input[type=email]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+  }
+  .row2 {
+    display: flex;
+    gap: 12px;
+  }
+  .row2 .field { flex: 1; }
   button {
-    width: 100%; padding: 16px; background: linear-gradient(145deg, #e6c860, #c9a133);
-    color: #0a1128; border: none; border-radius: 12px; font-size: 19px; font-weight: bold; cursor: pointer;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(145deg, #e6c860, #c9a133);
+    color: #0a1128;
+    border: none;
+    border-radius: 12px;
+    font-size: 19px;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 5px;
+    box-shadow: 0 4px 14px rgba(212,175,55,0.3);
+    transition: transform 0.15s, box-shadow 0.15s;
   }
+  button:active { transform: scale(0.98); box-shadow: 0 2px 8px rgba(212,175,55,0.25); }
   #results { display: none; }
-  .result-title { color: #d4af37; font-size: 20px; text-align: center; margin-bottom: 15px; border-bottom: 1px solid #d4af3744; padding-bottom: 12px; }
-  .stat { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid #ffffff11; font-size: 17px; }
-  .stat .val { color: #d4af37; font-weight: bold; }
-  .highlight-box { background: linear-gradient(160deg, #182a5e, #14224e); border: 1px solid #d4af3733; border-radius: 12px; padding: 16px; margin: 10px 0; text-align: center; }
-  .highlight-box .big { font-size: 30px; color: #d4af37; font-weight: bold; }
-  
-  /* اوپری نیویگیشن بار */
-  .top-nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: #0e1a3d; border-bottom: 1px solid #d4af3744;
-    display: flex; justify-content: space-around; padding: 8px 2px; z-index: 100;
+  .result-title {
+    color: #d4af37;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #d4af3744;
+    padding-bottom: 12px;
   }
-  .top-nav-item {
-    display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 10px; cursor: pointer; flex: 1; text-align: center;
+  .stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom: 1px solid #ffffff11;
+    font-size: 17px;
   }
-  .top-nav-item.active { color: #d4af37; }
-  .top-nav-item span { font-size: 14px; }
-
-  .lang-select-wrap { text-align: center; margin-bottom: 20px; position: relative; max-width: 300px; margin-left: auto; margin-right: auto; }
-  #langDisplay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 18px; font-size: 14px; border-radius: 20px; border: 1px solid #d4af3766; background: #101d42; color: #d4af37; cursor: pointer; width: 100%; }
-  #langDropdownPanel { display: none; position: absolute; top: 105%; left: 0; right: 0; background: #101d42; border: 1px solid #d4af3766; border-radius: 12px; z-index: 300; padding: 10px; max-height: 320px; flex-direction: column; }
-  #langDropdownPanel.open { display: flex; }
-  #langSearchInput { width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #d4af3766; background: #0a1128; color: #f2e9dc; font-size: 14px; margin-bottom: 8px; }
-  #langListItems { overflow-y: auto; max-height: 230px; text-align: left; }
-  .lang-item { padding: 8px 10px; font-size: 14px; color: #e8e0d0; border-radius: 6px; cursor: pointer; }
-  .lang-item:hover { background: #16255a; }
-  
+  .stat:last-child { border-bottom: none; }
+  .stat .val {
+    color: #d4af37;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+  }
+  .highlight-box {
+    background: linear-gradient(160deg, #182a5e, #14224e);
+    border: 1px solid #d4af3733;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .highlight-box .big {
+    font-size: 30px;
+    color: #d4af37;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+  }
+  .note {
+    font-size: 14px;
+    color: #a99f8c;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .walk-box {
+    background: linear-gradient(160deg, #1e3170, #182a5e);
+    border: 1px solid #d4af3733;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    margin-top: 15px;
+  }
+  .walk-box .big {
+    font-size: 34px;
+    color: #d4af37;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+  }
+  .choice-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(160deg, #16255a, #101d47);
+    border: 1px solid #d4af3766;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .choice-btn:active { transform: scale(0.98); }
+  .choice-btn:hover { border-color: #d4af37; box-shadow: 0 6px 16px rgba(212,175,55,0.2); }
+  .choice-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background: linear-gradient(145deg, #d4af37, #a8842a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .choice-title {
+    color: #d4af37;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  .choice-sub {
+    color: #b8a888;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .footer-note {
+    text-align: center;
+    color: #6d7a9c;
+    font-size: 13px;
+    margin-top: 10px;
+    padding: 16px;
+    border-top: 1px solid #d4af3722;
+  }
+  .ad-slot {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+  .ad-slot ins {
+    margin: 0 auto;
+  }
+  .ad-slot ins.adsbygoogle {
+    height: 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .ad-slot ins.adsbygoogle[data-ad-status="filled"] {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+    margin: 20px auto;
+  }
   .page { display: none; }
   .page.active { display: block; }
-  .success-msg {
-    background: #155724; color: #d4edda; padding: 12px; border-radius: 8px; text-align: center; margin-top: 15px; display: none; border: 1px solid #c3e6cb;
+  .static-page h2 {
+    color: #d4af37;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 16px;
   }
-  .page-content p { color: #b8a888; font-size: 15px; margin-bottom: 12px; line-height: 1.8; }
-  .page-content h3 { color: #d4af37; margin-top: 15px; margin-bottom: 8px; font-size: 18px; }
+  .static-page p {
+    color: #e8e0d0;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 14px;
+  }
+  .page[dir="ltr"] .static-page {
+    text-align: left;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+  .page[dir="ltr"] .static-page p {
+    line-height: 1.8;
+    font-size: 14.5px;
+  }
+  .bottom-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #0e1a3d;
+    border-bottom: 1px solid #d4af3744;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 2px 8px;
+    z-index: 100;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #8a93ad;
+    font-size: 10.5px;
+    cursor: pointer;
+    flex: 1;
+    padding: 4px 2px;
+    gap: 3px;
+    transition: color 0.15s;
+  }
+  .nav-item .nav-icon { font-size: 18px; }
+  .nav-item.active { color: #d4af37; }
+  .lang-select-wrap {
+    text-align: center;
+    margin-bottom: 18px;
+    position: relative;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #langDisplay {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 18px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: 1px solid #d4af3766;
+    background: #101d42;
+    color: #d4af37;
+    cursor: pointer;
+    width: 100%;
+  }
+  #langDropdownPanel {
+    display: none;
+    position: absolute;
+    top: 105%;
+    left: 0;
+    right: 0;
+    background: #101d42;
+    border: 1px solid #d4af3766;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 300;
+    padding: 10px;
+    max-height: 320px;
+    flex-direction: column;
+  }
+  #langDropdownPanel.open { display: flex; }
+  #langSearchInput {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid #d4af3766;
+    background: #0a1128;
+    color: #f2e9dc;
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 8px;
+  }
+  #langListItems {
+    overflow-y: auto;
+    max-height: 250px;
+  }
+  .lang-item {
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #e8e0d0;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .lang-item:hover, .lang-item:active { background: #16255a; }
+  .lang-item.selected { color: #d4af37; font-weight: bold; }
+  .lang-no-results {
+    padding: 12px;
+    text-align: center;
+    color: #6d7a9c;
+    font-size: 13px;
+  }
+  .cookie-banner {
+    position: fixed;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: #101d42;
+    border: 1px solid #d4af3766;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #e8e0d0;
+    z-index: 200;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cookie-banner button {
+    width: auto;
+    padding: 8px 18px;
+    font-size: 13px;
+    margin-top: 0;
+  }
+  .copyright {
+    text-align: center;
+    color: #5a6688;
+    font-size: 12px;
+    padding: 6px 0 4px;
+  }
+  .diary-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 11px 0;
+    border-bottom: 1px solid #ffffff11;
+  }
+  .diary-input-row select {
+    flex: 1 1 150px;
+    min-width: 0;
+  }
+  .diary-input-row input {
+    flex: 0 0 70px;
+    width: 70px;
+  }
+  .diary-input-row button {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+  }
+  .diary-log-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 0;
+    border-bottom: 1px solid #ffffff11;
+  }
+  .diary-log-row .entry-text {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
+  }
+  .diary-log-row .delete-btn {
+    flex: 0 0 auto;
+    cursor: pointer;
+    color: #e07a5f;
+    font-weight: bold;
+    padding: 0 8px;
+  }
 </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9829612219556114" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VY36D52JPE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VY36D52JPE');
+</script>
 </head>
 <body>
-
-<!-- اوپر کا نیویگیشن بار -->
-<div class="top-nav">
-  <div class="top-nav-item active" onclick="showPage('home', this)"><span>🏠</span>Home</div>
-  <div class="top-nav-item" onclick="showPage('about', this)"><span>ℹ️</span>About</div>
-  <div class="top-nav-item" onclick="showPage('terms', this)"><span>📜</span>Terms</div>
-  <div class="top-nav-item" onclick="showPage('privacy', this)"><span>🔒</span>Privacy</div>
-  <div class="top-nav-item" onclick="showPage('disclaimer', this)"><span>⚠️</span>Disclaimer</div>
-  <div class="top-nav-item" onclick="showPage('contact', this)"><span>✉️</span>Contact</div>
-</div>
-
-<div class="container" style="margin-top: 20px;">
+<div class="container">
   <div class="header-badge">⚖️</div>
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
-
-  <div class="lang-select-wrap">
-    <div id="langDisplay" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">اردو (Urdu)</span> ▾</div>
-    <div id="langDropdownPanel">
-      <input type="text" id="langSearchInput" placeholder="Search language..." oninput="filterLangList()" />
-      <div id="langListItems"></div>
-    </div>
-  </div>
-  
   <div class="share-prompt">
     <span data-i18n="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
     <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
-  <!-- 1. ہوم پیج -->
+  <div class="lang-select-wrap">
+    <div id="langDisplay" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">اردو (Urdu)</span> ▾</div>
+    <div id="langDropdownPanel">
+      <input type="text" id="langSearchInput" placeholder="Search language... / زبان تلاش کریں" oninput="filterLangList()" />
+      <div id="langListItems"></div>
+    </div>
+  </div>
+
   <div id="page-home" class="page active">
+  <div class="card">
+    <div class="field">
+      <label data-i18n="labelWeight">وزن (کلوگرام)</label>
+      <input type="number" id="weight" placeholder="مثلاً 85" data-i18n-placeholder="placeholderWeight" />
+    </div>
+    <div class="field">
+      <label data-i18n="labelAge">عمر (سال)</label>
+      <input type="number" id="age" placeholder="مثلاً 30" data-i18n-placeholder="placeholderAge" />
+    </div>
+
+    <div class="field">
+      <label data-i18n="labelHeightUnit">قد کی اکائی</label>
+      <select id="heightUnit" onchange="toggleHeightUnit()">
+        <option value="cm" data-i18n="optCm">سینٹی میٹر</option>
+        <option value="ft" data-i18n="optFt">فٹ</option>
+      </select>
+    </div>
+
+    <div class="field" id="heightCmField">
+      <label data-i18n="labelHeightCm">قد (سینٹی میٹر)</label>
+      <input type="number" id="height" placeholder="مثلاً 170" data-i18n-placeholder="placeholderHeightCm" />
+    </div>
+
+    <div class="row2" id="heightFtField" style="display:none;">
+      <div class="field">
+        <label data-i18n="labelHeightFt">قد (فٹ)</label>
+        <input type="number" id="heightFeet" placeholder="مثلاً 5" data-i18n-placeholder="placeholderHeightFeet" />
+      </div>
+      <div class="field">
+        <label data-i18n="labelInches">انچ</label>
+        <input type="number" id="heightInches" placeholder="مثلاً 7" data-i18n-placeholder="placeholderHeightInches" />
+      </div>
+    </div>
+    <div class="field">
+      <label data-i18n="labelGender">جنس</label>
+      <select id="gender">
+        <option value="male" data-i18n="optMale">مرد</option>
+        <option value="female" data-i18n="optFemale">عورت</option>
+      </select>
+    </div>
+    <div class="field">
+      <label data-i18n="labelActivity">کام کاج (روزمرہ سرگرمی)</label>
+      <select id="activity">
+        <option value="1.2" data-i18n="optAct1">دفتری کام / زیادہ تر بیٹھے رہنا</option>
+        <option value="1.375" data-i18n="optAct2">ہلکی مشقت (تھوڑی چہل قدمی، گھریلو کام)</option>
+        <option value="1.55" data-i18n="optAct3">درمیانی مشقت (روزانہ جسمانی کام یا ورزش)</option>
+        <option value="1.725" data-i18n="optAct4">بھاری مشقت (مزدوری، کھیل، سخت جسمانی کام)</option>
+      </select>
+    </div>
+    <button onclick="calculate()" data-i18n="btnCalculate">حساب لگائیں</button>
+  </div>
+
+  <div id="results">
     <div class="card">
-      <div class="field">
-        <label data-i18n="labelWeight">وزن (کلوگرام)</label>
-        <input type="number" id="weight" placeholder="مثلاً 85" />
+      <div class="result-title" data-i18n="titleDailyNeed">آپ کی روزانہ ضرورت</div>
+      <div class="highlight-box">
+        <div data-i18n="labelMaintainCal">موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز</div>
+        <div class="big" id="tdee">-</div>
       </div>
-      <div class="field">
-        <label data-i18n="labelAge">عمر (سال)</label>
-        <input type="number" id="age" placeholder="مثلاً 30" />
-      </div>
-      <div class="field">
-        <label data-i18n="labelHeightUnit">قد کی اکائی</label>
-        <select id="heightUnit" onchange="toggleHeightUnit()">
-          <option value="cm" data-i18n="optCm">سینٹی میٹر</option>
-          <option value="ft" data-i18n="optFt">فٹ</option>
-        </select>
-      </div>
-      <div class="field" id="heightCmField">
-        <label data-i18n="labelHeightCm">قد (سینٹی میٹر)</label>
-        <input type="number" id="height" placeholder="مثلاً 170" />
-      </div>
-      <div class="field" id="heightFtField" style="display:none;">
-        <label data-i18n="labelHeightFt">قد (فٹ اور انچ)</label>
-        <div style="display:flex; gap:10px;">
-          <input type="number" id="heightFt" placeholder="فٹ (ft)" style="flex:1;" />
-          <input type="number" id="heightIn" placeholder="انچ (in)" style="flex:1;" />
+      <div class="note" data-i18n="noteTdee">یہ آپ کی BMR اور روزمرہ سرگرمی کے حساب سے ہے</div>
+    </div>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9829612219556114"
+           data-ad-slot="3440964824"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <div class="card" id="bmiCard" style="display:none;">
+      <div class="result-title" data-i18n="titleBmi">وزن کا تجزیہ (BMI)</div>
+      <div class="stat"><span data-i18n="labelBmiValue">آپ کا BMI</span><span class="val" id="bmiValue">-</span></div>
+      <div class="stat"><span data-i18n="labelBmiCategory">وزن کی حالت</span><span class="val" id="bmiCategory">-</span></div>
+      <div class="stat"><span data-i18n="labelIdealWeight">مثالی وزن کی حد</span><span class="val" id="idealWeightRange">-</span></div>
+      <div class="note" id="bmiAdviceNote" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+    </div>
+
+    <div class="card">
+      <div class="result-title" data-i18n="titleWeightLossPlan">وزن کم کرنے کا پلان</div>
+      <div class="stat"><span data-i18n="labelTargetCal">روزانہ کیلوریز (وزن کم کرنے کے لیے)</span><span class="val" id="targetCal">-</span></div>
+      <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="protein">-</span></div>
+      <div class="stat"><span data-i18n="labelFat">فیٹ (گرام)</span><span class="val" id="fat">-</span></div>
+      <div class="stat"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="carbs">-</span></div>
+      <div class="note" id="weeklyLoss"></div>
+    </div>
+
+    <div class="card">
+      <div class="result-title" data-i18n="titleFoodSelect">اپنی مرضی کی غذا منتخب کریں</div>
+      <div class="note" style="margin-bottom:15px;" data-i18n="notePickMethod">پہلے طریقہ منتخب کریں</div>
+      <div class="choice-btn" onclick="autoSelectFoods()">
+        <div class="choice-icon">🤖</div>
+        <div>
+          <div class="choice-title" data-i18n="titleAutoSelect">خودکار انتخاب</div>
+          <div class="choice-sub" data-i18n="subAutoSelect">ویب سائٹ موسم کے مطابق غذا خود منتخب کرے</div>
         </div>
       </div>
-      <div class="field">
-        <label data-i18n="labelGender">جنس</label>
-        <select id="gender">
-          <option value="male" data-i18n="optMale">مرد</option>
-          <option value="female" data-i18n="optFemale">عورت</option>
-        </select>
-      </div>
-      <div class="field">
-        <label data-i18n="labelActivity">کام کاج (روزمرہ سرگرمی)</label>
-        <select id="activity">
-          <option value="1.2" data-i18n="optAct1">دفتری کام / زیادہ تر بیٹھے رہنا</option>
-          <option value="1.375" data-i18n="optAct2">ہلکی مشقت</option>
-          <option value="1.55" data-i18n="optAct3">درمیانی مشقت</option>
-          <option value="1.725" data-i18n="optAct4">بھاری مشقت</option>
-        </select>
-      </div>
-      <button onclick="calculate()" data-i18n="btnCalculate">حساب لگائیں</button>
-    </div>
-
-    <div id="results">
-      <div class="card">
-        <div class="result-title" data-i18n="titleDailyNeed">آپ کی روزانہ ضرورت</div>
-        <div class="highlight-box">
-          <div data-i18n="labelMaintainCal">موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز</div>
-          <div class="big" id="tdee">-</div>
+      <div class="choice-btn" onclick="diarySelectMode()">
+        <div class="choice-icon">📝</div>
+        <div>
+          <div class="choice-title" data-i18n="titleDiarySelect">کھانے کی ڈائری (جیسے کھائیں لکھتے جائیں)</div>
+          <div class="choice-sub" data-i18n="subDiarySelect">صبح سے رات تک جو کھائیں فوراً لکھیں، بقایا خود کم ہوتا رہے گا</div>
         </div>
       </div>
-      <div class="card">
-        <div class="result-title" data-i18n="titleWeightLossPlan">وزن کم کرنے کا پلان</div>
-        <div class="stat"><span data-i18n="labelTargetCal">روزانہ کیلوریز</span><span class="val" id="targetCal">-</span></div>
-        <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="protein">-</span></div>
+      <div class="note" id="planLabel" style="margin-bottom:15px;"></div>
+
+      <div id="diaryWrapper" style="display:none;">
+        <div class="note" style="margin-bottom:10px;" data-i18n="diaryPickNote">نیچے سے غذا اور مقدار چن کر "ڈائری میں شامل کریں" دبائیں۔ ہر بار جو کھائیں وہ فوراً شامل ہو جائے گا اور بقایا کیلوریز/پروٹین/فیٹ/کارب خود بخود اپڈیٹ ہوتے رہیں گے</div>
+        <div class="diary-input-row">
+          <select id="diaryFoodSelect" style="padding:8px;"></select>
+          <input type="number" id="diaryQtyInput" min="0" step="0.5" value="1" style="padding:8px; text-align:center;" />
+          <button onclick="diaryAddEntry()" style="padding:8px 14px;" data-i18n="diaryAddBtn">شامل کریں</button>
+        </div>
+        <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="diarySummaryTitle">آج تک کھائی گئی خوراک کا خلاصہ</div>
+        <div class="stat"><span data-i18n="labelTotalCal">کل کیلوریز</span><span class="val" id="diaryTotalCal">0</span></div>
+        <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="diaryTotalProtein">0</span></div>
+        <div class="stat"><span data-i18n="labelFat">فیٹ (گرام)</span><span class="val" id="diaryTotalFat">0</span></div>
+        <div class="stat"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="diaryTotalCarbs">0</span></div>
+        <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="diaryLogTitle">آج کی ڈائری</div>
+        <div id="diaryLogList"></div>
+        <div class="note" id="diaryEmptyMsg" data-i18n="diaryEmptyMsg">ابھی تک کوئی غذا شامل نہیں کی گئی</div>
+        <button onclick="diaryResetLog()" style="margin-top:14px; background:transparent; border:1px solid #d4af37; color:#d4af37;" data-i18n="diaryResetBtn">ڈائری صاف کریں (نیا دن)</button>
+      </div>
+
+      <div id="foodListWrapper" style="display:none;">
+        <div class="note" style="margin-bottom:15px;" data-i18n="noteFoodQty">ہر غذا کے سامنے مقدار (تعداد) درج کریں۔ صرف وہ چیزیں شمار ہوں گی جن کی مقدار 0 سے زیادہ ہو</div>
+        <div id="foodList"></div>
+        <button onclick="calculateDiet()" style="margin-top:10px;" data-i18n="btnCalcDiet">میری خوراک کا حساب لگائیں</button>
       </div>
     </div>
+
+    <div class="card" id="dietResultCard" style="display:none;">
+      <div class="result-title" data-i18n="titleSelectedFoods">آپ کی منتخب کردہ غذائیں</div>
+      <div id="selectedFoodsList"></div>
+      <div class="note" id="noteChangeFoodsNote" style="margin:12px 0 4px;" data-i18n="noteChangeFoods">اگر غذائیں تبدیل کرنا ہو تو ہر بار "خودکار انتخاب" کے بٹن پر دوبارہ کلک کرنے سے نئی غذائیں خودکار طریقے سے منتخب ہو جائیں گی</div>
+      <div style="border-top:1px solid #d4af3744; margin:16px 0 12px;"></div>
+      <div class="result-title" data-i18n="titleDietSummary" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">آپ کی منتخب کردہ غذا کا مجموعہ</div>
+      <div class="stat"><span data-i18n="labelTotalCal">کل کیلوریز</span><span class="val" id="dietCal">-</span></div>
+      <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="dietProtein">-</span></div>
+      <div class="stat"><span data-i18n="labelFat">فیٹ (گرام)</span><span class="val" id="dietFat">-</span></div>
+      <div class="stat"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="dietCarbs">-</span></div>
+      <div class="note" id="dietCompare" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+      <div id="dietStatusList" style="margin-top:14px;"></div>
+    </div>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="fluid"
+           data-ad-layout-key="-gw-3+1f-3d+2z"
+           data-ad-client="ca-pub-9829612219556114"
+           data-ad-slot="1759006047"></ins>
+    </div>
+
+    <div class="card" id="exerciseCard" style="display:none;">
+      <div class="result-title" data-i18n="titleExercise">روزانہ ورزش</div>
+      <div class="walk-box">
+        <div data-i18n="labelWalkDistance">روزانہ پیدل چلنے کا فاصلہ</div>
+        <div class="big"><span id="walkKm">-</span> <span data-i18n="unitKm">کلومیٹر</span></div>
+        <div class="note" id="walkMin"></div>
+        <div class="note" id="walkSteps" style="margin-top:6px;"></div>
+      </div>
+      <div class="note" id="brisknote" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+    </div>
+
+    <div class="card" id="finalSummaryCard" style="display:none;">
+      <div class="result-title" data-i18n="titleFinalSummary">حتمی خلاصہ</div>
+      <div class="note" id="kcalRuleText" style="margin-bottom:14px;"></div>
+      <div class="highlight-box">
+        <div id="finalWeekLabel" data-i18n="labelWeeklyLoss">ایک ہفتے میں متوقع وزن کمی</div>
+        <div class="big" id="finalWeekLoss">-</div>
+      </div>
+      <div class="highlight-box" style="margin-top:10px;">
+        <div id="finalMonthLabel" data-i18n="labelMonthlyLoss">ایک مہینے میں متوقع وزن کمی</div>
+        <div class="big" id="finalMonthLoss">-</div>
+      </div>
+      <div class="note" id="finalSummaryNote" style="margin-top:12px;"></div>
+    </div>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-format="autorelaxed"
+           data-ad-client="ca-pub-9829612219556114"
+           data-ad-slot="4251483612"></ins>
+    </div>
+
+    <div class="card" id="articlesSection" style="display:none;">
+      <div class="result-title">📚 Free Weight Loss &amp; Nutrition Articles</div>
+      <p style="text-align:center; color:#b8a888; font-size:14px; margin:-4px 0 18px;">
+        30 expert guides on calories, diet, and healthy habits
+      </p>
+      <div class="articles-grid">
+        <a class="article-card" href="articles/what-is-bmi-and-its-limitations.html">
+          <span class="article-icon">⚖️</span>
+          <span class="article-title">What Is BMI and What Are Its Limitations?</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/understanding-bmr-basal-metabolic-rate.html">
+          <span class="article-icon">🔥</span>
+          <span class="article-title">Understanding BMR: Calories Burned at Rest</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/tdee-explained-total-daily-energy-expenditure.html">
+          <span class="article-icon">📊</span>
+          <span class="article-title">TDEE Explained: Total Daily Energy Expenditure</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/calorie-deficit-101-science-of-weight-loss.html">
+          <span class="article-icon">📉</span>
+          <span class="article-title">Calorie Deficit 101: The Science of Weight Loss</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/protein-intake-guide-for-weight-loss.html">
+          <span class="article-icon">🍗</span>
+          <span class="article-title">Protein Intake Guide for Weight Loss</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/healthy-carbs-vs-unhealthy-carbs.html">
+          <span class="article-icon">🌾</span>
+          <span class="article-title">Healthy Carbs vs Unhealthy Carbs</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/understanding-dietary-fats.html">
+          <span class="article-icon">🥑</span>
+          <span class="article-title">Understanding Dietary Fats</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/pakistani-diet-plan-for-weight-loss.html">
+          <span class="article-icon">🍛</span>
+          <span class="article-title">A Practical Pakistani Diet Plan</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/calories-in-common-pakistani-foods.html">
+          <span class="article-icon">🍽️</span>
+          <span class="article-title">Calories in Common Pakistani Foods</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/how-many-steps-a-day-to-lose-weight.html">
+          <span class="article-icon">🚶</span>
+          <span class="article-title">How Many Steps a Day to Lose Weight?</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/walking-for-weight-loss-beginners-guide.html">
+          <span class="article-icon">👟</span>
+          <span class="article-title">Walking for Weight Loss: Beginner's Guide</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/strength-training-vs-cardio-for-fat-loss.html">
+          <span class="article-icon">🏋️</span>
+          <span class="article-title">Strength Training vs Cardio for Fat Loss</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/intermittent-fasting-pros-and-cons.html">
+          <span class="article-icon">⏰</span>
+          <span class="article-title">Intermittent Fasting: Pros and Cons</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/how-to-break-a-weight-loss-plateau.html">
+          <span class="article-icon">🧗</span>
+          <span class="article-title">How to Break a Weight Loss Plateau</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/water-intake-and-weight-loss.html">
+          <span class="article-icon">💧</span>
+          <span class="article-title">Water Intake and Weight Loss</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/sleep-and-its-impact-on-weight.html">
+          <span class="article-icon">😴</span>
+          <span class="article-title">Sleep and Its Impact on Weight</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/stress-and-emotional-eating.html">
+          <span class="article-icon">🧠</span>
+          <span class="article-title">Stress and Emotional Eating</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/how-to-read-food-labels.html">
+          <span class="article-icon">🏷️</span>
+          <span class="article-title">How to Read Food Labels</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/meal-prep-tips-for-busy-people.html">
+          <span class="article-icon">🍱</span>
+          <span class="article-title">Meal Prep Tips for Busy People</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/healthy-snacking-ideas.html">
+          <span class="article-icon">🥜</span>
+          <span class="article-title">Healthy Snacking Ideas</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/weight-loss-myths-debunked.html">
+          <span class="article-icon">❌</span>
+          <span class="article-title">Common Weight Loss Myths Debunked</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/understanding-macronutrients-macros.html">
+          <span class="article-icon">🧮</span>
+          <span class="article-title">Understanding Macronutrients (Macros)</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/how-to-track-your-food-diary-effectively.html">
+          <span class="article-icon">📔</span>
+          <span class="article-title">How to Track Your Food Diary</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/setting-realistic-weight-loss-goals.html">
+          <span class="article-icon">🎯</span>
+          <span class="article-title">Setting Realistic Weight Loss Goals</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/metabolism-myths-and-facts.html">
+          <span class="article-icon">⚙️</span>
+          <span class="article-title">Metabolism: Myths and Facts</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/ramadan-fasting-and-weight-management.html">
+          <span class="article-icon">🌙</span>
+          <span class="article-title">Ramadan Fasting and Weight Management</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/desi-breakfast-ideas-for-weight-loss.html">
+          <span class="article-icon">🍳</span>
+          <span class="article-title">Healthy Desi Breakfast Ideas</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/how-age-affects-metabolism-and-weight.html">
+          <span class="article-icon">📅</span>
+          <span class="article-title">How Age Affects Metabolism and Weight</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/building-a-sustainable-weight-loss-lifestyle.html">
+          <span class="article-icon">🌱</span>
+          <span class="article-title">Building a Sustainable Weight Loss Lifestyle</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+        <a class="article-card" href="articles/salt-water-retention-and-bloating.html">
+          <span class="article-icon">🧂</span>
+          <span class="article-title">Salt, Water Retention, and Bloating</span>
+          <span class="article-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-note" data-i18n="footerDisclaimer">یہ کیلکولیٹر عمومی رہنمائی کے لیے ہے۔ کسی بھی سنگین طبی مسئلے یا خاص جسمانی حالت کی صورت میں ڈاکٹر یا ماہرِ غذائیت سے مشورہ ضرور کریں۔</div>
+  </div>
   </div>
 
-  <!-- 2. About پیج (مکمل پرانا ڈیٹا) -->
-  <div id="page-about" class="page">
-    <div class="card page-content">
-      <h2 style="color:#d4af37; margin-bottom:12px;">About Motapa Calculator</h2>
-      <p>Motapa Calculator is a comprehensive, free online health platform designed specifically to help individuals track and manage their weight loss journeys effectively[span_5](start_span)[span_5](end_span).</p>
-      <p>We understand that achieving fitness goals requires accurate data regarding your body's energy expenditure. Our application calculates critical metrics such as Body Mass Index (BMI), Basal Metabolic Rate (BMR), and Total Daily Energy Expenditure (TDEE)[span_6](start_span)[span_6](end_span).</p>
-      <h3>Why Choose Us?</h3>
-      <p>Unlike generic fitness tools, our platform features localized diet plans incorporating regional and desi dishes (such as biryani and daal chawal), allowing users to maintain a healthy lifestyle without compromising on traditional foods[span_7](start_span)[span_7](end_span).</p>
+  <div id="page-about" class="page" dir="ltr">
+    <div class="card static-page">
+      <h2 data-i18n="pageAboutTitle">About Us</h2>
+      <div id="aboutContent"></div>
     </div>
   </div>
 
-  <!-- 3. Terms پیج (مکمل پرانا ڈیٹا) -->
-  <div id="page-terms" class="page">
-    <div class="card page-content">
-      <h2 style="color:#d4af37; margin-bottom:12px;">Terms & Conditions</h2>
-      <p>Welcome to Motapa Calculator[span_8](start_span)[span_8](end_span). By accessing or using our website, you agree to comply with and be bound by the following terms and conditions.</p>
-      <h3>1. Use of Calculators</h3>
-      <p>The tools, calculations, and diet plans provided on this website are for informational and educational purposes only. They should not be considered as certified medical prescriptions.</p>
-      <h3>2. Intellectual Property</h3>
-      <p>All content, design elements, graphics, and code on this website are the property of Motapa Calculator and are protected under international copyright laws.</p>
+  <div id="page-terms" class="page" dir="ltr">
+    <div class="card static-page">
+      <h2 data-i18n="pageTermsTitle">Terms & Conditions</h2>
+      <div id="termsContent"></div>
     </div>
   </div>
 
-  <!-- 4. Privacy پیج (مکمل پرانا ڈیٹا) -->
-  <div id="page-privacy" class="page">
-    <div class="card page-content">
-      <h2 style="color:#d4af37; margin-bottom:12px;">Privacy Policy</h2>
-      <p>At Motapa Calculator, accessible from our main portal, your privacy is of utmost importance to us[span_9](start_span)[span_9](end_span).</p>
-      <p>This Privacy Policy document outlines the types of information we collect and how we utilize it. We do not store any personal health metrics, weights, or user logs on our permanent servers[span_10](start_span)[span_10](end_span). All calculations are processed securely within your browser session.</p>
-      <h3>Third-Party Partners</h3>
-      <p>We may use third-party advertising partners like Google AdSense to serve ads, which may utilize cookies to enhance user experience.</p>
+  <div id="page-privacy" class="page" dir="ltr">
+    <div class="card static-page">
+      <h2 data-i18n="pagePrivacyTitle">Privacy Policy</h2>
+      <div id="privacyContent"></div>
     </div>
   </div>
 
-  <!-- 5. Disclaimer پیج (مکمل پرانا ڈیٹا) -->
-  <div id="page-disclaimer" class="page">
-    <div class="card page-content">
-      <h2 style="color:#d4af37; margin-bottom:12px;">Medical Disclaimer</h2>
-      <p>The information provided by Motapa Calculator is for general informational purposes only[span_11](start_span)[span_11](end_span). All information on the site is provided in good faith; however, we make no representation or warranty of any kind regarding its absolute medical accuracy.</p>
-      <p>Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or weight loss program.</p>
+  <div id="page-disclaimer" class="page" dir="ltr">
+    <div class="card static-page">
+      <h2 data-i18n="pageDisclaimerTitle">Disclaimer</h2>
+      <div id="disclaimerContent"></div>
     </div>
   </div>
 
-  <!-- 6. Contact پیج (فوری نوٹیفکیشن کے ساتھ) -->
-  <div id="page-contact" class="page">
+  <div id="page-progress" class="page" dir="ltr">
     <div class="card">
-      <h2 style="color:#d4af37; margin-bottom:15px;">Contact Us</h2>
-      <p style="color:#b8a888; font-size:14px; margin-bottom:15px;">Have questions, suggestions, or feedback? Feel free to drop us a message below[span_12](start_span)[span_12](end_span)!</p>
-      <div class="field">
-        <label>آپ کا نام</label>
-        <input type="text" id="contactName" placeholder="نام درج کریں" />
+      <h2 data-i18n="titleProgress">Weekly Weight Progress</h2>
+      <div class="note" data-i18n="progressNote">Log your weight regularly to see a weekly report and graph of your progress</div>
+      <div class="stat" style="align-items:center; gap:8px;">
+        <input type="date" id="progressDateInput" style="flex:1; padding:8px;" />
+        <input type="number" id="progressWeightInput" step="0.1" min="0" placeholder="kg" style="width:80px; padding:8px; text-align:center;" />
+        <button onclick="progressAddEntry()" style="width:auto; padding:8px 14px; margin:0;" data-i18n="progressAddBtn">Add</button>
       </div>
-      <div class="field">
-        <label>آپ کا پیغام</label>
-        <textarea id="contactMsg" rows="4" placeholder="अपना پیغام یہاں لکھیں..."></textarea>
-      </div>
-      <button onclick="sendContactMsg()">پیغام بھیجیں</button>
-      <div id="successAlert" class="success-msg">پیغام کامیابی کے ساتھ بھیج دیا گیا ہے! شکریہ۔</div>
+      <div id="progressChartWrap" style="margin-top:16px;"></div>
+      <div id="progressSummary" style="margin-top:12px;"></div>
+      <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="progressLogTitle">Weight Log</div>
+      <div id="progressLogList"></div>
+      <div class="note" id="progressEmptyMsg" data-i18n="progressEmptyMsg">No weight logged yet</div>
+      <button onclick="progressResetLog()" style="margin-top:14px; background:#7a2e2e;" data-i18n="progressResetBtn">Clear All Entries</button>
+    </div>
+  </div>
+
+  <div id="page-contact" class="page" dir="ltr">
+    <div class="card static-page">
+      <h2 data-i18n="pageContactTitle">Contact Us</h2>
+      <p id="contactIntroText">We would love to hear from you. Whether you have a question about how the calculator works, a suggestion for a new feature, or feedback on a result, please use the form below to send us a message directly.</p>
+
+      <form id="contactForm">
+        <div class="field">
+          <label style="text-align:left;" data-i18n="contactName">Name</label>
+          <input type="text" name="name" id="cf_name" placeholder="Your name" data-i18n-placeholder="contactPlaceholderName" required />
+        </div>
+        <div class="field">
+          <label style="text-align:left;" data-i18n="contactEmail">Email</label>
+          <input type="email" name="email" id="cf_email" placeholder="you@example.com" data-i18n-placeholder="contactPlaceholderEmail" required />
+        </div>
+        <div class="field">
+          <label style="text-align:left;" data-i18n="contactMessage">Message</label>
+          <textarea name="message" id="cf_message" placeholder="Write your message here..." data-i18n-placeholder="contactPlaceholderMessage" required></textarea>
+        </div>
+        <button type="submit" id="cf_submit" data-i18n="contactSend">Send Message</button>
+      </form>
+      <div class="note" id="contactStatus" style="text-align:left;"></div>
+
+      <p style="margin-top:20px;" id="contactAltText">Alternatively, you can reach us directly at:</p>
+      <p>Email: sajjadrate@gmail.com</p>
+      <p style="color:#8a93ad; font-size:13px;">(Note: replace "YOUR_FORMSPREE_ID" in the form's script with your own Formspree form ID to activate this contact form.)</p>
     </div>
   </div>
 
 </div>
 
-<script>
-let currentLang = 'ur';
+<div class="copyright" id="copyrightNote"></div>
 
-const languagesList = [
-  { code: 'ur', name: 'اردو (Urdu)', dir: 'rtl' },
-  { code: 'en', name: 'English', dir: 'ltr' },
-  { code: 'ar', name: 'العربية (Arabic)', dir: 'rtl' }
-];
+<div class="cookie-banner" id="cookieBanner" style="display:none;">
+  <span data-i18n="cookieText">This website may use cookies from third-party advertising services (such as Google AdSense) to display ads.</span>
+  <button onclick="acceptCookies()" data-i18n="cookieAccept">Accept</button>
+</div>
 
-const translations = {
-  ur: {
-    sharePromptText: "پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!",
-    shareBtnText: "🔗 شئیر کریں",
-    title: "موٹاپا کم کریں",
-    subtitle: "اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں",
-    labelWeight: "وزن (کلوگرام)",
-    labelAge: "عمر (سال)",
-    labelHeightUnit: "قد کی اکائی",
-    optCm: "سینٹی میٹر",
-    optFt: "فٹ",
-    labelHeightCm: "قد (سینٹی میٹر)",
-    labelHeightFt: "قد (فٹ اور انچ)",
-    labelGender: "جنس",
-    optMale: "مرد",
-    optFemale: "عورت",
-    labelActivity: "کام کاج (روزمرہ سرگرمی)",
-    optAct1: "دفتری کام / زیادہ تر بیٹھے رہنا",
-    optAct2: "ہلکی مشقت",
-    optAct3: "درمیانی مشقت",
-    optAct4: "بھاری مشقت",
-    btnCalculate: "حساب لگائیں",
-    titleDailyNeed: "آپ کی روزانہ ضرورت",
-    labelMaintainCal: "موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز",
-    titleWeightLossPlan: "وزن کم کرنے کا پلان",
-    labelTargetCal: "روزانہ کیلوریز",
-    labelProtein: "پروٹین (گرام)"
-  },
-  en: {
-    sharePromptText: "Liked it? Share with your friends!",
-    shareBtnText: "🔗 Share",
-    title: "Motapa Calculator",
-    subtitle: "Enter your info and get a complete diet & workout plan",
-    labelWeight: "Weight (kg)",
-    labelAge: "Age (years)",
-    labelHeightUnit: "Height Unit",
-    optCm: "Centimeters",
-    optFt: "Feet/Inches",
-    labelHeightCm: "Height (cm)",
-    labelHeightFt: "Height (ft & in)",
-    labelGender: "Gender",
-    optMale: "Male",
-    optFemale: "Female",
-    labelActivity: "Activity Level",
-    optAct1: "Desk job / Sedentary",
-    optAct2: "Light exercise",
-    optAct3: "Moderate exercise",
-    optAct4: "Heavy exercise",
-    btnCalculate: "Calculate",
-    titleDailyNeed: "Your Daily Need",
-    labelMaintainCal: "Daily calories to maintain current weight",
-    titleWeightLossPlan: "Weight Loss Plan",
-    labelTargetCal: "Daily Calories",
-    labelProtein: "Protein (grams)"
-  },
-  ar: {
-    sharePromptText: "هل أعجبك؟ شاركه مع أصدقائك!",
-    shareBtnText: "🔗 مشاركة",
-    title: "حاسبة الوزن",
-    subtitle: "أدخل معلوماتك واحصل على خطة حمية وتمرين كاملة",
-    labelWeight: "الوزن (كجم)",
-    labelAge: "العمر (سنوات)",
-    labelHeightUnit: "وحدة الطول",
-    optCm: "سنتيمتر",
-    optFt: "قدم",
-    labelHeightCm: "الطول (سنتيمتر)",
-    labelHeightFt: "الطول (قدم وبوصة)",
-    labelGender: "الجنس",
-    optMale: "ذكر",
-    optFemale: "أنثى",
-    labelActivity: "النشاط اليومي",
-    optAct1: "عمل مكتب / قلة الحركة",
-    optAct2: "تمرين خفيف",
-    optAct3: "تمرين متوسط",
-    optAct4: "تمرين شاق",
-    btnCalculate: "احسب",
-    titleDailyNeed: "احتياجك اليومي",
-    labelMaintainCal: "السعرات اليومية للحفاظ على الوزن الحالي",
-    titleWeightLossPlan: "خطة فقدان الوزن",
-    labelTargetCal: "السعرات اليومية",
-    labelProtein: "البروتين (جرام)"
-  }
-};
-
-function getDM(lang) {
-  return translations[lang] || translations.en;
-}
-
-function toggleHeightUnit() {
-  const unit = document.getElementById('heightUnit').value;
-  if (unit === 'cm') {
-    document.getElementById('heightCmField').style.display = 'block';
-    document.getElementById('heightFtField').style.display = 'none';
-  } else {
-    document.getElementById('heightCmField').style.display = 'none';
-    document.getElementById('heightFtField').style.display = 'block';
-  }
-}
-
-function renderLangList(filter = '') {
-  const listContainer = document.getElementById('langListItems');
-  listContainer.innerHTML = '';
-  languagesList.forEach(l => {
-    if (l.name.toLowerCase().includes(filter.toLowerCase())) {
-      const div = document.createElement('div');
-      div.className = 'lang-item';
-      div.innerText = l.name;
-      div.onclick = () => selectLanguage(l.code);
-      listContainer.appendChild(div);
-    }
-  });
-}
-
-function toggleLangDropdown() {
-  const panel = document.getElementById('langDropdownPanel');
-  panel.classList.toggle('open');
-  if (panel.classList.contains('open')) {
-    renderLangList();
-    document.getElementById('langSearchInput').focus();
-  }
-}
-
-function filterLangList() {
-  const query = document.getElementById('langSearchInput').value;
-  renderLangList(query);
-}
-
-function selectLanguage(langCode) {
-  const langObj = languagesList.find(l => l.code === langCode) || languagesList[0];
-  currentLang = langObj.code;
-  
-  document.getElementById('langCurrentName').innerText = langObj.name;
-  document.documentElement.setAttribute('dir', langObj.dir);
-  document.documentElement.setAttribute('lang', langObj.code);
-  
-  document.getElementById('langDropdownPanel').classList.remove('open');
-  
-  const dm = getDM(currentLang);
-  const sharePromptSpan = document.querySelector('.share-prompt span');
-  const shareButton = document.querySelector('.share-btn');
-  
-  if (sharePromptSpan) sharePromptSpan.innerText = dm.sharePromptText;
-  if (shareButton) shareButton.innerText = dm.shareBtnText;
-  
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dm[key]) el.innerText = dm[key];
-  });
-
-  const resultsDiv = document.getElementById('results');
-  if (resultsDiv && resultsDiv.style.display === 'block') {
-    calculate();
-  }
-}
-
-function shareApp() {
-  const titles = {
-    ur: "موٹاپا کم کریں - وزن کم کرنے کا کیلکولیٹر اور ڈائری",
-    ar: "حاسبة فقدان الوزن - تخسيس وزني وخطة النظام الغذائي",
-    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan[span_13](start_span)[span_13](end_span)"
-  };
-  
-  const shareTitle = titles[currentLang] || titles.en;
-  const shareText = currentLang === 'ur' ? "اپنا وزن، BMI اور روزانہ کی کیلوریز چیک کریں!" : "Check your weight, BMI, and daily calories!";
-  
-  if (navigator.share) {
-    navigator.share({
-      title: shareTitle,
-      text: shareText,
-      url: window.location.href
-    }).catch(console.error);
-  } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert(currentLang === 'ur' ? "لنک کاپی ہو گیا!" : "Link copied to clipboard!");
-    });
-  }
-}
-
-function calculate() {
-  const weight = parseFloat(document.getElementById('weight').value) || 70;
-  
-  document.getElementById('tdee').innerText = Math.round(weight * 25 + 500) + " kcal";
-  document.getElementById('targetCal').innerText = Math.round(weight * 25) + " kcal";
-  document.getElementById('protein').innerText = Math.round(weight * 1.2);
-  
-  document.getElementById('results').style.display = 'block';
-}
-
-function showPage(pageId, el) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('page-' + pageId).classList.add('active');
-  
-  document.querySelectorAll('.top-nav-item').forEach(nav => nav.classList.remove('active'));
-  if (el) el.classList.add('active');
-}
-
-function sendContactMsg() {
-  const name = document.getElementById('contactName').value.trim();
-  const msg = document.getElementById('contactMsg').value.trim();
-  
-  if(!name || !msg) {
-    alert(currentLang === 'ur' ? "براہ کرم نام اور پیغام دونوں درج کریں!" : "Please fill in both name and message!");
-    return;
-  }
-  
-  const alertBox = document.getElementById('successAlert');
-  alertBox.style.display = 'block';
-  
-  document.getElementById('contactName').value = '';
-  document.getElementById('contactMsg').value = '';
-  
-  setTimeout(() => {
-    alertBox.style.display = 'none';
-  }, 4000);
-}
-
-renderLangList();
-</script>
+<div class="bottom-nav">
+  <div class="nav-item active" id="nav-home" onclick="showPage('home', this)">
+    <div class="nav-icon">🏠</div><span>Home</span>
+  </div>
+  <div class="nav-item" id="nav-about" onclick="showPage('about', this)">
+    <div class="nav-icon">ℹ️</div><span>About</span>
+  </div>
+  <div class="nav-item" id="nav-terms" onclick="showPage('terms', this)">
+    <div class="nav-icon">📜</div><span>Terms</span>
+  </div>
+  <div class="nav-item" id="nav-privacy" onclick="showPage('privacy', this)">
+    <div class="nav-icon">🔒</div><span>Privacy</span>
+  </div>
+  <div class="nav-item" id="nav-disclaimer" onclick="showPage('disclaimer', this)">
+    <div class="nav-icon">⚠️</div><span>Disclaimer</span>
+  </div>
+  <div class="nav-item" id="nav-contact" onclick="showPage('contact', this)">
+    <div class="nav-icon">✉️</div><span>Contact</span>
+  </div>
+</div>
 </body>
 </html>
