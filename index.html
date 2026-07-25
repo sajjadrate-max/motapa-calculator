@@ -249,6 +249,99 @@ function showPage(pageId, el) {
 </script>
 </body>
 </html>
+labelAge: "Age (years)",
+    btnCalculate: "Calculate",
+    titleDailyNeed: "Your Daily Need",
+    labelMaintainCal: "Daily calories to maintain current weight",
+    titleWeightLossPlan: "Weight Loss Plan",
+    labelTargetCal: "Daily Calories",
+    labelProtein: "Protein (grams)"
+  },
+  ar: {
+    sharePromptText: "هل أعجبك؟ شاركه مع أصدقائك!",
+    shareBtnText: "🔗 مشاركة",
+    title: "حاسبة الوزن",
+    subtitle: "أدخل معلوماتك واحصل على خطة حمية وتمرين كاملة",
+    labelWeight: "الوزن (كجم)",
+    labelAge: "العمر (سنوات)",
+    btnCalculate: "احسب",
+    titleDailyNeed: "احتياجك اليومي",
+    labelMaintainCal: "السعرات اليومية للحفاظ على الوزن الحالي",
+    titleWeightLossPlan: "خطة فقدان الوزن",
+    labelTargetCal: "السعرات اليومية",
+    labelProtein: "البروتين (جرام)"
+  }
+};
+
+function getDM(lang) {
+  return translations[lang] || translations.en;
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  const dm = getDM(lang);
+  const sharePromptSpan = document.querySelector('.share-prompt span');
+  const shareButton = document.querySelector('.share-btn');
+  
+  if (sharePromptSpan) sharePromptSpan.innerText = dm.sharePromptText;
+  if (shareButton) shareButton.innerText = dm.shareBtnText;
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dm[key]) el.innerText = dm[key];
+  });
+
+  const resultsDiv = document.getElementById('results');
+  if (resultsDiv && resultsDiv.style.display === 'block') {
+    calculate();
+  }
+}
+
+function shareApp() {
+  const titles = {
+    ur: "موٹاپا کم کریں - وزن کم کرنے کا کیلکولیٹر اور ڈائری",
+    ar: "حاسبة فقدان الوزن - تخسيس وزني وخطة النظام الغذائي",
+    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan[span_2](start_span)[span_2](end_span)"
+  };
+  
+  const shareTitle = titles[currentLang] || titles.en;
+  const shareText = currentLang === 'ur' ? "اپنا وزن، BMI اور روزانہ کی کیلوریز چیک کریں!" : "Check your weight, BMI, and daily calories!";
+  
+  if (navigator.share) {
+    navigator.share({
+      title: shareTitle,
+      text: shareText,
+      url: window.location.href
+    }).catch(console.error);
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert(currentLang === 'ur' ? "لنک کاپی ہو گیا!" : "Link copied to clipboard!");
+    });
+  }
+}
+
+function calculate() {
+  const weight = parseFloat(document.getElementById('weight').value) || 70;
+  
+  document.getElementById('tdee').innerText = Math.round(weight * 25 + 500) + " kcal";
+  document.getElementById('targetCal').innerText = Math.round(weight * 25) + " kcal";
+  document.getElementById('protein').innerText = Math.round(weight * 1.2);
+  
+  document.getElementById('results').style.display = 'block';
+}
+
+function toggleLangDropdown() {
+  const panel = document.getElementById('langDropdownPanel');
+  panel.classList.toggle('open');
+}
+
+function showPage(pageId, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+}
+</script>
+</body>
+</html>
   "operatingSystem":"Any",
   "browserRequirements":"Requires JavaScript",
   "description":"Free BMI, BMR, TDEE, Calorie and Weight Loss Calculator.",
