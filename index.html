@@ -51,13 +51,84 @@
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
-    padding: 20px 16px 80px;
+    padding: 70px 16px 80px;
     line-height: 1.6;
   }
   .container {
     max-width: 650px;
     margin: 0 auto;
   }
+  /* Top Bar for Home and Language Buttons */
+  .top-nav-bar {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 500;
+  }
+  .top-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 1px solid #d4af3766;
+    background: #101d42ee;
+    color: #d4af37;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+  }
+  .top-btn:hover {
+    background: #16255a;
+  }
+  .lang-select-wrap {
+    position: relative;
+  }
+  #langDropdownPanel {
+    display: none;
+    position: absolute;
+    top: 115%;
+    right: 0;
+    width: 230px;
+    background: #101d42;
+    border: 1px solid #d4af3766;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 500;
+    padding: 10px;
+    flex-direction: column;
+  }
+  #langDropdownPanel.open { display: flex; }
+  #langSearchInput {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #d4af3766;
+    background: #0a1128;
+    color: #f2e9dc;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  #langListItems {
+    overflow-y: auto;
+    max-height: 200px;
+  }
+  .lang-item {
+    padding: 7px 8px;
+    font-size: 13px;
+    color: #e8e0d0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .lang-item:hover { background: #16255a; }
+
   .header-badge {
     width: 56px;
     height: 56px;
@@ -224,7 +295,6 @@
     padding: 16px;
     border-top: 1px solid #d4af3722;
   }
-  /* Inline links container right below calculate button */
   .inline-pages-nav {
     display: flex;
     justify-content: center;
@@ -282,6 +352,23 @@
 </style>
 </head>
 <body>
+
+<!-- Top Bar: Home Button on Left, Language Button on Right -->
+<div class="top-nav-bar">
+  <a href="index.html" class="top-btn">🏠 Home</a>
+  <div class="lang-select-wrap">
+    <div class="top-btn" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">اردو</span> ▾</div>
+    <div id="langDropdownPanel">
+      <input type="text" id="langSearchInput" placeholder="Search language..." oninput="filterLangList()" />
+      <div id="langListItems">
+        <div class="lang-item" onclick="changeLang('ur')">اردو (Urdu)</div>
+        <div class="lang-item" onclick="changeLang('en')">English</div>
+        <div class="lang-item" onclick="changeLang('ar')">العربية (Arabic)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <div class="header-badge">⚖️</div>
   <h1>موٹاپا کم کریں</h1>
@@ -425,6 +512,26 @@
 </div>
 
 <script>
+  function toggleLangDropdown() {
+    const panel = document.getElementById('langDropdownPanel');
+    panel.classList.toggle('open');
+  }
+
+  function changeLang(lang) {
+    const names = { 'ur': 'اردو', 'en': 'English', 'ar': 'العربية' };
+    document.getElementById('langCurrentName').innerText = names[lang] || 'Language';
+    document.getElementById('langDropdownPanel').classList.remove('open');
+  }
+
+  function filterLangList() {
+    const input = document.getElementById('langSearchInput').value.toLowerCase();
+    const items = document.querySelectorAll('.lang-item');
+    items.forEach(item => {
+      const text = item.innerText.toLowerCase();
+      item.style.display = text.includes(input) ? 'block' : 'none';
+    });
+  }
+
   function toggleHeightUnit() {
     const unit = document.getElementById('heightUnit').value;
     if (unit === 'cm') {
