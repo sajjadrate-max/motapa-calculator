@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Motapa Calculator - Free BMI, BMR, TDEE, Calorie & Weight Loss Calculator</title>
-<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets. Auto-select a diet plan, log your food diary, track weekly weight progress, and get a daily walking plan. Available in Urdu, English, and 85+ languages.">
+<meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets[span_1](start_span)[span_1](end_span).">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#0a1128">
 
@@ -42,10 +42,10 @@
     -webkit-background-clip: text; background-clip: text; color: #d4af37;
     font-size: 30px; margin-bottom: 6px; padding-top: 4px;
   }
-  .subtitle { text-align: center; color: #b8a888; font-size: 15px; margin-bottom: 28px; }
-  .share-prompt { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: -16px 0 24px; text-align: center; }
+  .subtitle { text-align: center; color: #b8a888; font-size: 15px; margin-bottom: 20px; }
+  .share-prompt { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 0 0 20px; text-align: center; }
   .share-prompt span { color: #b8a888; font-size: 13px; }
-  .share-btn { width: auto; padding: 8px 20px; margin: 0; font-size: 14px; border-radius: 20px; }
+  .share-btn { width: auto; padding: 6px 16px; margin: 0; font-size: 13px; border-radius: 20px; }
   .card {
     background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
     border: 1px solid #d4af3744; border-radius: 16px; padding: 22px; margin-bottom: 22px;
@@ -70,10 +70,14 @@
   .bottom-nav { position: fixed; top: 0; left: 0; right: 0; background: #0e1a3d; border-bottom: 1px solid #d4af3744; display: flex; justify-content: space-around; padding: 8px 2px; z-index: 100; }
   .nav-item { display: flex; flex-direction: column; align-items: center; color: #8a93ad; font-size: 10.5px; cursor: pointer; flex: 1; }
   .nav-item.active { color: #d4af37; }
-  .lang-select-wrap { text-align: center; margin-bottom: 18px; position: relative; max-width: 300px; margin-left: auto; margin-right: auto; }
+  .lang-select-wrap { text-align: center; margin-bottom: 20px; position: relative; max-width: 300px; margin-left: auto; margin-right: auto; }
   #langDisplay { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 18px; font-size: 14px; border-radius: 20px; border: 1px solid #d4af3766; background: #101d42; color: #d4af37; cursor: pointer; width: 100%; }
   #langDropdownPanel { display: none; position: absolute; top: 105%; left: 0; right: 0; background: #101d42; border: 1px solid #d4af3766; border-radius: 12px; z-index: 300; padding: 10px; max-height: 320px; flex-direction: column; }
   #langDropdownPanel.open { display: flex; }
+  #langSearchInput { width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #d4af3766; background: #0a1128; color: #f2e9dc; font-size: 14px; margin-bottom: 8px; }
+  #langListItems { overflow-y: auto; max-height: 230px; text-align: left; }
+  .lang-item { padding: 8px 10px; font-size: 14px; color: #e8e0d0; border-radius: 6px; cursor: pointer; }
+  .lang-item:hover { background: #16255a; }
   .page { display: none; }
   .page.active { display: block; }
 </style>
@@ -83,11 +87,6 @@
   <div class="header-badge">⚖️</div>
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
-  
-  <div class="share-prompt">
-    <span data-i18n="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
-    <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
-  </div>
 
   <div class="lang-select-wrap">
     <div id="langDisplay" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">اردو (Urdu)</span> ▾</div>
@@ -95,6 +94,11 @@
       <input type="text" id="langSearchInput" placeholder="Search language..." oninput="filterLangList()" />
       <div id="langListItems"></div>
     </div>
+  </div>
+  
+  <div class="share-prompt">
+    <span data-i18n="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
+    <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
   <div id="page-home" class="page active">
@@ -106,6 +110,40 @@
       <div class="field">
         <label data-i18n="labelAge">عمر (سال)</label>
         <input type="number" id="age" placeholder="مثلاً 30" />
+      </div>
+      <div class="field">
+        <label data-i18n="labelHeightUnit">قد کی اکائی</label>
+        <select id="heightUnit" onchange="toggleHeightUnit()">
+          <option value="cm" data-i18n="optCm">سینٹی میٹر</option>
+          <option value="ft" data-i18n="optFt">فٹ</option>
+        </select>
+      </div>
+      <div class="field" id="heightCmField">
+        <label data-i18n="labelHeightCm">قد (سینٹی میٹر)</label>
+        <input type="number" id="height" placeholder="مثلاً 170" />
+      </div>
+      <div class="field" id="heightFtField" style="display:none;">
+        <label data-i18n="labelHeightFt">قد (فٹ اور انچ)</label>
+        <div style="display:flex; gap:10px;">
+          <input type="number" id="heightFt" placeholder="فٹ (ft)" style="flex:1;" />
+          <input type="number" id="heightIn" placeholder="انچ (in)" style="flex:1;" />
+        </div>
+      </div>
+      <div class="field">
+        <label data-i18n="labelGender">جنس</label>
+        <select id="gender">
+          <option value="male" data-i18n="optMale">مرد</option>
+          <option value="female" data-i18n="optFemale">عورت</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-i18n="labelActivity">کام کاج (روزمرہ سرگرمی)</label>
+        <select id="activity">
+          <option value="1.2" data-i18n="optAct1">دفتری کام / زیادہ تر بیٹھے رہنا</option>
+          <option value="1.375" data-i18n="optAct2">ہلکی مشقت</option>
+          <option value="1.55" data-i18n="optAct3">درمیانی مشقت</option>
+          <option value="1.725" data-i18n="optAct4">بھاری مشقت</option>
+        </select>
       </div>
       <button onclick="calculate()" data-i18n="btnCalculate">حساب لگائیں</button>
     </div>
@@ -134,6 +172,12 @@
 <script>
 let currentLang = 'ur';
 
+const languagesList = [
+  { code: 'ur', name: 'اردو (Urdu)', dir: 'rtl' },
+  { code: 'en', name: 'English', dir: 'ltr' },
+  { code: 'ar', name: 'العربية (Arabic)', dir: 'rtl' }
+];
+
 const translations = {
   ur: {
     sharePromptText: "پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!",
@@ -142,6 +186,19 @@ const translations = {
     subtitle: "اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں",
     labelWeight: "وزن (کلوگرام)",
     labelAge: "عمر (سال)",
+    labelHeightUnit: "قد کی اکائی",
+    optCm: "سینٹی میٹر",
+    optFt: "فٹ",
+    labelHeightCm: "قد (سینٹی میٹر)",
+    labelHeightFt: "قد (فٹ اور انچ)",
+    labelGender: "جنس",
+    optMale: "مرد",
+    optFemale: "عورت",
+    labelActivity: "کام کاج (روزمرہ سرگرمی)",
+    optAct1: "دفتری کام / زیادہ تر بیٹھے رہنا",
+    optAct2: "ہلکی مشقت",
+    optAct3: "درمیانی مشقت",
+    optAct4: "بھاری مشقت",
     btnCalculate: "حساب لگائیں",
     titleDailyNeed: "آپ کی روزانہ ضرورت",
     labelMaintainCal: "موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز",
@@ -156,6 +213,19 @@ const translations = {
     subtitle: "Enter your info and get a complete diet & workout plan",
     labelWeight: "Weight (kg)",
     labelAge: "Age (years)",
+    labelHeightUnit: "Height Unit",
+    optCm: "Centimeters",
+    optFt: "Feet/Inches",
+    labelHeightCm: "Height (cm)",
+    labelHeightFt: "Height (ft & in)",
+    labelGender: "Gender",
+    optMale: "Male",
+    optFemale: "Female",
+    labelActivity: "Activity Level",
+    optAct1: "Desk job / Sedentary",
+    optAct2: "Light exercise",
+    optAct3: "Moderate exercise",
+    optAct4: "Heavy exercise",
     btnCalculate: "Calculate",
     titleDailyNeed: "Your Daily Need",
     labelMaintainCal: "Daily calories to maintain current weight",
@@ -170,6 +240,19 @@ const translations = {
     subtitle: "أدخل معلوماتك واحصل على خطة حمية وتمرين كاملة",
     labelWeight: "الوزن (كجم)",
     labelAge: "العمر (سنوات)",
+    labelHeightUnit: "وحدة الطول",
+    optCm: "سنتيمتر",
+    optFt: "قدم",
+    labelHeightCm: "الطول (سنتيمتر)",
+    labelHeightFt: "الطول (قدم وبوصة)",
+    labelGender: "الجنس",
+    optMale: "ذكر",
+    optFemale: "أنثى",
+    labelActivity: "النشاط اليومي",
+    optAct1: "عمل مكتب / قلة الحركة",
+    optAct2: "تمرين خفيف",
+    optAct3: "تمرين متوسط",
+    optAct4: "تمرين شاق",
     btnCalculate: "احسب",
     titleDailyNeed: "احتياجك اليومي",
     labelMaintainCal: "السعرات اليومية للحفاظ على الوزن الحالي",
@@ -183,9 +266,56 @@ function getDM(lang) {
   return translations[lang] || translations.en;
 }
 
-function setLanguage(lang) {
-  currentLang = lang;
-  const dm = getDM(lang);
+function toggleHeightUnit() {
+  const unit = document.getElementById('heightUnit').value;
+  if (unit === 'cm') {
+    document.getElementById('heightCmField').style.display = 'block';
+    document.getElementById('heightFtField').style.display = 'none';
+  } else {
+    document.getElementById('heightCmField').style.display = 'none';
+    document.getElementById('heightFtField').style.display = 'block';
+  }
+}
+
+function renderLangList(filter = '') {
+  const listContainer = document.getElementById('langListItems');
+  listContainer.innerHTML = '';
+  languagesList.forEach(l => {
+    if (l.name.toLowerCase().includes(filter.toLowerCase())) {
+      const div = document.createElement('div');
+      div.className = 'lang-item';
+      div.innerText = l.name;
+      div.onclick = () => selectLanguage(l.code);
+      listContainer.appendChild(div);
+    }
+  });
+}
+
+function toggleLangDropdown() {
+  const panel = document.getElementById('langDropdownPanel');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) {
+    renderLangList();
+    document.getElementById('langSearchInput').focus();
+  }
+}
+
+function filterLangList() {
+  const query = document.getElementById('langSearchInput').value;
+  renderLangList(query);
+}
+
+function selectLanguage(langCode) {
+  const langObj = languagesList.find(l => l.code === langCode) || languagesList[0];
+  currentLang = langObj.code;
+  
+  document.getElementById('langCurrentName').innerText = langObj.name;
+  document.documentElement.setAttribute('dir', langObj.dir);
+  document.documentElement.setAttribute('lang', langObj.code);
+  
+  document.getElementById('langDropdownPanel').classList.remove('open');
+  
+  const dm = getDM(currentLang);
   const sharePromptSpan = document.querySelector('.share-prompt span');
   const shareButton = document.querySelector('.share-btn');
   
@@ -207,7 +337,7 @@ function shareApp() {
   const titles = {
     ur: "موٹاپا کم کریں - وزن کم کرنے کا کیلکولیٹر اور ڈائری",
     ar: "حاسبة فقدان الوزن - تخسيس وزني وخطة النظام الغذائي",
-    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan"
+    en: "Motapa Calculator - Free BMI, BMR, TDEE & Weight Loss Plan[span_2](start_span)[span_2](end_span)"
   };
   
   const shareTitle = titles[currentLang] || titles.en;
@@ -236,15 +366,12 @@ function calculate() {
   document.getElementById('results').style.display = 'block';
 }
 
-function toggleLangDropdown() {
-  const panel = document.getElementById('langDropdownPanel');
-  panel.classList.toggle('open');
-}
-
 function showPage(pageId, el) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageId).classList.add('active');
 }
+
+renderLangList();
 </script>
 </body>
 </html>
