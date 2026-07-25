@@ -3,40 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us - Motapa Calculator</title>
+<title>About Us | Motapa Calculator</title>
+<meta name="description" content="Learn about Motapa Calculator, a free BMI, BMR, TDEE, and weight loss calculator built to help you plan your diet and track your progress.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a1128">
+<link rel="canonical" href="https://motapacalculator.com/about.html">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
-    color: #f2e9dc;
-    min-height: 100vh;
-    padding: 40px 16px;
-    line-height: 1.8;
-  }
-  .container { max-width: 650px; margin: 0 auto; }
-  .card {
-    background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
-    border: 1px solid #d4af3744;
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-  }
-  h2 { color: #d4af37; font-size: 24px; text-align: center; margin-bottom: 20px; }
-  p { color: #e8e0d0; font-size: 15px; margin-bottom: 16px; }
-  .back-link { display: block; text-align: center; margin-top: 24px; color: #d4af37; text-decoration: none; font-weight: bold; }
-  .back-link:hover { text-decoration: underline; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
+  color: #f2e9dc;
+  min-height: 100vh;
+  padding: 30px 16px 90px;
+  line-height: 1.75;
+}
+.container { max-width: 700px; margin: 0 auto; }
+.back-link { display: inline-block; color: #d4af37; text-decoration: none; font-size: 14px; margin-bottom: 18px; }
+.back-link:hover { text-decoration: underline; }
+h1 {
+  color: #d4af37; font-size: 26px; margin-bottom: 18px; letter-spacing: 0.3px;
+}
+.card {
+  background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
+  border: 1px solid #d4af3744; border-radius: 16px; padding: 22px 22px 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+  margin-bottom: 20px;
+}
+p { margin-bottom: 14px; color: #f2e9dc; font-size: 15.5px; }
+strong { color: #e8c766; }
+.field { margin-bottom: 16px; }
+.field label { display:block; color:#d4af37; font-size: 13.5px; margin-bottom: 6px; }
+.field input, .field textarea {
+  width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #d4af3744;
+  background: #0e1a3d; color: #f2e9dc; font-size: 15px; font-family: inherit;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+button.submit-btn {
+  width: 100%; background: linear-gradient(145deg, #e6c860, #c9a133); color: #0a1128;
+  font-weight: bold; padding: 14px; border: none; border-radius: 12px; font-size: 16px;
+  cursor: pointer; margin-bottom: 8px;
+}
+#contactStatus { text-align:center; font-size: 14px; min-height: 20px; margin-bottom: 14px; }
+.contact-alt { text-align:center; color:#b8a888; font-size: 14px; margin-top: 6px; }
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #0e1a3d; border-top: 1px solid #d4af3733;
+  display: flex; justify-content: space-around; padding: 10px 4px;
+}
+.nav-item { display:flex; flex-direction:column; align-items:center; color:#b8a888; text-decoration:none; font-size:11px; gap:2px; }
+.nav-item.active { color:#d4af37; }
+.nav-icon { font-size:18px; }
 </style>
 </head>
 <body>
 <div class="container">
+  <a class="back-link" href="index.html">&larr; Back to Motapa Calculator</a>
+  <h1>About Us</h1>
   <div class="card">
-    <h2>About Us</h2>
-    <p>Welcome to Motapa Calculator, your premier online destination for personalized health, weight management, and nutritional planning. Our platform is meticulously designed to help individuals decode their body metrics and achieve sustainable wellness goals.</p>
-    <p>We combine established scientific equations such as the Mifflin-St Jeor formula for BMR calculation with practical dietary frameworks tailored for various lifestyles, including traditional South Asian preferences and daily fitness tracking.</p>
-    <p>Our mission is to provide free, accessible, and accurate calorie, BMI, and TDEE calculation tools to empower users worldwide in multiple languages.</p>
-    <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <p>Welcome to this weight loss and nutrition calculator. It was built for one simple reason: people trying to lose weight often struggle not because they lack willpower, but because they lack clear, personalized numbers to work with. Generic advice like "eat less and move more" rarely helps anyone succeed on its own.</p>
+    <p>This calculator uses your weight, height, age, gender, and daily activity level to estimate your Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE) using the well-established Mifflin-St Jeor equation, which is widely used in clinical nutrition. From there, it calculates a safe daily calorie target for weight loss, along with recommended protein, fat, and carbohydrate amounts in grams, so you know exactly what a balanced day of eating should look like for your specific body.</p>
+    <p>Beyond the numbers, this site includes a diet planning tool that lets you select real foods — chicken, rice, roti, daal, vegetables, fruits, dairy, oils, and nuts — and see in real time how they add up against your daily targets. You can build your own meal plan manually, food by food, checking totals as you go.</p>
+    <p>Alternatively, the website can automatically suggest a complete meal plan for you, adjusted according to the current season, since eating patterns often change between summer and winter — favoring cooling foods like yogurt, cucumber, and watermelon in hot weather, and warming foods like nuts, oil, and heartier proteins in cold weather.</p>
+    <p>This calculator also recommends a daily walking distance, based on your body weight, to help you close the gap between the calories you eat and the calories you burn — because sustainable weight loss usually works best when diet and activity are addressed together, not separately.</p>
+    <p>The goal here is not to sell a quick fix or a fad diet. It is to give you a clear, evidence-based starting point that you can adjust over time, ideally alongside guidance from a qualified doctor or nutritionist. This website is provided free of charge and works entirely in your browser — no account, no sign-up, and no data sent anywhere.</p>
+    <p>A Food Diary ("Log As You Eat") is also part of this site, letting you record what you eat throughout the day — breakfast, lunch, or any snack — with your remaining daily calories, protein, fat, and carbohydrates updating automatically. Once a particular nutrient quota is used up, foods from that category are automatically removed from the list so you don't exceed your daily target.</p>
+    <p>A Weekly Progress section lets you log your weight regularly and see your trend on a visual graph over time, alongside a comparison of how your actual weekly weight loss compares to the calculator's projected estimate. This data stays entirely on your own device.</p>
+    <p>This website is available in more than 85 languages, including Urdu, Hindi, Arabic (with Gulf-region dialect variants), English, French, Spanish, Chinese, and many more, so that people around the world can plan their nutrition comfortably in their own language. Your language preference is saved in your browser so you don't need to select it again each visit.</p>
+    <p>Our goal is transparency: the formulas used are publicly published and well-established in clinical nutrition — there is no hidden algorithm or agenda. We want you to understand where your numbers come from, not just take them on faith.</p>
   </div>
+</div>
+<div class="bottom-nav">
+  <a class="nav-item" href="index.html"><div class="nav-icon">🏠</div><span>Home</span></a>
+  <a class="nav-item active" href="about.html"><div class="nav-icon">ℹ️</div><span>About</span></a>
+  <a class="nav-item" href="terms.html"><div class="nav-icon">📜</div><span>Terms</span></a>
+  <a class="nav-item" href="privacy.html"><div class="nav-icon">🔒</div><span>Privacy</span></a>
+  <a class="nav-item" href="disclaimer.html"><div class="nav-icon">⚠️</div><span>Disclaimer</span></a>
+  <a class="nav-item" href="contact.html"><div class="nav-icon">✉️</div><span>Contact</span></a>
 </div>
 </body>
 </html>
