@@ -46,14 +46,15 @@ button.submit-btn {
 }
 #contactStatus { text-align:center; font-size: 14px; min-height: 20px; margin-bottom: 14px; }
 .contact-alt { text-align:center; color:#b8a888; font-size: 14px; margin-top: 6px; }
-.bottom-nav {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  background: #0e1a3d; border-top: 1px solid #d4af3733;
-  display: flex; justify-content: space-around; padding: 10px 4px;
+.corner-home-btn {
+  position: fixed; top: 14px; left: 14px; z-index: 500;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 7px 12px; font-size: 12.5px; border-radius: 20px;
+  border: 1px solid #d4af3766; background: #101d42ee; color: #d4af37;
+  text-decoration: none; font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4); backdrop-filter: blur(4px);
 }
-.nav-item { display:flex; flex-direction:column; align-items:center; color:#b8a888; text-decoration:none; font-size:11px; gap:2px; }
-.nav-item.active { color:#d4af37; }
-.nav-icon { font-size:18px; }
+.corner-home-btn .nav-icon { font-size: 14px; }
 </style>
 </head>
 <body>
@@ -79,7 +80,6 @@ button.submit-btn {
       <button type="submit" class="submit-btn" id="cf_submit">Send Message</button>
       <div id="contactStatus"></div>
     </form>
-    <p class="contact-alt">Alternatively, you can reach us directly at:<br><strong>sajjadrate@gmail.com</strong></p>
 <script>
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
@@ -88,25 +88,23 @@ if (contactForm) {
     const statusEl = document.getElementById('contactStatus');
     const submitBtn = document.getElementById('cf_submit');
     statusEl.style.color = '#d4af37';
-    statusEl.innerText = 'Sending...';
+    statusEl.innerHTML = 'Sending...';
     submitBtn.disabled = true;
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+      const response = await fetch('https://formspree.io/f/mbdnppka', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
         body: new FormData(contactForm)
       });
       if (response.ok) {
-        statusEl.style.color = '#7fc97f';
-        statusEl.innerText = 'Thank you! Your message has been sent successfully.';
+        statusEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;gap:8px;background:#173a2b;border:1px solid #3fae6a66;border-radius:10px;padding:12px;color:#7fe0a3;font-weight:600;">'
+          + '<span style="font-size:20px;">✅</span><span>Message sent successfully!</span></div>';
         contactForm.reset();
       } else {
-        statusEl.style.color = '#e07a5f';
-        statusEl.innerText = 'Something went wrong. Please try again or email us directly.';
+        statusEl.innerHTML = '<div style="color:#e07a5f;">Something went wrong. Please try again later.</div>';
       }
     } catch (err) {
-      statusEl.style.color = '#e07a5f';
-      statusEl.innerText = 'Network error. Please check your connection and try again.';
+      statusEl.innerHTML = '<div style="color:#e07a5f;">Network error. Please check your connection and try again.</div>';
     }
     submitBtn.disabled = false;
   });
@@ -115,13 +113,6 @@ if (contactForm) {
 
   </div>
 </div>
-<div class="bottom-nav">
-  <a class="nav-item" href="index.html"><div class="nav-icon">🏠</div><span>Home</span></a>
-  <a class="nav-item" href="about.html"><div class="nav-icon">ℹ️</div><span>About</span></a>
-  <a class="nav-item" href="terms.html"><div class="nav-icon">📜</div><span>Terms</span></a>
-  <a class="nav-item" href="privacy.html"><div class="nav-icon">🔒</div><span>Privacy</span></a>
-  <a class="nav-item" href="disclaimer.html"><div class="nav-icon">⚠️</div><span>Disclaimer</span></a>
-  <a class="nav-item active" href="contact.html"><div class="nav-icon">✉️</div><span>Contact</span></a>
-</div>
+<a class="corner-home-btn" href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
 </body>
 </html>

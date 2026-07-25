@@ -46,14 +46,15 @@ button.submit-btn {
 }
 #contactStatus { text-align:center; font-size: 14px; min-height: 20px; margin-bottom: 14px; }
 .contact-alt { text-align:center; color:#b8a888; font-size: 14px; margin-top: 6px; }
-.bottom-nav {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  background: #0e1a3d; border-top: 1px solid #d4af3733;
-  display: flex; justify-content: space-around; padding: 10px 4px;
+.corner-home-btn {
+  position: fixed; top: 14px; left: 14px; z-index: 500;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 7px 12px; font-size: 12.5px; border-radius: 20px;
+  border: 1px solid #d4af3766; background: #101d42ee; color: #d4af37;
+  text-decoration: none; font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4); backdrop-filter: blur(4px);
 }
-.nav-item { display:flex; flex-direction:column; align-items:center; color:#b8a888; text-decoration:none; font-size:11px; gap:2px; }
-.nav-item.active { color:#d4af37; }
-.nav-icon { font-size:18px; }
+.corner-home-btn .nav-icon { font-size: 14px; }
 </style>
 </head>
 <body>
@@ -71,13 +72,6 @@ button.submit-btn {
     <p><strong>Special Populations.</strong> Pregnant or breastfeeding women, growing children and teenagers, elderly individuals, and anyone managing a chronic illness should always consult their physician before following this calculator's recommendations, as their nutritional needs may differ significantly from general formulas.</p>
   </div>
 </div>
-<div class="bottom-nav">
-  <a class="nav-item" href="index.html"><div class="nav-icon">🏠</div><span>Home</span></a>
-  <a class="nav-item" href="about.html"><div class="nav-icon">ℹ️</div><span>About</span></a>
-  <a class="nav-item" href="terms.html"><div class="nav-icon">📜</div><span>Terms</span></a>
-  <a class="nav-item" href="privacy.html"><div class="nav-icon">🔒</div><span>Privacy</span></a>
-  <a class="nav-item active" href="disclaimer.html"><div class="nav-icon">⚠️</div><span>Disclaimer</span></a>
-  <a class="nav-item" href="contact.html"><div class="nav-icon">✉️</div><span>Contact</span></a>
-</div>
+<a class="corner-home-btn" href="index.html"><span class="nav-icon">🏠</span><span>Home</span></a>
 </body>
 </html>
