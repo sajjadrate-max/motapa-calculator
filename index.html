@@ -51,7 +51,7 @@
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
-    padding: 70px 16px 80px;
+    padding: 70px 16px 40px;
     line-height: 1.6;
   }
   .container {
@@ -314,35 +314,6 @@
   .inline-pages-nav a:hover {
     text-decoration: underline;
   }
-  .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #0e1a3d;
-    border-top: 1px solid #d4af3744;
-    display: flex;
-    justify-content: space-around;
-    padding: 8px 2px 8px;
-    z-index: 100;
-    box-shadow: 0 -4px 18px rgba(0,0,0,0.35);
-  }
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #8a93ad;
-    font-size: 10.5px;
-    text-decoration: none;
-    cursor: pointer;
-    flex: 1;
-    padding: 4px 2px;
-    gap: 3px;
-    transition: color 0.15s;
-  }
-  .nav-item .nav-icon { font-size: 18px; }
-  .nav-item.active { color: #d4af37; }
   .copyright {
     text-align: center;
     color: #5a6688;
@@ -355,7 +326,7 @@
 
 <!-- Top Bar: Home Button on Left, Language Button on Right -->
 <div class="top-nav-bar">
-  <a href="index.html" class="top-btn">🏠 Home</a>
+  <a href="index.html" class="top-btn" id="navHome">🏠 Home</a>
   <div class="lang-select-wrap">
     <div class="top-btn" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">اردو</span> ▾</div>
     <div id="langDropdownPanel">
@@ -371,147 +342,154 @@
 
 <div class="container">
   <div class="header-badge">⚖️</div>
-  <h1>موٹاپا کم کریں</h1>
-  <div class="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
+  <h1 id="mainTitle">موٹاپا کم کریں</h1>
+  <div class="subtitle" id="mainSub">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
   
   <div class="share-prompt">
-    <span>پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
-    <button type="button" class="share-btn" onclick="shareApp()">🔗 شئیر کریں</button>
+    <span id="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
+    <button type="button" class="share-btn" id="shareBtnText" onclick="shareApp()">🔗 شئیر کریں</button>
   </div>
 
   <div class="card">
     <div class="field">
-      <label>وزن (کلوگرام)</label>
+      <label id="labelWeight">وزن (کلوگرام)</label>
       <input type="number" id="weight" placeholder="مثلاً 85" />
     </div>
     <div class="field">
-      <label>عمر (سال)</label>
+      <label id="labelAge">عمر (سال)</label>
       <input type="number" id="age" placeholder="مثلاً 30" />
     </div>
 
     <div class="field">
-      <label>قد کی اکائی</label>
+      <label id="labelHeightUnit">قد کی اکائی</label>
       <select id="heightUnit" onchange="toggleHeightUnit()">
-        <option value="cm">سینٹی میٹر</option>
-        <option value="ft">فٹ</option>
+        <option value="cm" id="optCm">سینٹی میٹر</option>
+        <option value="ft" id="optFt">فٹ</option>
       </select>
     </div>
 
     <div class="field" id="heightCmField">
-      <label>قد (سینٹی میٹر)</label>
+      <label id="labelHeightCm">قد (سینٹی میٹر)</label>
       <input type="number" id="heightCm" placeholder="مثلاً 170" />
     </div>
 
     <div class="row2" id="heightFtField" style="display:none;">
       <div class="field">
-        <label>قد (فٹ)</label>
+        <label id="labelHeightFt">قد (فٹ)</label>
         <input type="number" id="heightFeet" placeholder="مثلاً 5" />
       </div>
       <div class="field">
-        <label>انچ</label>
+        <label id="labelInches">انچ</label>
         <input type="number" id="heightInches" placeholder="مثلاً 7" />
       </div>
     </div>
     
     <div class="field">
-      <label>جنس</label>
+      <label id="labelGender">جنس</label>
       <select id="gender">
-        <option value="male">مرد</option>
-        <option value="female">عورت</option>
+        <option value="male" id="optMale">مرد</option>
+        <option value="female" id="optFemale">عورت</option>
       </select>
     </div>
     <div class="field">
-      <label>کام کاج (روزمرہ سرگرمی)</label>
+      <label id="labelActivity">کام کاج (روزمرہ سرگرمی)</label>
       <select id="activity">
-        <option value="1.2">دفتری کام / زیادہ تر بیٹھے رہنا</option>
-        <option value="1.375">ہلکی مشقت (تھوڑی چہل قدمی، گھریلو کام)</option>
-        <option value="1.55">درمیانی مشقت (روزانہ جسمانی کام یا ورزش)</option>
-        <option value="1.725">بھاری مشقت (مزدوری، کھیل، سخت جسمانی کام)</option>
+        <option value="1.2" id="optAct1">دفتری کام / زیادہ تر بیٹھے رہنا</option>
+        <option value="1.375" id="optAct2">ہلکی مشقت (تھوڑی چہل قدمی، گھریلو کام)</option>
+        <option value="1.55" id="optAct3">درمیانی مشقت (روزانہ جسمانی کام یا ورزش)</option>
+        <option value="1.725" id="optAct4">بھاری مشقت (مزدوری، کھیل، سخت جسمانی کام)</option>
       </select>
     </div>
-    <button onclick="calculate()">حساب لگائیں</button>
+    <button onclick="calculate()" id="btnCalculate">حساب لگائیں</button>
 
     <!-- Pages Links right below calculate button -->
     <div class="inline-pages-nav">
-      <a href="about.html">About Us</a> |
-      <a href="terms.html">Terms</a> |
-      <a href="privacy.html">Privacy Policy</a> |
-      <a href="disclaimer.html">Disclaimer</a> |
-      <a href="contact.html">Contact Us</a>
+      <a href="about.html" id="linkAbout">About Us</a> |
+      <a href="terms.html" id="linkTerms">Terms</a> |
+      <a href="privacy.html" id="linkPrivacy">Privacy Policy</a> |
+      <a href="disclaimer.html" id="linkDisclaimer">Disclaimer</a> |
+      <a href="contact.html" id="linkContact">Contact Us</a>
     </div>
   </div>
 
   <div id="results">
-    <div class="card">
-      <div class="result-title">آپ کی روزانہ ضرورت</div>
+    <!-- Results section targeted by auto-scroll -->
+    <div class="card" id="resultsSectionStart">
+      <div class="result-title" id="titleDailyNeed">آپ کی روزانہ ضرورت</div>
       <div class="highlight-box">
-        <div>موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز</div>
+        <div id="labelMaintainCal">موجودہ وزن برقرار رکھنے کے لیے روزانہ کیلوریز</div>
         <div class="big" id="tdee">-</div>
       </div>
-      <div class="note">یہ آپ کی BMR اور روزمرہ سرگرمی کے حساب سے ہے</div>
+      <div class="note" id="noteTdee">یہ آپ کی BMR اور روزمرہ سرگرمی کے حساب سے ہے</div>
     </div>
 
     <div class="card" id="bmiCard" style="display:none;">
-      <div class="result-title">وزن کا تجزیہ (BMI)</div>
-      <div class="stat"><span>آپ کا BMI</span><span class="val" id="bmiValue">-</span></div>
-      <div class="stat"><span>وزن کی حالت</span><span class="val" id="bmiCategory">-</span></div>
-      <div class="stat"><span>مثالی وزن کی حد</span><span class="val" id="idealWeightRange">-</span></div>
+      <div class="result-title" id="titleBmi">وزن کا تجزیہ (BMI)</div>
+      <div class="stat"><span id="labelBmiValue">آپ کا BMI</span><span class="val" id="bmiValue">-</span></div>
+      <div class="stat"><span id="labelBmiCategory">وزن کی حالت</span><span class="val" id="bmiCategory">-</span></div>
+      <div class="stat"><span id="labelIdealWeight">مثالی وزن کی حد</span><span class="val" id="idealWeightRange">-</span></div>
     </div>
 
     <div class="card">
-      <div class="result-title">وزن کم کرنے کا پلان</div>
-      <div class="stat"><span>روزانہ کیلوریز (وزن کم کرنے کے لیے)</span><span class="val" id="targetCal">-</span></div>
-      <div class="stat"><span>پروٹین (گرام)</span><span class="val" id="protein">-</span></div>
-      <div class="stat"><span>فیٹ (گرام)</span><span class="val" id="fat">-</span></div>
-      <div class="stat"><span>کاربوہائیڈریٹ (گرام)</span><span class="val" id="carbs">-</span></div>
+      <div class="result-title" id="titleWeightLossPlan">وزن کم کرنے کا پلان</div>
+      <div class="stat"><span id="labelTargetCal">روزانہ کیلوریز (وزن کم کرنے کے لیے)</span><span class="val" id="targetCal">-</span></div>
+      <div class="stat"><span id="labelProtein">پروٹین (گرام)</span><span class="val" id="protein">-</span></div>
+      <div class="stat"><span id="labelFat">فیٹ (گرام)</span><span class="val" id="fat">-</span></div>
+      <div class="stat"><span id="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="carbs">-</span></div>
     </div>
 
     <div class="card" id="exerciseCard" style="display:none;">
-      <div class="result-title">روزانہ ورزش</div>
+      <div class="result-title" id="titleExercise">روزانہ ورزش</div>
       <div class="walk-box">
-        <div>روزانہ پیدل چلنے کا فاصلہ</div>
-        <div class="big"><span id="walkKm">-</span> <span>کلومیٹر</span></div>
+        <div id="labelWalkDistance">روزانہ پیدل چلنے کا فاصلہ</div>
+        <div class="big"><span id="walkKm">-</span> <span id="unitKm">کلومیٹر</span></div>
         <div class="note" id="walkMin"></div>
         <div class="note" id="walkSteps" style="margin-top:6px;"></div>
       </div>
     </div>
 
     <div class="card" id="finalSummaryCard" style="display:none;">
-      <div class="result-title">حتمی خلاصہ</div>
+      <div class="result-title" id="titleFinalSummary">حتمی خلاصہ</div>
       <div class="highlight-box">
-        <div>ایک ہفتے میں متوقع وزن کمی</div>
+        <div id="labelWeeklyLoss">ایک ہفتے میں متوقع وزن کمی</div>
         <div class="big" id="finalWeekLoss">0.5 kg</div>
       </div>
     </div>
   </div>
 
-  <div class="footer-note">یہ کیلکولیٹر عمومی رہنمائی کے لیے ہے۔ کسی بھی طبی مسئلے کی صورت میں ڈاکٹر سے رجوع کریں۔</div>
+  <div class="footer-note" id="footerDisclaimer">یہ کیلکولیٹر عمومی رہنمائی کے لیے ہے۔ کسی بھی طبی مسئلے کی صورت میں ڈاکٹر سے رجوع کریں۔</div>
   <div class="copyright">Motapa Calculator © 2026</div>
 </div>
 
-<!-- Bottom Fixed Navigation Bar -->
-<div class="bottom-nav">
-  <a href="index.html" class="nav-item active">
-    <div class="nav-icon">🏠</div><span>Home</span>
-  </a>
-  <a href="about.html" class="nav-item">
-    <div class="nav-icon">ℹ️</div><span>About</span>
-  </a>
-  <a href="terms.html" class="nav-item">
-    <div class="nav-icon">📜</div><span>Terms</span>
-  </a>
-  <a href="privacy.html" class="nav-item">
-    <div class="nav-icon">🔒</div><span>Privacy</span>
-  </a>
-  <a href="disclaimer.html" class="nav-item">
-    <div class="nav-icon">⚠️</div><span>Disclaimer</span>
-  </a>
-  <a href="contact.html" class="nav-item">
-    <div class="nav-icon">✉️</div><span>Contact</span>
-  </a>
-</div>
-
 <script>
+  // Language translations mapping for share & interface text
+  const translations = {
+    'ur': {
+      home: '🏠 ہوم',
+      title: 'موٹاپا کم کریں',
+      sub: 'اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں',
+      sharePrompt: 'پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!',
+      shareBtn: '🔗 شئیر کریں',
+      calc: 'حساب لگائیں'
+    },
+    'en': {
+      home: '🏠 Home',
+      title: 'Lose Weight Calculator',
+      sub: 'Enter your details and get a complete diet & exercise plan',
+      sharePrompt: 'Liked it? Share with your friends!',
+      shareBtn: '🔗 Share',
+      calc: 'Calculate'
+    },
+    'ar': {
+      home: '🏠 الرئيسية',
+      title: 'حاسبة إنقاص الوزن',
+      sub: 'أدخل تفاصيلك واحصل على خطة نظام غذائي وتمرين كاملة',
+      sharePrompt: 'هل أعجبك؟ شاركه مع أصدقائك!',
+      shareBtn: '🔗 مشاركة',
+      calc: 'احسب'
+    }
+  };
+
   function toggleLangDropdown() {
     const panel = document.getElementById('langDropdownPanel');
     panel.classList.toggle('open');
@@ -521,6 +499,15 @@
     const names = { 'ur': 'اردو', 'en': 'English', 'ar': 'العربية' };
     document.getElementById('langCurrentName').innerText = names[lang] || 'Language';
     document.getElementById('langDropdownPanel').classList.remove('open');
+
+    // Apply translations dynamically to Share and main elements
+    const t = translations[lang] || translations['ur'];
+    document.getElementById('navHome').innerText = t.home;
+    document.getElementById('mainTitle').innerText = t.title;
+    document.getElementById('mainSub').innerText = t.sub;
+    document.getElementById('sharePromptText').innerText = t.sharePrompt;
+    document.getElementById('shareBtnText').innerText = t.shareBtn;
+    document.getElementById('btnCalculate').innerText = t.calc;
   }
 
   function filterLangList() {
@@ -608,6 +595,9 @@
     document.getElementById('results').style.display = 'block';
     document.getElementById('exerciseCard').style.display = 'block';
     document.getElementById('finalSummaryCard').style.display = 'block';
+
+    // Auto scroll down to "آپ کی روزانہ ضرورت" section smoothly
+    document.getElementById('resultsSectionStart').scrollIntoView({ behavior: 'smooth' });
   }
 
   function shareApp() {
