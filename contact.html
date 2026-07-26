@@ -94,12 +94,12 @@ button.submit-btn {
   window.__pageChrome = chrome;
   document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
   document.documentElement.setAttribute('lang', lang);
-  document.title = (chrome.pageContactTitle || document.title) + ' | ' + (chrome.title || 'Motapa Calculator');
+  document.title = 'Contact Us | Motapa Calculator';
   var h1 = document.getElementById('pageH1');
-  if (h1 && chrome.pageContactTitle) h1.textContent = chrome.pageContactTitle;
+  // H1 stays static English by design
   var backLink = document.getElementById('backLink');
-  if (backLink && chrome.navHome) {
-    backLink.innerHTML = (isRtl ? '&rarr; ' : '&larr; ') + chrome.navHome;
+  if (backLink) {
+    backLink.innerHTML = (isRtl ? '&rarr; ' : '&larr; ') + 'Home';
   }
   var c = PAGE_CONTENT[lang];
   if (c) {
@@ -113,8 +113,7 @@ button.submit-btn {
   var cfEmail = document.getElementById('cf_email'); if (cfEmail && chrome.contactPlaceholderEmail) cfEmail.setAttribute('placeholder', chrome.contactPlaceholderEmail);
   var cfMessage = document.getElementById('cf_message'); if (cfMessage && chrome.contactPlaceholderMessage) cfMessage.setAttribute('placeholder', chrome.contactPlaceholderMessage);
   var submitBtn = document.getElementById('cf_submit'); if (submitBtn && chrome.contactSend) submitBtn.textContent = chrome.contactSend;
-  var homeBtn = document.querySelector('.corner-home-btn span:last-child');
-  if (homeBtn && chrome.navHome) homeBtn.textContent = chrome.navHome;
+  // Home button stays static English by design
 })();
 </script>
 <script>

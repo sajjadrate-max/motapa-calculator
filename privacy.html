@@ -88,12 +88,12 @@ button.submit-btn {
   var isRtl = rtlLangs.indexOf(lang) !== -1;
   document.documentElement.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
   document.documentElement.setAttribute('lang', lang);
-  document.title = (chrome.pagePrivacyTitle || document.title) + ' | ' + (chrome.title || 'Motapa Calculator');
+  document.title = 'Privacy Policy | Motapa Calculator';
   var h1 = document.getElementById('pageH1');
-  if (h1 && chrome.pagePrivacyTitle) h1.textContent = chrome.pagePrivacyTitle;
+  // H1 stays static English by design
   var backLink = document.getElementById('backLink');
-  if (backLink && chrome.navHome) {
-    backLink.innerHTML = (isRtl ? '&rarr; ' : '&larr; ') + chrome.navHome;
+  if (backLink) {
+    backLink.innerHTML = (isRtl ? '&rarr; ' : '&larr; ') + 'Home';
   }
   var body = document.getElementById('pageBody');
   var paras = PAGE_CONTENT[lang];
@@ -104,8 +104,7 @@ button.submit-btn {
     }
     body.innerHTML = html;
   }
-  var homeBtn = document.querySelector('.corner-home-btn span:last-child');
-  if (homeBtn && chrome.navHome) homeBtn.textContent = chrome.navHome;
+  // Home button stays static English by design
 })();
 </script>
 </body>
