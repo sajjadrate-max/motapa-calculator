@@ -1,59 +1,134 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
+<html lang="en" dir="ltr" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ہمارے بارے میں - Motapa Calculator</title>
-<meta name="description" content="Motapa Calculator کے بارے میں جانیں — ایک مفت، اردو زبان میں دستیاب BMI، BMR، TDEE اور کیلوری کیلکولیٹر جو آپ کو صحت مند وزن تک پہنچنے میں مدد دیتا ہے۔">
+<title id="pageTitle">About Us - Motapa Calculator</title>
+<meta name="description" content="Learn about Motapa Calculator — a free BMI, BMR, TDEE and calorie calculator available in Urdu, English and 100+ languages, helping you reach a healthy weight.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://motapacalculator.com/about.html">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
     background: radial-gradient(circle at 50% 0%, #101e45 0%, #0a1128 55%, #070d20 100%);
     color: #f2e9dc;
     min-height: 100vh;
     padding: 30px 16px 40px;
+    line-height: 1.7;
+  }
+  html[dir="rtl"] body {
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Segoe UI', sans-serif;
     line-height: 2.15;
   }
   .container { max-width: 700px; margin: 0 auto; }
-  a.home-link {
-    display: inline-block;
-    color: #d4af37;
-    text-decoration: none;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  h1 {
-    text-align: center;
-    color: #d4af37;
-    font-size: 28px;
-    margin-bottom: 22px;
-  }
-  h2 {
-    color: #e8c766;
-    font-size: 20px;
-    margin: 26px 0 10px;
-  }
+  a.home-link { display: inline-block; color: #d4af37; text-decoration: none; margin-bottom: 20px; font-weight: bold; }
+  h1 { text-align: center; color: #d4af37; font-size: 28px; margin-bottom: 22px; }
+  h2 { color: #e8c766; font-size: 20px; margin: 26px 0 10px; }
   p { margin-bottom: 14px; color: #f2e9dc; font-size: 16px; }
-  .card {
-    background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
-    border: 1px solid #d4af3744;
-    border-radius: 16px;
-    padding: 24px;
-    margin-bottom: 22px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-  }
+  .card { background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%); border: 1px solid #d4af3744; border-radius: 16px; padding: 24px; margin-bottom: 22px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); }
   ul { margin: 10px 0 14px 24px; }
   li { margin-bottom: 8px; }
   .footer-note { text-align:center; color:#8a7f6a; font-size: 13px; margin-top: 30px; }
+  .page-links-row { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 10px; margin-top:26px; padding-top:18px; border-top:1px solid #d4af3733; }
+  .page-links-row a { color:#d4af37; text-decoration:none; font-size:14px; }
+  .page-links-row a:hover { text-decoration:underline; }
+  .page-links-row span { color:#5a5040; }
+  #content-ur { display: none; }
 </style>
 </head>
 <body>
 <div class="container">
-  <a class="home-link" href="index.html">🏠 ہوم پیج پر واپس جائیں</a>
-  <h1>ہمارے بارے میں</h1>
+  <a class="home-link" href="index.html" dir="ltr">🏠 Back to Home</a>
+  <h1 dir="ltr">About Us</h1>
+
+  <div id="content-en">
+
+  <div class="card">
+    <p>Motapa Calculator is a free online platform built to help people understand their body weight, health, and daily nutritional needs in a simple, accessible way. Our goal is to take complex scientific calculations — like BMI, BMR, and TDEE — and make them so easy that anyone can understand their current situation in a few seconds and build a practical plan around it.</p>
+
+    <p>Obesity and weight-related health issues (such as diabetes, high blood pressure, and heart disease) are rising quickly across South Asia and many other regions. A big part of the problem is that most health calculators and information sites are only available in English, leaving millions of people unable to benefit from them. We built Motapa Calculator to close that gap — first in Urdu, and later in over 100 other languages, so that as many people as possible could use it.</p>
+  </div>
+
+  <div class="card">
+    <h2>What We Offer</h2>
+    <p>Our website gives users a complete, entirely free toolkit that includes:</p>
+    <ul>
+      <li><strong>BMI Calculator:</strong> Calculates your Body Mass Index and tells you whether your weight falls in the normal, underweight, overweight, or obese range.</li>
+      <li><strong>BMR &amp; TDEE Calculator:</strong> Shows how many calories your body burns at rest, and your total daily energy expenditure once daily activity is factored in.</li>
+      <li><strong>Personalized diet plan:</strong> Daily calorie, protein, fat, and carbohydrate targets based on your age, height, weight, and activity level.</li>
+      <li><strong>Automatic and manual food selection:</strong> Choose your own foods, or let the system automatically suggest a balanced plan — including local and desi dishes like biryani and daal chawal.</li>
+      <li><strong>Food diary:</strong> Log what you eat each day and automatically track your remaining calorie budget.</li>
+      <li><strong>Weekly weight progress tracker:</strong> Log your weight over time and see your progress as a graph.</li>
+      <li><strong>Saved plans:</strong> Save your selected foods with the date and review them anytime later.</li>
+      <li><strong>Daily walking plan:</strong> A recommended daily walking target to support your weight loss goals.</li>
+      <li><strong>Free educational articles:</strong> Dozens of detailed, reliable articles on BMI, calories, exercise, and healthy eating, in both Urdu and English.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Our Philosophy</h2>
+    <p>We believe that basic health information and tools should be a right for everyone, not something locked behind an expensive app or consultant. That's why Motapa Calculator is completely free, with no registration, subscription, or payment required. Anyone, anywhere, can open it on their phone or computer and get a picture of their health in seconds.</p>
+
+    <p>We also understand that everyone's life, culture, and eating habits are different. That's why our diet plans include local and desi foods, so users get advice that actually fits their day-to-day life rather than generic, hard-to-follow rules. Our goal is practical, achievable, and sustainable advice — not rigid diet regimens that are impossible to stick to.</p>
+
+    <p>We also recognize that language is often the biggest barrier to accessing health information. That's why our website is available not just in English and Urdu, but in over 100 languages worldwide — including Arabic, Persian, Hindi, Bengali, French, Spanish, and many African and Asian languages. Our goal is for anyone, anywhere in the world, to be able to understand their own health in their own language, without needing to rely on a translator or a second language they're less comfortable with.</p>
+  </div>
+
+  <div class="card">
+    <h2>Our Technology and Standards</h2>
+    <p>All calculations on Motapa Calculator are based on well-established, medically recognized formulas (such as the Mifflin-St Jeor equation for BMR, and World Health Organization BMI standards). We regularly update and refine our calculators to give users the most accurate and reliable results possible.</p>
+
+    <p>Our website also functions as a Progressive Web App (PWA), meaning it can be installed like an app on mobile devices and works quickly even on limited internet connections. Your data — such as your food diary, weight progress, and saved plans — is stored directly on your own device, keeping things both private and fast.</p>
+  </div>
+
+  <div class="card">
+    <h2>Who This Is For</h2>
+    <p>Motapa Calculator is designed for people of every age and background. Whether you want to lose weight, gain weight, or simply understand your current health status, this tool is built for you.</p>
+    <ul>
+      <li><strong>People trying to lose weight:</strong> Get a clear daily calorie target and a practical diet plan suited to your body and lifestyle.</li>
+      <li><strong>People trying to gain weight:</strong> Underweight users also get a plan for gaining weight in a healthy way.</li>
+      <li><strong>Athletes and fitness enthusiasts:</strong> Track daily protein, carbohydrate, and calorie needs accurately.</li>
+      <li><strong>Families building healthier habits:</strong> Parents can monitor their own and their children's weight.</li>
+      <li><strong>Beginners:</strong> Our educational articles are a great starting point for anyone wanting to learn the basics of calories, metabolism, and healthy eating.</li>
+    </ul>
+    <p>We've intentionally kept the website simple and straightforward to use. No complicated setup, no account required — just enter your weight, height, age, and activity level, and get instant results. Whether you're checking your BMI for the first time or you've been tracking your weight loss journey for months using our progress tracker, the experience is designed to stay fast, clear, and free of clutter.</p>
+    <p>We also know that motivation can be hard to sustain over weeks and months. That's why features like the weekly progress graph and saved food plans exist — to give you a visual, tangible sense of how far you've come, rather than leaving you to guess. Small, consistent steps, tracked over time, tend to produce far better long-term results than short bursts of extreme effort.</p>
+  </div>
+
+  <div class="card">
+    <h2>Why We Built This</h2>
+    <p>The idea for Motapa Calculator came from a simple observation: millions of people in Pakistan and across South Asia want to understand their weight and health better, but most of the tools available online are either too technical, too expensive, or simply not in a language they're comfortable reading. We wanted to change that by building something genuinely useful, genuinely free, and genuinely accessible — regardless of a person's income, education level, or native language.</p>
+    <p>Since launch, we've continued to expand the platform based on what real users have asked for — from a food diary and weight progress tracker to saved diet plans and a growing library of educational articles. Every feature we add is guided by one question: does this make it easier for an ordinary person to understand and manage their own health?</p>
+  </div>
+
+  <div class="card">
+    <h2>An Important Note</h2>
+    <p>Motapa Calculator is an educational and informational tool. It is not a substitute for a doctor, dietitian, or medical professional. Our calculators provide estimates based on general scientific formulas, while every person's health situation is unique. If you have a serious medical condition, chronic illness, are pregnant, or have any special physical circumstances, please consult your doctor or a registered dietitian before making any major changes to your diet or exercise routine. See our <a href="disclaimer.html" style="color:#d4af37;">Disclaimer</a> page for more details.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, suggestions, feedback, or issues, we'd love to hear from you. Our team reads every message carefully and values user feedback as we work to improve the website. Please reach out through our <a href="contact.html" style="color:#d4af37;">Contact page</a>.</p>
+
+    <p>Thank you for using Motapa Calculator. We hope this tool becomes a helpful companion on your journey toward a healthier life. Whatever your goal — losing weight, gaining weight, or simply understanding your body better — we're glad you're here, and we'll keep working to make this the most useful free health tool available in your language.</p>
+  </div>
+
+  <div class="page-links-row">
+    <a href="index.html">🏠 Home</a><span>|</span>
+    <a href="index.html#articles">Articles</a><span>|</span>
+    <a href="about.html">About Us</a><span>|</span>
+    <a href="terms.html">Terms</a><span>|</span>
+    <a href="privacy.html">Privacy Policy</a><span>|</span>
+    <a href="disclaimer.html">Disclaimer</a><span>|</span>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <div class="footer-note">© 2026 Motapa Calculator</div>
+  </div>
+  <!-- ================= END ENGLISH ================= -->
+
+  <div id="content-ur">
 
   <div class="card">
     <p>Motapa Calculator ایک مفت آن لائن پلیٹ فارم ہے جو خاص طور پر اردو بولنے والے صارفین کے لیے بنایا گیا ہے تاکہ وہ اپنی جسمانی صحت، وزن اور روزانہ کی غذائی ضروریات کو آسانی سے سمجھ سکیں۔ ہمارا مقصد یہ ہے کہ صحت سے متعلق پیچیدہ سائنسی حساب کتاب — جیسے BMI، BMR اور TDEE — کو ایک عام آدمی کے لیے اتنا آسان بنا دیا جائے کہ وہ چند سیکنڈ میں اپنی موجودہ صورتحال سمجھ سکے اور ایک عملی منصوبہ بنا سکے۔</p>
@@ -118,7 +193,33 @@
     <p>Motapa Calculator کو استعمال کرنے کا شکریہ۔ ہم امید کرتے ہیں کہ یہ ٹول آپ کی صحت مند زندگی کی طرف سفر میں ایک مفید ساتھی ثابت ہوگا۔</p>
   </div>
 
+  <div class="page-links-row">
+    <a href="index.html">🏠 ہوم</a><span>|</span>
+    <a href="index.html#articles">آرٹیکلز</a><span>|</span>
+    <a href="about.html">ہمارے بارے میں</a><span>|</span>
+    <a href="terms.html">شرائط</a><span>|</span>
+    <a href="privacy.html">پرائیویسی پالیسی</a><span>|</span>
+    <a href="disclaimer.html">ڈس کلیمر</a><span>|</span>
+    <a href="contact.html">ہم سے رابطہ</a>
+  </div>
+
   <div class="footer-note">© 2026 Motapa Calculator</div>
+  </div>
+  <!-- ================= END URDU ================= -->
+
 </div>
+
+<script>
+(function() {
+  let lang = 'en';
+  try { lang = localStorage.getItem('siteLang') || 'en'; } catch(e) {}
+  const isUrdu = (lang === 'ur');
+  document.getElementById('content-en').style.display = isUrdu ? 'none' : '';
+  document.getElementById('content-ur').style.display = isUrdu ? '' : 'none';
+  const html = document.getElementById('htmlRoot');
+  html.setAttribute('lang', isUrdu ? 'ur' : 'en');
+  html.setAttribute('dir', isUrdu ? 'rtl' : 'ltr');
+})();
+</script>
 </body>
 </html>

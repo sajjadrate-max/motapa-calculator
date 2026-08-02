@@ -1012,8 +1012,8 @@
 </div>
 
   <div class="page-links-row" style="margin-top:18px;">
-    <a href="javascript:void(0)" onclick="showPage('progress', this)" data-i18n="navProgress">Progress</a><span>|</span>
-    <a href="javascript:void(0)" onclick="showPage('savedplans', this)" data-i18n="navSavedPlans">Saved Plans</a><span>|</span>
+    <a href="javascript:void(0)" onclick="showPage('progress', this)">Progress</a><span>|</span>
+    <a href="javascript:void(0)" onclick="showPage('savedplans', this)">Saved Plans</a><span>|</span>
     <a href="javascript:void(0)" onclick="showPage('articles', this)">Articles</a><span>|</span>
     <a href="about.html">About Us</a><span>|</span>
     <a href="terms.html">Terms</a><span>|</span>
@@ -1034,7 +1034,7 @@
 </a>
 
 <a class="corner-home-btn" href="javascript:void(0)" onclick="showPage('savedplans', this)" id="nav-savedplans" style="left:50%; transform:translateX(-50%);">
-  <span class="nav-icon">📋</span><span data-i18n="navSavedPlans">Saved Plans</span>
+  <span class="nav-icon">📋</span><span>Saved Plan</span>
 </a>
 
 <script>
@@ -2133,6 +2133,12 @@ function acceptCookies() {
   try { consent = localStorage.getItem('cookieConsent'); } catch(e) {}
   if (!consent) {
     document.getElementById('cookieBanner').style.display = 'flex';
+  }
+
+  const hashPage = (window.location.hash || '').replace('#', '');
+  if (hashPage && document.getElementById('page-' + hashPage)) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + hashPage).classList.add('active');
   }
 })();
 
