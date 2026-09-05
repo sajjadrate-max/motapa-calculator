@@ -862,7 +862,10 @@
           <input type="number" id="diaryQtyInput" min="0" step="0.5" value="1" style="padding:8px; text-align:center;" />
           <button onclick="diaryAddEntry()" style="padding:8px 14px;" data-i18n="diaryAddBtn">شامل کریں</button>
         </div>
-        <div id="diaryFoodPickerList" style="display:none; margin-bottom:10px; border:1px solid #d4af3744; border-radius:10px; overflow:hidden; max-height:280px; overflow-y:auto;"></div>
+        <div id="diaryFoodPickerList" style="display:none; margin-bottom:10px; border:1px solid #d4af3744; border-radius:10px; overflow:hidden;">
+          <input type="text" id="diaryFoodFilterInput" oninput="onDiaryFoodFilterInput()" data-i18n-placeholder="customFoodNamePlaceholder" placeholder="مثلاً Pizza, Sushi, حلوہ" autocomplete="off" style="width:100%; padding:9px 12px; border:none; border-bottom:1px solid #d4af3744; background:#0a1128; color:#f2e9dc; box-sizing:border-box;" />
+          <div id="diaryFoodPickerItems" style="max-height:240px; overflow-y:auto;"></div>
+        </div>
         <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="diarySummaryTitle">آج تک کھائی گئی خوراک کا خلاصہ</div>
         <div class="stat"><span data-i18n="labelTotalCal">کل کیلوریز</span><span class="val" id="diaryTotalCal">0</span></div>
         <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="diaryTotalProtein">0</span></div>
@@ -2104,19 +2107,28 @@ function diaryFoodHasCapacity(id) {
 
 let diarySelectedFoodId = '';
 
+let diaryFoodFilterTerm = '';
+
 function buildDiaryFoodSelect() {
-  const listEl = document.getElementById('diaryFoodPickerList');
-  if (!listEl) return;
+  const itemsEl = document.getElementById('diaryFoodPickerItems');
+  if (!itemsEl) return;
   const names = foodNames[currentLang] || foodNames.ur;
   const units = unitLabels[currentLang] || unitLabels.ur;
   const groups = groupNames[currentLang] || groupNames.ur;
   const dict = translations[currentLang] || translations.ur;
+  const q = diaryFoodFilterTerm.trim().toLowerCase();
   let html = '';
   let colorIdx3 = 0;
   const imageTargets = [];
   let stillAvailable = false;
   foodDB.forEach(section => {
-    const availableItems = section.items.filter(food => diaryFoodHasCapacity(food.id));
+    let availableItems = section.items.filter(food => diaryFoodHasCapacity(food.id));
+    if (q) {
+      availableItems = availableItems.filter(food => {
+        const label = food.customName || names[food.id] || foodNames.en[food.id] || foodNames.ur[food.id] || food.id;
+        return label.toLowerCase().includes(q);
+      });
+    }
     if (!availableItems.length) return;
     html += '<div style="padding:6px 10px; font-size:12px; color:#d4af37; background:#0a1128;">' + (groups[section.groupKey] || groupNames.en[section.groupKey] || groupNames.ur[section.groupKey] || section.groupKey) + '</div>';
     availableItems.forEach(food => {
@@ -2137,10 +2149,16 @@ function buildDiaryFoodSelect() {
         '</div>';
     });
   });
-  listEl.innerHTML = html || '<div style="padding:10px; color:#a99f8c; font-size:13px;">' + (dict.diaryEmptyMsg || '') + '</div>';
+  itemsEl.innerHTML = html || '<div style="padding:10px; color:#a99f8c; font-size:13px;">' + (dict.diaryEmptyMsg || '') + '</div>';
   if (!stillAvailable) diarySelectedFoodId = '';
   updateDiaryFoodPickerLabel();
   loadRealFoodImages(imageTargets, 'diaryopt_');
+}
+
+function onDiaryFoodFilterInput() {
+  const input = document.getElementById('diaryFoodFilterInput');
+  diaryFoodFilterTerm = input ? input.value : '';
+  buildDiaryFoodSelect();
 }
 
 function updateDiaryFoodPickerLabel() {
@@ -2165,7 +2183,13 @@ function updateDiaryFoodPickerLabel() {
 function toggleDiaryFoodPicker() {
   const listEl = document.getElementById('diaryFoodPickerList');
   if (!listEl) return;
-  listEl.style.display = (listEl.style.display === 'none' || !listEl.style.display) ? 'block' : 'none';
+  const opening = (listEl.style.display === 'none' || !listEl.style.display);
+  listEl.style.display = opening ? 'block' : 'none';
+  if (opening) {
+    const filterInput = document.getElementById('diaryFoodFilterInput');
+    if (filterInput) { filterInput.value = ''; diaryFoodFilterTerm = ''; filterInput.focus(); }
+    buildDiaryFoodSelect();
+  }
 }
 
 function selectDiaryFood(id) {
