@@ -153,6 +153,7 @@
   .container {
     max-width: 650px;
     margin: 0 auto;
+    transition: zoom 0.2s;
   }
   .header-badge {
     width: 56px;
@@ -589,6 +590,36 @@
     position: relative;
   }
   .top-nav-row .nav-icon { font-size: 13px; flex-shrink: 0; }
+  #fontSizeToggle {
+    position: fixed;
+    bottom: 18px;
+    inset-inline-end: 14px;
+    z-index: 600;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #d4af37;
+    color: #0a1128;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+  }
+  .whatsapp-btn {
+    display: inline-block;
+    background: #25D366 !important;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-inline-start: 8px;
+  }
   @keyframes pedoBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
   .top-nav-row span { overflow: hidden; text-overflow: ellipsis; }
   #langCurrentName {
@@ -730,26 +761,27 @@
 </script>
 </head>
 <body>
+<div id="fontSizeToggle" onclick="cycleFontSize()" role="button" aria-label="Change text size / متن کا سائز تبدیل کریں">Aa</div>
 <div class="container">
   <div class="header-badge">⚖️</div>
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
 
   <div class="top-nav-row">
-    <a href="index.html" id="nav-home">
+    <a href="index.html" id="nav-home" aria-label="Home">
       <span class="nav-icon">🏠</span><span>Home</span>
     </a>
-    <a href="javascript:void(0)" onclick="showPage('savedplans', this)" id="nav-savedplans">
+    <a href="javascript:void(0)" onclick="showPage('savedplans', this)" id="nav-savedplans" aria-label="Saved Plan">
       <span class="nav-icon">📋</span><span>Plan</span>
     </a>
     <div class="lang-select-wrap">
-      <div id="langDisplay" onclick="toggleLangDropdown()">🌐 <span id="langCurrentName">Lang</span></div>
+      <div id="langDisplay" onclick="toggleLangDropdown()" role="button" aria-label="Change language">🌐 <span id="langCurrentName">Lang</span></div>
       <div id="langDropdownPanel">
         <input type="text" id="langSearchInput" placeholder="Search language... / زبان تلاش کریں" oninput="filterLangList()" />
         <div id="langListItems"></div>
       </div>
     </div>
-    <a href="javascript:void(0)" onclick="showPage('pedometer', this)" id="nav-pedometer">
+    <a href="javascript:void(0)" onclick="showPage('pedometer', this)" id="nav-pedometer" aria-label="Pedometer">
       <span class="nav-icon">🚶</span><span>Steps</span>
     </a>
   </div>
@@ -815,7 +847,7 @@
         <option value="1.725" data-i18n="optAct4">بھاری مشقت (مزدوری، کھیل، سخت جسمانی کام)</option>
       </select>
     </div>
-    <button onclick="calculate()" data-i18n="btnCalculate">حساب لگائیں</button>
+    <button onclick="calculate()" data-i18n="btnCalculate" aria-label="Calculate">حساب لگائیں</button>
   </div>
 
   <div id="results">
@@ -845,6 +877,9 @@
       <div class="stat"><span data-i18n="labelIdealWeight">مثالی وزن کی حد</span><span class="val" id="idealWeightRange">-</span></div>
       <div style="margin:16px 0 8px; position:relative; height:14px; border-radius:7px; background:linear-gradient(to right, #4a90d9 0% 46.25%, #4caf50 46.25% 62.5%, #e8a33d 62.5% 75%, #d9534f 75% 100%);">
         <div id="bmiMarker" style="position:absolute; top:-5px; width:4px; height:24px; background:#f2e9dc; border-radius:2px; left:0%; transition:left 0.4s;"></div>
+      </div>
+      <div dir="ltr" style="display:flex; justify-content:space-between; font-size:10.5px; color:#a99f8c; margin-bottom:2px;">
+        <span>0</span><span>18.5</span><span>25</span><span>30</span><span>40+</span>
       </div>
       <div class="note" id="bmiAdviceNote" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
     </div>
@@ -1165,7 +1200,7 @@
   </div>
 
   <div class="card" id="faqCard" style="text-align:right; font-size:14.5px; color:#d9cdb8; line-height:1.9;">
-    <div onclick="toggleFAQ()" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+    <div onclick="toggleFAQ()" role="button" aria-label="Toggle FAQ" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
       <span style="color:#d4af37; font-size:16px; font-weight:700;" data-i18n="titleFAQ">❓ Frequently Asked Questions</span>
       <span id="faqArrow" style="color:#d4af37; font-size:18px;">▾</span>
     </div>
@@ -1200,7 +1235,8 @@
   </div>
   <div class="share-prompt">
     <span data-i18n="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
-    <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText">🔗 شئیر کریں</button>
+    <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText" aria-label="Share this website">🔗 شئیر کریں</button>
+    <a id="whatsappShareBtn" class="whatsapp-btn" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">📲 WhatsApp</a>
   </div>
 
 
@@ -1235,8 +1271,8 @@
         <div class="note" data-i18n="labelGlassesToday">glasses today</div>
         <div class="note" id="waterGoalNote"></div>
         <div style="display:flex; gap:14px; justify-content:center; margin-top:16px;">
-          <button onclick="waterRemoveGlass()" style="width:70px; font-size:22px;">−</button>
-          <button onclick="waterAddGlass()" style="width:70px; font-size:22px;">+</button>
+          <button onclick="waterRemoveGlass()" style="width:70px; font-size:22px;" aria-label="Remove a glass of water">−</button>
+          <button onclick="waterAddGlass()" style="width:70px; font-size:22px;" aria-label="Add a glass of water">+</button>
         </div>
       </div>
     </div>
@@ -1390,8 +1426,8 @@
 
 <div class="cookie-banner" id="cookieBanner" style="display:none;">
   <span data-i18n="cookieText">This website may use cookies from third-party advertising services (such as Google AdSense) to display ads.</span>
-  <button onclick="acceptCookies()" data-i18n="cookieAccept">Accept</button>
-  <button onclick="rejectCookies()" data-i18n="cookieReject" style="background:#555; margin-inline-start:8px;">Reject</button>
+  <button onclick="acceptCookies()" data-i18n="cookieAccept" aria-label="Accept cookies">Accept</button>
+  <button onclick="rejectCookies()" data-i18n="cookieReject" aria-label="Reject cookies" style="background:#555; margin-inline-start:8px;">Reject</button>
 </div>
 
 <script>
@@ -2937,6 +2973,7 @@ function applyLanguage(lang) {
   if (articlesEl) articlesEl.style.display = 'none'; // paused: waiting for confirmed articles/English/ filenames
   const articlesUrEl = document.getElementById('articlesSectionUr');
   if (articlesUrEl) articlesUrEl.style.display = (lang === 'ur') ? 'block' : 'none';
+  updateWhatsAppLink();
 }
 
 function updateCopyright(lang) {
@@ -2961,6 +2998,32 @@ function shareApp() {
   } else {
     window.prompt(dict.shareCopyManual || en.shareCopyManual || translations.ur.shareCopyManual, shareData.url);
   }
+}
+
+function updateWhatsAppLink() {
+  const dict = translations[currentLang] || translations.ur;
+  const en = translations.en || {};
+  const shareText = dict.shareDialogText || en.shareDialogText || translations.ur.shareDialogText;
+  const btn = document.getElementById('whatsappShareBtn');
+  if (btn) {
+    btn.href = 'https://wa.me/?text=' + encodeURIComponent(shareText + ' ' + window.location.href);
+  }
+}
+
+// ---- Font size (accessibility) ----
+const FONT_SCALE_KEY = 'motapaFontScale';
+const fontScaleSteps = [1, 1.15, 1.3];
+function applyFontScale(scale) {
+  const el = document.querySelector('.container');
+  if (el) el.style.zoom = scale;
+  try { localStorage.setItem(FONT_SCALE_KEY, String(scale)); } catch (e) {}
+}
+function cycleFontSize() {
+  let current = 1;
+  try { current = parseFloat(localStorage.getItem(FONT_SCALE_KEY)) || 1; } catch (e) {}
+  let idx = fontScaleSteps.indexOf(current);
+  idx = (idx + 1) % fontScaleSteps.length;
+  applyFontScale(fontScaleSteps[idx]);
 }
 
 function acceptCookies() {
@@ -3057,6 +3120,9 @@ function renderStreakBanner() {
   refreshWaterDisplay();
   const todayStr = todayDateStrGlobal();
   ['sleepDateInput', 'measureDateInput'].forEach(id => { const el = document.getElementById(id); if (el && !el.value) el.value = todayStr; });
+  let savedScale = 1;
+  try { savedScale = parseFloat(localStorage.getItem(FONT_SCALE_KEY)) || 1; } catch (e) {}
+  applyFontScale(savedScale);
 
   let consent = null;
   try { consent = localStorage.getItem('cookieConsent'); } catch(e) {}
