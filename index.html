@@ -208,25 +208,6 @@
     margin-bottom: 28px;
     font-weight: 400;
   }
-  .share-prompt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin: -16px 0 24px;
-    text-align: center;
-  }
-  .share-prompt span {
-    color: #b8a888;
-    font-size: 13px;
-  }
-  .share-btn {
-    width: auto;
-    padding: 8px 20px;
-    margin: 0;
-    font-size: 14px;
-    border-radius: 20px;
-  }
   .card {
     background: linear-gradient(160deg, rgba(18,31,71,0.92) 0%, rgba(14,26,61,0.92) 100%);
     backdrop-filter: blur(6px);
@@ -763,7 +744,7 @@
     padding: 0 8px;
   }
   @media print {
-    .top-nav-row, #fontSizeToggle, .share-prompt, #cookieBanner, .page-links-row,
+    .top-nav-row, #fontSizeToggle, #cookieBanner, .page-links-row,
     #testimonialsCard, #faqCard, #usageGuideCard, #backupCard, #achievementsCard { display: none !important; }
     body { padding: 10px; background: #fff; color: #000; }
     .card { background: #fff; color: #000; border: 1px solid #ccc; }
@@ -791,6 +772,7 @@
     <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeNoSignup">✓ No Sign-Up</span>
     <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgePrivacy">✓ Privacy-First</span>
     <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeLanguages">✓ 99 Languages</span>
+    <button type="button" onclick="shareApp()" aria-label="Share this website" style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px; width:auto; margin:0;" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
   <div class="top-nav-row">
@@ -1536,10 +1518,6 @@
     </div>
   </div>
 
-  <div class="share-prompt">
-    <span data-i18n="sharePromptText">پسند آیا؟ اپنے دوستوں کے ساتھ شئیر کریں!</span>
-    <button type="button" class="share-btn" onclick="shareApp()" data-i18n="shareBtnText" aria-label="Share this website">🔗 شئیر کریں</button>
-  </div>
 
 
 
