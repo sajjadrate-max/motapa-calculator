@@ -2,7 +2,7 @@
   "name": "Motapa Calculator",
   "short_name": "Motapa Calculator",
   "description": "Free BMI, BMR, TDEE, Calorie & Weight Loss Calculator — مفت وزن کم کرنے کا کیلکولیٹر",
-  "start_url": "/motapa-calculator.html",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
