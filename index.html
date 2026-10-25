@@ -1525,12 +1525,9 @@
 
   <div class="card" id="backupCard" style="text-align:right; font-size:14.5px; color:#d9cdb8; line-height:1.9;">
     <div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleBackupSection">💾 Data Backup</div>
-    <div class="note" data-i18n="noteBackupSection" style="margin-bottom:12px;">Save all your data to a file, or restore it on a new phone</div>
-    <div style="display:flex; gap:10px; flex-wrap:wrap;">
-      <button onclick="exportAllData()" style="flex:1; min-width:140px;" data-i18n="btnExportData">📥 Backup My Data</button>
-      <button onclick="document.getElementById('importFileInput').click()" style="flex:1; min-width:140px; background:transparent; border:1px solid #d4af37; color:#d4af37;" data-i18n="btnImportData">📤 Restore Data</button>
-      <input type="file" id="importFileInput" accept="application/json" style="display:none;" onchange="importAllData(event)" />
-    </div>
+    <div class="note" data-i18n="noteBackupSection" style="margin-bottom:12px;">Restore your data from a backup file</div>
+    <button onclick="document.getElementById('importFileInput').click()" style="width:100%;" data-i18n="btnImportData">📤 Restore Data</button>
+    <input type="file" id="importFileInput" accept="application/json" style="display:none;" onchange="importAllData(event)" />
   </div>
 
   <div id="page-progress" class="page" dir="ltr">
