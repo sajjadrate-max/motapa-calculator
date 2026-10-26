@@ -1776,12 +1776,6 @@
   <button onclick="rejectCookies()" data-i18n="cookieReject" aria-label="Reject cookies" style="background:#555; color:#fff; margin-inline-start:8px;">Reject</button>
 </div>
 
-<div id="pwaInstallBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:800; background:#fdf8ecee; backdrop-filter:blur(4px); border-top:1px solid #d4af3766; padding:12px 16px; align-items:center; justify-content:space-between; gap:10px;">
-  <span style="color:#1a1a2e; font-size:13.5px; flex:1;" data-i18n="pwaInstallText">📲 Install this app on your phone for quick, one-tap access!</span>
-  <button onclick="triggerPwaInstall()" style="width:auto; padding:8px 16px; margin:0; flex-shrink:0;" data-i18n="pwaInstallBtn">Install</button>
-  <span onclick="dismissPwaInstall()" style="cursor:pointer; color:#6b6b7a; font-size:20px; padding:0 4px;">✕</span>
-</div>
-
 <div id="welcomePopupOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:900; align-items:center; justify-content:center; padding:20px;">
   <div class="card" style="max-width:380px; text-align:center;">
     <div style="font-size:20px; font-weight:800; color:#8a6d1f; margin-bottom:10px;" data-i18n="titleWelcomePopup">🎉 Welcome!</div>
@@ -3440,36 +3434,6 @@ function resetAllUserData() {
   if (!confirm(dict.resetConfirmMsg || en.resetConfirmMsg || 'This will permanently delete all your saved data (diary, weight log, water, sleep, measurements, achievements, saved plans, custom foods). This cannot be undone. Continue?')) return;
   try { localStorage.clear(); } catch (e) {}
   window.location.reload();
-}
-
-// ---- PWA Install Prompt ----
-let deferredPwaPrompt = null;
-window.addEventListener('beforeinstallprompt', function(e) {
-  e.preventDefault();
-  deferredPwaPrompt = e;
-  let dismissed = null;
-  try { dismissed = localStorage.getItem('motapaPwaDismissed'); } catch (err) {}
-  if (!dismissed) {
-    const banner = document.getElementById('pwaInstallBanner');
-    if (banner) banner.style.display = 'flex';
-  }
-});
-function triggerPwaInstall() {
-  const banner = document.getElementById('pwaInstallBanner');
-  if (deferredPwaPrompt) {
-    deferredPwaPrompt.prompt();
-    deferredPwaPrompt.userChoice.finally(function() {
-      deferredPwaPrompt = null;
-      if (banner) banner.style.display = 'none';
-    });
-  } else if (banner) {
-    banner.style.display = 'none';
-  }
-}
-function dismissPwaInstall() {
-  const banner = document.getElementById('pwaInstallBanner');
-  if (banner) banner.style.display = 'none';
-  try { localStorage.setItem('motapaPwaDismissed', '1'); } catch (e) {}
 }
 
 function closeWelcomePopup() {
