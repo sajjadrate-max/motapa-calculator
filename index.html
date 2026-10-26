@@ -177,15 +177,12 @@
     transition: zoom 0.2s;
   }
   .header-badge {
-    width: 60px;
-    height: 60px;
+    width: 72px;
+    height: 72px;
     margin: 0 auto 14px;
-    background: linear-gradient(145deg, #e8c766, #d4af37 55%, #a8842a);
+    display: block;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 27px;
+    object-fit: contain;
     box-shadow: 0 0 0 6px rgba(212,175,55,0.08), 0 8px 22px rgba(212,175,55,0.3);
   }
   h1 {
@@ -765,7 +762,7 @@
 <body>
 <div id="fontSizeToggle" onclick="cycleFontSize()" role="button" aria-label="Change text size / متن کا سائز تبدیل کریں">Aa</div>
 <div class="container">
-  <div class="header-badge">⚖️</div>
+  <img class="header-badge" src="icon-badge.png" width="72" height="72" alt="Motapa Calculator" loading="eager">
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
   <div dir="ltr" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0 4px;">
