@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.motapacalculator.app",
+    "sha256_cert_fingerprints": [
+      "C1:56:14:42:F5:7C:33:CD:3A:A6:49:6F:63:63:5A:28:13:31:9D:B5:38:9A:DE:E3:24:1B:54:60:DF:3B:14:B5"
+    ]
+  }
+}]
