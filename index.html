@@ -776,10 +776,28 @@
     <button type="button" onclick="shareApp()" aria-label="Share this website" style="background:linear-gradient(145deg, #e6c860, #c9a133); border:none; color:#1a1a2e; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:14px; width:auto; margin:0; box-shadow:0 2px 8px rgba(212,175,55,0.4);" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
-  <div style="text-align:center; margin:10px 0 14px;">
+  <div id="apkDownloadSection" style="text-align:center; margin:10px 0 14px;">
     <a href="https://github.com/sajjadrate-max/motapa-calculator/releases/download/android-latest/motapa-calculator.apk" style="display:inline-flex; align-items:center; gap:7px; background:linear-gradient(145deg, #e6c860, #c9a133); color:#1a1a2e; font-size:15px; font-weight:800; padding:12px 26px; border-radius:16px; text-decoration:none; box-shadow:0 3px 10px rgba(212,175,55,0.45);" data-i18n="apkDownloadText">📱 Android ایپ (APK) ڈاؤن لوڈ کریں</a>
     <div style="color:#8a8275; font-size:11.5px; margin-top:7px;" data-i18n="apkDownloadNote">یہ براہ راست APK فائل ہے، انسٹال کرنے کیلئے فون کی سیٹنگز میں "نامعلوم ذرائع سے انسٹال کی اجازت" آن کرنا ہوگی</div>
   </div>
+  <script>
+  (function() {
+    // Hide the APK download prompt when already running inside the installed
+    // Android app (TWA) or an installed PWA - it's redundant there.
+    var isTwa = document.referrer.indexOf('android-app://') === 0;
+    var isStandalone = false;
+    try {
+      isStandalone = window.matchMedia('(display-mode: standalone)').matches ||
+        window.matchMedia('(display-mode: fullscreen)').matches ||
+        window.matchMedia('(display-mode: minimal-ui)').matches ||
+        window.navigator.standalone === true;
+    } catch (e) {}
+    if (isTwa || isStandalone) {
+      var el = document.getElementById('apkDownloadSection');
+      if (el) el.style.display = 'none';
+    }
+  })();
+  </script>
 
   <div class="top-nav-row">
     <a href="/" id="nav-home" aria-label="Home">
