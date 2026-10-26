@@ -6,56 +6,56 @@
 <title>Contact Us | Motapa Calculator</title>
 <meta name="description" content="Get in touch with the Motapa Calculator team for questions, feedback, or suggestions about the free weight loss calculator.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a1128">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://motapacalculator.com/contact.html">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   background:
-    radial-gradient(circle at 14% 10%, rgba(232,199,102,0.20) 0%, transparent 40%),
-    radial-gradient(circle at 88% 14%, rgba(90,160,235,0.18) 0%, transparent 42%),
-    radial-gradient(circle at 22% 100%, rgba(150,110,220,0.15) 0%, transparent 46%),
-    radial-gradient(circle at 96% 96%, rgba(212,175,55,0.12) 0%, transparent 40%),
-    linear-gradient(165deg, #182a5e 0%, #101e45 35%, #0a1128 70%, #070d20 100%);
-  color: #f2e9dc;
+    radial-gradient(circle at 14% 10%, rgba(232,199,102,0.14) 0%, transparent 40%),
+    radial-gradient(circle at 88% 14%, rgba(90,160,235,0.10) 0%, transparent 42%),
+    radial-gradient(circle at 22% 100%, rgba(150,110,220,0.08) 0%, transparent 46%),
+    radial-gradient(circle at 96% 96%, rgba(212,175,55,0.08) 0%, transparent 40%),
+    linear-gradient(165deg, #ffffff 0%, #fbf9f4 55%, #f7f2e6 100%);
+  color: #1a1a2e;
   min-height: 100vh;
   padding: 30px 16px 90px;
   line-height: 1.75;
 }
 .container { max-width: 700px; margin: 0 auto; }
-.back-link { display: inline-block; color: #d4af37; text-decoration: none; font-size: 14px; margin-bottom: 18px; }
+.back-link { display: inline-block; color: #8a6d1f; text-decoration: none; font-size: 14px; margin-bottom: 18px; }
 .back-link:hover { text-decoration: underline; }
 h1 {
-  color: #d4af37; font-size: 26px; margin-bottom: 18px; letter-spacing: 0.3px;
+  color: #8a6d1f; font-size: 26px; margin-bottom: 18px; letter-spacing: 0.3px;
 }
 .card {
-  background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
-  border: 1px solid #d4af3744; border-radius: 16px; padding: 22px 22px 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+  background: #ffffff;
+  border: 1px solid #e8e2d0; border-radius: 16px; padding: 22px 22px 8px;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
   margin-bottom: 20px;
 }
-p { margin-bottom: 14px; color: #f2e9dc; font-size: 15.5px; }
-strong { color: #e8c766; }
+p { margin-bottom: 14px; color: #33333a; font-size: 15.5px; }
+strong { color: #8a6d1f; }
 .field { margin-bottom: 16px; }
-.field label { display:block; color:#d4af37; font-size: 13.5px; margin-bottom: 6px; }
+.field label { display:block; color:#8a6d1f; font-size: 13.5px; margin-bottom: 6px; }
 .field input, .field textarea {
   width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #d4af3744;
-  background: #0e1a3d; color: #f2e9dc; font-size: 15px; font-family: inherit;
+  background: #faf8f2; color: #1a1a2e; font-size: 15px; font-family: inherit;
 }
 .field textarea { min-height: 120px; resize: vertical; }
 button.submit-btn {
-  width: 100%; background: linear-gradient(145deg, #e6c860, #c9a133); color: #0a1128;
+  width: 100%; background: linear-gradient(145deg, #e6c860, #c9a133); color: #1a1a2e;
   font-weight: bold; padding: 14px; border: none; border-radius: 12px; font-size: 16px;
   cursor: pointer; margin-bottom: 8px;
 }
 #contactStatus { text-align:center; font-size: 14px; min-height: 20px; margin-bottom: 14px; }
-.contact-alt { text-align:center; color:#b8a888; font-size: 14px; margin-top: 6px; }
+.contact-alt { text-align:center; color:#6b6b7a; font-size: 14px; margin-top: 6px; }
 .corner-home-btn {
   position: fixed; top: 14px; left: 14px; z-index: 500;
   display: inline-flex; align-items: center; justify-content: center; gap: 5px;
   padding: 7px 12px; font-size: 12.5px; border-radius: 20px;
-  border: 1px solid #d4af3766; background: #101d42ee; color: #d4af37;
+  border: 1px solid #d4af3755; background: #fdf8ecee; color: #8a6d1f;
   text-decoration: none; font-weight: 600;
   box-shadow: 0 4px 14px rgba(0,0,0,0.4); backdrop-filter: blur(4px);
 }
@@ -140,14 +140,14 @@ if (contactForm) {
       });
       if (response.ok) {
         const successText = chrome.contactSuccess || 'Message sent successfully!';
-        statusEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;gap:8px;background:#173a2b;border:1px solid #3fae6a66;border-radius:10px;padding:12px;color:#7fe0a3;font-weight:600;">'
+        statusEl.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;gap:8px;background:#e8f5e9;border:1px solid #4caf5055;border-radius:10px;padding:12px;color:#1b5e20;font-weight:600;">'
           + '<span style="font-size:20px;">✅</span><span>' + successText + '</span></div>';
         contactForm.reset();
       } else {
-        statusEl.innerHTML = '<div style="color:#e07a5f;">' + (chrome.contactErrorServer || 'Something went wrong. Please try again later.') + '</div>';
+        statusEl.innerHTML = '<div style="color:#c0392b;">' + (chrome.contactErrorServer || 'Something went wrong. Please try again later.') + '</div>';
       }
     } catch (err) {
-      statusEl.innerHTML = '<div style="color:#e07a5f;">' + (chrome.contactErrorNetwork || 'Network error. Please check your connection and try again.') + '</div>';
+      statusEl.innerHTML = '<div style="color:#c0392b;">' + (chrome.contactErrorNetwork || 'Network error. Please check your connection and try again.') + '</div>';
     }
     submitBtn.disabled = false;
   });

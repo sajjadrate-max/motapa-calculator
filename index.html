@@ -7,7 +7,7 @@
 <meta name="description" content="Free weight loss & calorie calculator with personalised daily calorie, protein, fat, and carb targets. Auto-select a diet plan (including Pakistani/desi dishes like biryani, daal chawal), log your food diary as you eat, track weekly weight progress with a graph, and get a daily walking plan. Available in Urdu, English, and 85+ languages.">
 <meta name="keywords" content="BMI Calculator,BMR Calculator,TDEE Calculator,Weight Loss Calculator,Calorie Calculator,Pakistani Diet Plan,Food Diary,Exercise Calculator,Healthy Weight Calculator,Weight Tracker,weight loss calculator,calorie calculator,diet plan,food diary,weight progress tracker,biryani calories,Urdu calorie calculator,macros calculator">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a1128">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Weight Loss & Calorie Calculator - Diet Plan, Food Diary & Progress Tracker">
 <meta property="og:description" content="Get your daily calorie, protein, fat, and carb targets, an auto-generated diet plan (with desi dishes like biryani & daal chawal), a food diary, weekly weight progress graph, and a walking plan - free, in Urdu and 85+ languages.">
 <meta property="og:type" content="website">
@@ -47,7 +47,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0a1128">
+<meta name="theme-color" content="#ffffff">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -156,12 +156,12 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background:
-      radial-gradient(circle at 14% 10%, rgba(232,199,102,0.20) 0%, transparent 40%),
-      radial-gradient(circle at 88% 14%, rgba(90,160,235,0.18) 0%, transparent 42%),
-      radial-gradient(circle at 22% 100%, rgba(150,110,220,0.15) 0%, transparent 46%),
-      radial-gradient(circle at 96% 96%, rgba(212,175,55,0.12) 0%, transparent 40%),
-      linear-gradient(165deg, #182a5e 0%, #101e45 35%, #0a1128 70%, #070d20 100%);
-    color: #f2e9dc;
+      radial-gradient(circle at 14% 10%, rgba(232,199,102,0.14) 0%, transparent 40%),
+      radial-gradient(circle at 88% 14%, rgba(90,160,235,0.10) 0%, transparent 42%),
+      radial-gradient(circle at 22% 100%, rgba(150,110,220,0.08) 0%, transparent 46%),
+      radial-gradient(circle at 96% 96%, rgba(212,175,55,0.08) 0%, transparent 40%),
+      linear-gradient(165deg, #ffffff 0%, #fbf9f4 55%, #f7f2e6 100%);
+    color: #1a1a2e;
     min-height: 100vh;
     padding: 74px 16px 20px;
     line-height: 1.6;
@@ -186,36 +186,35 @@
     align-items: center;
     justify-content: center;
     font-size: 27px;
-    box-shadow: 0 0 0 6px rgba(212,175,55,0.08), 0 8px 22px rgba(212,175,55,0.4);
+    box-shadow: 0 0 0 6px rgba(212,175,55,0.08), 0 8px 22px rgba(212,175,55,0.3);
   }
   h1 {
     text-align: center;
-    background: linear-gradient(90deg, #f2d888, #d4af37 50%, #f2d888);
+    background: linear-gradient(90deg, #a8842a, #8a6d1f 50%, #a8842a);
     -webkit-background-clip: text;
     background-clip: text;
-    color: #d4af37;
+    color: #8a6d1f;
     font-size: 30px;
     font-weight: 800;
     margin-bottom: 6px;
     padding-top: 4px;
     letter-spacing: 0.3px;
-    text-shadow: 0 0 30px rgba(212,175,55,0.15);
+    text-shadow: none;
   }
   .subtitle {
     text-align: center;
-    color: #b8a888;
+    color: #6b6b7a;
     font-size: 15px;
     margin-bottom: 28px;
     font-weight: 400;
   }
   .card {
-    background: linear-gradient(160deg, rgba(18,31,71,0.92) 0%, rgba(14,26,61,0.92) 100%);
-    backdrop-filter: blur(6px);
-    border: 1px solid #d4af3744;
+    background: #ffffff;
+    border: 1px solid #e8e2d0;
     border-radius: 16px;
     padding: 22px;
     margin-bottom: 22px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.03);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
   }
   .card-icon-title {
     display: flex;
@@ -232,13 +231,13 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    background: linear-gradient(160deg, #16234f 0%, #101c40 100%);
-    border: 1px solid #d4af3733;
+    background: #ffffff;
+    border: 1px solid #e8e2d0;
     border-radius: 12px;
     padding: 14px 16px;
     text-decoration: none;
     transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
   .article-card:hover, .article-card:active {
     transform: translateY(-2px);
@@ -258,15 +257,15 @@
   }
   .article-title {
     flex: 1;
-    color: #f2e9dc;
+    color: #1a1a2e;
     font-size: 14.5px;
     line-height: 1.4;
   }
   .article-arrow {
-    color: #d4af37;
+    color: #a8842a;
     font-size: 16px;
     flex-shrink: 0;
-    opacity: 0.7;
+    opacity: 0.8;
   }
   @media (min-width: 480px) {
     .articles-grid {
@@ -278,7 +277,7 @@
   }
   label {
     display: block;
-    color: #d4af37;
+    color: #8a6d1f;
     font-size: 17px;
     margin-bottom: 6px;
   }
@@ -286,9 +285,9 @@
     width: 100%;
     padding: 12px;
     border-radius: 8px;
-    border: 1px solid #d4af3766;
-    background: #0a1128;
-    color: #f2e9dc;
+    border: 1px solid #d4af3744;
+    background: #faf8f2;
+    color: #1a1a2e;
     font-size: 16px;
     font-family: inherit;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -296,7 +295,7 @@
   textarea { resize: vertical; min-height: 110px; }
   input[type=number]:focus, input[type=text]:focus, input[type=email]:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #d4af37;
+    border-color: #c9a133;
     box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
   }
   .row2 {
@@ -308,7 +307,7 @@
     width: 100%;
     padding: 16px;
     background: linear-gradient(145deg, #e6c860, #c9a133);
-    color: #0a1128;
+    color: #1a1a2e;
     border: none;
     border-radius: 12px;
     font-size: 19px;
@@ -322,7 +321,7 @@
   button:active { transform: scale(0.98); box-shadow: 0 2px 8px rgba(212,175,55,0.25); }
   #results { display: none; }
   .result-title {
-    color: #d4af37;
+    color: #8a6d1f;
     font-size: 20px;
     text-align: center;
     margin-bottom: 15px;
@@ -333,18 +332,18 @@
     display: flex;
     justify-content: space-between;
     padding: 11px 0;
-    border-bottom: 1px solid #ffffff11;
+    border-bottom: 1px solid #0000000f;
     font-size: 17px;
   }
   .stat:last-child { border-bottom: none; }
   .stat .val {
-    color: #d4af37;
+    color: #8a6d1f;
     font-weight: bold;
     font-variant-numeric: tabular-nums;
   }
   .highlight-box {
-    background: linear-gradient(160deg, #182a5e, #14224e);
-    border: 1px solid #d4af3733;
+    background: linear-gradient(160deg, #fdf8ec, #f7f2e6);
+    border: 1px solid #d4af3744;
     border-radius: 12px;
     padding: 16px;
     margin: 10px 0;
@@ -352,19 +351,19 @@
   }
   .highlight-box .big {
     font-size: 30px;
-    color: #d4af37;
+    color: #8a6d1f;
     font-weight: bold;
     font-variant-numeric: tabular-nums;
   }
   .note {
     font-size: 14px;
-    color: #a99f8c;
+    color: #6b6b7a;
     text-align: center;
     margin-top: 10px;
   }
   .walk-box {
-    background: linear-gradient(160deg, #1e3170, #182a5e);
-    border: 1px solid #d4af3733;
+    background: linear-gradient(160deg, #fdf8ec, #f7f2e6);
+    border: 1px solid #d4af3744;
     border-radius: 12px;
     padding: 18px;
     text-align: center;
@@ -372,7 +371,7 @@
   }
   .walk-box .big {
     font-size: 34px;
-    color: #d4af37;
+    color: #8a6d1f;
     font-weight: bold;
     font-variant-numeric: tabular-nums;
   }
@@ -380,17 +379,17 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    background: linear-gradient(160deg, #16255a, #101d47);
-    border: 1px solid #d4af3766;
+    background: #ffffff;
+    border: 1px solid #e8e2d0;
     border-radius: 14px;
     padding: 16px;
     margin-bottom: 12px;
     cursor: pointer;
     transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   }
   .choice-btn:active { transform: scale(0.98); }
-  .choice-btn:hover { border-color: #d4af37; box-shadow: 0 6px 16px rgba(212,175,55,0.2); }
+  .choice-btn:hover { border-color: #c9a133; box-shadow: 0 6px 16px rgba(212,175,55,0.15); }
   .choice-icon {
     width: 44px;
     height: 44px;
@@ -403,23 +402,23 @@
     font-size: 20px;
   }
   .choice-title {
-    color: #d4af37;
+    color: #1a1a2e;
     font-size: 17px;
     font-weight: bold;
     margin-bottom: 2px;
   }
   .choice-sub {
-    color: #b8a888;
+    color: #6b6b7a;
     font-size: 13px;
     line-height: 1.6;
   }
   .footer-note {
     text-align: center;
-    color: #6d7a9c;
+    color: #6b6b7a;
     font-size: 13px;
     margin-top: 10px;
     padding: 16px;
-    border-top: 1px solid #d4af3722;
+    border-top: 1px solid #d4af3733;
   }
   .ad-slot {
     width: 100%;
@@ -448,13 +447,13 @@
   .page { display: none; }
   .page.active { display: block; }
   .static-page h2 {
-    color: #d4af37;
+    color: #8a6d1f;
     font-size: 22px;
     text-align: center;
     margin-bottom: 16px;
   }
   .static-page p {
-    color: #e8e0d0;
+    color: #33333a;
     font-size: 15px;
     line-height: 1.9;
     margin-bottom: 14px;
@@ -472,20 +471,20 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #0e1a3d;
-    border-bottom: 1px solid #d4af3744;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e2d0;
     display: flex;
     justify-content: space-around;
     padding: 8px 2px 8px;
     z-index: 100;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
   }
   .nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #8a93ad;
+    color: #6b6b7a;
     font-size: 10.5px;
     cursor: pointer;
     flex: 1;
@@ -494,9 +493,9 @@
     transition: color 0.15s;
   }
   .nav-item .nav-icon { font-size: 18px; }
-  .nav-item.active { color: #d4af37; }
+  .nav-item.active { color: #8a6d1f; }
   .page-links-row {
-    background: linear-gradient(160deg, #121f47 0%, #0e1a3d 100%);
+    background: linear-gradient(160deg, #fdf8ec 0%, #f7f2e6 100%);
     border: 1px solid #d4af3744;
     border-radius: 14px;
     padding: 16px;
@@ -510,14 +509,14 @@
     row-gap: 12px;
   }
   .page-links-row a {
-    color: #d4af37;
+    color: #8a6d1f;
     text-decoration: none;
     font-size: 14.5px;
     font-weight: 600;
   }
   .page-links-row a:hover { text-decoration: underline; }
   .page-links-row span {
-    color: #d4af3766;
+    color: #c7b98a;
   }
   .lang-select-wrap {
     flex: 1 1 0;
@@ -532,11 +531,11 @@
     padding: 7px 3px;
     font-size: 11px;
     border-radius: 14px;
-    border: 1px solid #d4af3766;
-    background: #101d42ee;
-    color: #d4af37;
+    border: 1px solid #d4af3755;
+    background: #fdf8ecee;
+    color: #8a6d1f;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     backdrop-filter: blur(4px);
     white-space: nowrap;
     overflow: hidden;
@@ -554,12 +553,12 @@
     padding: 7px 12px;
     font-size: 12.5px;
     border-radius: 20px;
-    border: 1px solid #d4af3766;
-    background: #101d42ee;
-    color: #d4af37;
+    border: 1px solid #d4af3755;
+    background: #fdf8ecee;
+    color: #8a6d1f;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     backdrop-filter: blur(4px);
   }
   .corner-home-btn .nav-icon { font-size: 14px; }
@@ -582,12 +581,12 @@
     padding: 7px 3px;
     font-size: 11px;
     border-radius: 14px;
-    border: 1px solid #d4af3766;
-    background: #101d42ee;
-    color: #d4af37;
+    border: 1px solid #d4af3755;
+    background: #fdf8ecee;
+    color: #8a6d1f;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
     backdrop-filter: blur(4px);
     white-space: nowrap;
     overflow: hidden;
@@ -605,12 +604,12 @@
     height: 46px;
     border-radius: 50%;
     background: #d4af37;
-    color: #0a1128;
+    color: #1a1a2e;
     font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
     cursor: pointer;
     font-size: 15px;
     user-select: none;
@@ -630,10 +629,10 @@
     right: 0;
     left: auto;
     width: 260px;
-    background: #101d42;
-    border: 1px solid #d4af3766;
+    background: #ffffff;
+    border: 1px solid #e8e2d0;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     z-index: 500;
     padding: 10px;
     max-height: 320px;
@@ -644,9 +643,9 @@
     width: 100%;
     padding: 9px 12px;
     border-radius: 8px;
-    border: 1px solid #d4af3766;
-    background: #0a1128;
-    color: #f2e9dc;
+    border: 1px solid #d4af3744;
+    background: #faf8f2;
+    color: #1a1a2e;
     font-size: 14px;
     font-family: inherit;
     margin-bottom: 8px;
@@ -658,17 +657,17 @@
   .lang-item {
     padding: 9px 10px;
     font-size: 14px;
-    color: #e8e0d0;
+    color: #1a1a2e;
     border-radius: 8px;
     cursor: pointer;
     text-align: left;
   }
-  .lang-item:hover, .lang-item:active { background: #16255a; }
-  .lang-item.selected { color: #d4af37; font-weight: bold; }
+  .lang-item:hover, .lang-item:active { background: #fdf8ec; }
+  .lang-item.selected { color: #8a6d1f; font-weight: bold; }
   .lang-no-results {
     padding: 12px;
     text-align: center;
-    color: #6d7a9c;
+    color: #6b6b7a;
     font-size: 13px;
   }
   .cookie-banner {
@@ -676,14 +675,14 @@
     bottom: 12px;
     left: 12px;
     right: 12px;
-    background: #101d42;
-    border: 1px solid #d4af3766;
+    background: #ffffff;
+    border: 1px solid #e8e2d0;
     border-radius: 12px;
     padding: 14px 16px;
     font-size: 13px;
-    color: #e8e0d0;
+    color: #1a1a2e;
     z-index: 200;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -698,7 +697,7 @@
   }
   .copyright {
     text-align: center;
-    color: #5a6688;
+    color: #6b6b7a;
     font-size: 12px;
     padding: 6px 0 4px;
   }
@@ -708,7 +707,7 @@
     gap: 8px;
     flex-wrap: wrap;
     padding: 11px 0;
-    border-bottom: 1px solid #ffffff11;
+    border-bottom: 1px solid #0000000f;
   }
   .diary-input-row select {
     flex: 1 1 150px;
@@ -729,7 +728,7 @@
     align-items: center;
     gap: 8px;
     padding: 11px 0;
-    border-bottom: 1px solid #ffffff11;
+    border-bottom: 1px solid #0000000f;
   }
   .diary-log-row .entry-text {
     min-width: 0;
@@ -739,7 +738,7 @@
   .diary-log-row .delete-btn {
     flex: 0 0 auto;
     cursor: pointer;
-    color: #e07a5f;
+    color: #c0392b;
     font-weight: bold;
     padding: 0 8px;
   }
@@ -768,11 +767,11 @@
   <h1 data-i18n="title">موٹاپا کم کریں</h1>
   <div class="subtitle" data-i18n="subtitle">اپنی معلومات درج کریں اور مکمل خوراک و ورزش پلان حاصل کریں</div>
   <div dir="ltr" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0 4px;">
-    <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeFree">✓ 100% Free</span>
-    <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeNoSignup">✓ No Sign-Up</span>
-    <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgePrivacy">✓ Privacy-First</span>
-    <span style="background:#101d42; border:1px solid #d4af3755; color:#d4af37; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeLanguages">✓ 99 Languages</span>
-    <button type="button" onclick="shareApp()" aria-label="Share this website" style="background:linear-gradient(145deg, #e6c860, #c9a133); border:none; color:#0a1128; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:14px; width:auto; margin:0; box-shadow:0 2px 8px rgba(212,175,55,0.4);" data-i18n="shareBtnText">🔗 شئیر کریں</button>
+    <span style="background:#ffffff; border:1px solid #d4af3755; color:#8a6d1f; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeFree">✓ 100% Free</span>
+    <span style="background:#ffffff; border:1px solid #d4af3755; color:#8a6d1f; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeNoSignup">✓ No Sign-Up</span>
+    <span style="background:#ffffff; border:1px solid #d4af3755; color:#8a6d1f; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgePrivacy">✓ Privacy-First</span>
+    <span style="background:#ffffff; border:1px solid #d4af3755; color:#8a6d1f; font-size:11.5px; font-weight:600; padding:5px 12px; border-radius:14px;" data-i18n="badgeLanguages">✓ 99 Languages</span>
+    <button type="button" onclick="shareApp()" aria-label="Share this website" style="background:linear-gradient(145deg, #e6c860, #c9a133); border:none; color:#1a1a2e; font-size:11.5px; font-weight:800; padding:6px 14px; border-radius:14px; width:auto; margin:0; box-shadow:0 2px 8px rgba(212,175,55,0.4);" data-i18n="shareBtnText">🔗 شئیر کریں</button>
   </div>
 
   <div class="top-nav-row">
@@ -798,8 +797,8 @@
     <div style="display:flex; align-items:center; gap:8px; min-width:0;">
       <span style="font-size:26px; flex-shrink:0;">🔥</span>
       <div style="min-width:0;">
-        <div style="font-weight:800; color:#d4af37; font-size:15px;" id="streakCountText">0</div>
-        <div style="font-size:11.5px; color:#a99f8c; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:220px;" id="dailyTipText"></div>
+        <div style="font-weight:800; color:#8a6d1f; font-size:15px;" id="streakCountText">0</div>
+        <div style="font-size:11.5px; color:#6b6b7a; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:220px;" id="dailyTipText"></div>
       </div>
     </div>
     <div id="achievementBadges" style="display:flex; gap:3px; font-size:17px; flex-shrink:0;"></div>
@@ -890,12 +889,12 @@
       <div class="stat"><span data-i18n="labelBmiCategory">وزن کی حالت</span><span class="val" id="bmiCategory">-</span></div>
       <div class="stat"><span data-i18n="labelIdealWeight">مثالی وزن کی حد</span><span class="val" id="idealWeightRange">-</span></div>
       <div style="margin:16px 0 8px; position:relative; height:14px; border-radius:7px; background:linear-gradient(to right, #4a90d9 0% 46.25%, #4caf50 46.25% 62.5%, #e8a33d 62.5% 75%, #d9534f 75% 100%);">
-        <div id="bmiMarker" style="position:absolute; top:-5px; width:4px; height:24px; background:#f2e9dc; border-radius:2px; left:0%; transition:left 0.4s;"></div>
+        <div id="bmiMarker" style="position:absolute; top:-5px; width:4px; height:24px; background:#1a1a2e; border-radius:2px; left:0%; transition:left 0.4s;"></div>
       </div>
-      <div dir="ltr" style="display:flex; justify-content:space-between; font-size:10.5px; color:#a99f8c; margin-bottom:2px;">
+      <div dir="ltr" style="display:flex; justify-content:space-between; font-size:10.5px; color:#6b6b7a; margin-bottom:2px;">
         <span>0</span><span>18.5</span><span>25</span><span>30</span><span>40+</span>
       </div>
-      <div class="note" id="bmiAdviceNote" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+      <div class="note" id="bmiAdviceNote" style="margin-top:12px; color:#8a6d1f; font-weight:bold;"></div>
     </div>
 
 <div class="card">
@@ -938,12 +937,12 @@
       <div id="customFoodResultBox" style="display:none; margin-top:10px;">
         <div class="stat"><span data-i18n="customFoodFoundNameLabel">ملا ہوا نام</span><span class="val" id="customFoodFoundName">-</span></div>
         <div class="diary-input-row" style="margin-top:8px;">
-          <label style="flex:1; font-size:12px; color:#a99f8c;"><span data-i18n="customFoodKcalLabel">کیلوریز (فی 100 گرام)</span><input type="number" id="customFoodKcal" style="width:100%; padding:6px; margin-top:4px;" /></label>
-          <label style="flex:1; font-size:12px; color:#a99f8c;"><span data-i18n="labelProtein">پروٹین (گرام)</span><input type="number" id="customFoodProtein" style="width:100%; padding:6px; margin-top:4px;" /></label>
+          <label style="flex:1; font-size:12px; color:#6b6b7a;"><span data-i18n="customFoodKcalLabel">کیلوریز (فی 100 گرام)</span><input type="number" id="customFoodKcal" style="width:100%; padding:6px; margin-top:4px;" /></label>
+          <label style="flex:1; font-size:12px; color:#6b6b7a;"><span data-i18n="labelProtein">پروٹین (گرام)</span><input type="number" id="customFoodProtein" style="width:100%; padding:6px; margin-top:4px;" /></label>
         </div>
         <div class="diary-input-row" style="margin-top:6px;">
-          <label style="flex:1; font-size:12px; color:#a99f8c;"><span data-i18n="labelFat">فیٹ (گرام)</span><input type="number" id="customFoodFat" style="width:100%; padding:6px; margin-top:4px;" /></label>
-          <label style="flex:1; font-size:12px; color:#a99f8c;"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><input type="number" id="customFoodCarb" style="width:100%; padding:6px; margin-top:4px;" /></label>
+          <label style="flex:1; font-size:12px; color:#6b6b7a;"><span data-i18n="labelFat">فیٹ (گرام)</span><input type="number" id="customFoodFat" style="width:100%; padding:6px; margin-top:4px;" /></label>
+          <label style="flex:1; font-size:12px; color:#6b6b7a;"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><input type="number" id="customFoodCarb" style="width:100%; padding:6px; margin-top:4px;" /></label>
         </div>
         <div class="note" style="margin-top:6px;" data-i18n="customFoodPer100gNote">یہ اقدار فی 100 گرام ہیں — ضرورت کے مطابق تبدیل کر سکتے ہیں</div>
         <button onclick="addCustomFood()" style="margin-top:10px;" data-i18n="customFoodAddBtn">اس غذا کو فہرست میں شامل کریں</button>
@@ -954,27 +953,27 @@
       <div id="diaryWrapper" style="display:none;">
         <div class="note" style="margin-bottom:10px;" data-i18n="diaryPickNote">نیچے سے غذا اور مقدار چن کر "ڈائری میں شامل کریں" دبائیں۔ ہر بار جو کھائیں وہ فوراً شامل ہو جائے گا اور بقایا کیلوریز/پروٹین/فیٹ/کارب خود بخود اپڈیٹ ہوتے رہیں گے</div>
         <div class="diary-input-row" style="position:relative;">
-          <div id="diaryFoodPicker" onclick="toggleDiaryFoodPicker()" style="flex:1 1 150px; min-width:0; padding:8px; border-radius:8px; border:1px solid #d4af3766; background:#0a1128; color:#f2e9dc; display:flex; align-items:center; gap:8px; cursor:pointer;">
+          <div id="diaryFoodPicker" onclick="toggleDiaryFoodPicker()" style="flex:1 1 150px; min-width:0; padding:8px; border-radius:8px; border:1px solid #d4af3766; background:#faf8f2; color:#1a1a2e; display:flex; align-items:center; gap:8px; cursor:pointer;">
             <span id="diaryFoodPickerIcon" style="font-size:20px; flex-shrink:0;">🍽️</span>
             <span id="diaryFoodPickerLabel" style="flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">-- غذا چنیں --</span>
-            <span style="color:#d4af37; flex-shrink:0;">▾</span>
+            <span style="color:#8a6d1f; flex-shrink:0;">▾</span>
           </div>
           <input type="number" id="diaryQtyInput" min="0" step="0.5" value="1" style="padding:8px; text-align:center;" />
           <button onclick="diaryAddEntry()" style="padding:8px 14px;" data-i18n="diaryAddBtn">شامل کریں</button>
         </div>
         <div id="diaryFoodPickerList" style="display:none; margin-bottom:10px; border:1px solid #d4af3744; border-radius:10px; overflow:hidden;">
-          <input type="text" id="diaryFoodFilterInput" oninput="onDiaryFoodFilterInput()" data-i18n-placeholder="customFoodNamePlaceholder" placeholder="مثلاً Pizza, Sushi, حلوہ" autocomplete="off" style="width:100%; padding:9px 12px; border:none; border-bottom:1px solid #d4af3744; background:#0a1128; color:#f2e9dc; box-sizing:border-box;" />
+          <input type="text" id="diaryFoodFilterInput" oninput="onDiaryFoodFilterInput()" data-i18n-placeholder="customFoodNamePlaceholder" placeholder="مثلاً Pizza, Sushi, حلوہ" autocomplete="off" style="width:100%; padding:9px 12px; border:none; border-bottom:1px solid #d4af3744; background:#faf8f2; color:#1a1a2e; box-sizing:border-box;" />
           <div id="diaryFoodPickerItems" style="max-height:240px; overflow-y:auto;"></div>
         </div>
-        <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="diarySummaryTitle">آج تک کھائی گئی خوراک کا خلاصہ</div>
+        <div style="color:#8a6d1f; font-size:16px; margin:16px 0 8px;" data-i18n="diarySummaryTitle">آج تک کھائی گئی خوراک کا خلاصہ</div>
         <div class="stat"><span data-i18n="labelTotalCal">کل کیلوریز</span><span class="val" id="diaryTotalCal">0</span></div>
         <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="diaryTotalProtein">0</span></div>
         <div class="stat"><span data-i18n="labelFat">فیٹ (گرام)</span><span class="val" id="diaryTotalFat">0</span></div>
         <div class="stat"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="diaryTotalCarbs">0</span></div>
-        <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="diaryLogTitle">آج کی ڈائری</div>
+        <div style="color:#8a6d1f; font-size:16px; margin:16px 0 8px;" data-i18n="diaryLogTitle">آج کی ڈائری</div>
         <div id="diaryLogList"></div>
         <div class="note" id="diaryEmptyMsg" data-i18n="diaryEmptyMsg">ابھی تک کوئی غذا شامل نہیں کی گئی</div>
-        <button onclick="diaryResetLog()" style="margin-top:14px; background:transparent; border:1px solid #d4af37; color:#d4af37;" data-i18n="diaryResetBtn">ڈائری صاف کریں (نیا دن)</button>
+        <button onclick="diaryResetLog()" style="margin-top:14px; background:transparent; border:1px solid #d4af37; color:#8a6d1f;" data-i18n="diaryResetBtn">ڈائری صاف کریں (نیا دن)</button>
       </div>
 
       <div id="foodListWrapper" style="display:none;">
@@ -988,7 +987,7 @@
       <div class="result-title" data-i18n="titleSelectedFoods">آپ کی منتخب کردہ غذائیں</div>
       <div id="selectedFoodsList"></div>
       <button onclick="saveFoodPlan()" id="saveFoodPlanBtn1" style="margin-top:10px; display:none;" data-i18n="btnSavePlan">💾 Save This Plan</button>
-      <div class="note" id="savePlanMsg1" style="display:none; color:#7fc97f; margin-top:6px;"></div>
+      <div class="note" id="savePlanMsg1" style="display:none; color:#2e7d32; margin-top:6px;"></div>
       <div class="note" id="noteChangeFoodsNote" style="margin:12px 0 4px;" data-i18n="noteChangeFoods">اگر غذائیں تبدیل کرنا ہو تو ہر بار "خودکار انتخاب" کے بٹن پر دوبارہ کلک کرنے سے نئی غذائیں خودکار طریقے سے منتخب ہو جائیں گی</div>
       <div style="border-top:1px solid #d4af3744; margin:16px 0 12px;"></div>
       <div class="result-title" data-i18n="titleDietSummary" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">آپ کی منتخب کردہ غذا کا مجموعہ</div>
@@ -996,7 +995,7 @@
       <div class="stat"><span data-i18n="labelProtein">پروٹین (گرام)</span><span class="val" id="dietProtein">-</span></div>
       <div class="stat"><span data-i18n="labelFat">فیٹ (گرام)</span><span class="val" id="dietFat">-</span></div>
       <div class="stat"><span data-i18n="labelCarbs">کاربوہائیڈریٹ (گرام)</span><span class="val" id="dietCarbs">-</span></div>
-      <div class="note" id="dietCompare" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+      <div class="note" id="dietCompare" style="margin-top:12px; color:#8a6d1f; font-weight:bold;"></div>
       <div id="dietStatusList" style="margin-top:14px;"></div>
     </div>
 
@@ -1017,7 +1016,7 @@
         <div class="note" id="walkMin"></div>
         <div class="note" id="walkSteps" style="margin-top:6px;"></div>
       </div>
-      <div class="note" id="brisknote" style="margin-top:12px; color:#d4af37; font-weight:bold;"></div>
+      <div class="note" id="brisknote" style="margin-top:12px; color:#8a6d1f; font-weight:bold;"></div>
     </div>
 
     <div class="card" id="finalSummaryCard" style="display:none;">
@@ -1044,7 +1043,7 @@
     <div id="articles">
     <div class="card" id="articlesSection" style="display:none;">
       <div class="result-title">📚 Free Weight Loss &amp; Nutrition Articles</div>
-      <p style="text-align:center; color:#b8a888; font-size:14px; margin:-4px 0 18px;">
+      <p style="text-align:center; color:#6b6b7a; font-size:14px; margin:-4px 0 18px;">
         40 expert guides on calories, diet, and healthy habits
       </p>
       <div class="articles-grid">
@@ -1253,7 +1252,7 @@
 
     <div class="card" id="articlesSectionUr" style="display:none;" dir="rtl">
       <div class="result-title">📚 وزن کم کرنے اور غذائیت سے متعلق مفت آرٹیکلز</div>
-      <p style="text-align:center; color:#b8a888; font-size:14px; margin:-4px 0 18px;">
+      <p style="text-align:center; color:#6b6b7a; font-size:14px; margin:-4px 0 18px;">
         کیلوریز، ڈائٹ اور صحت مند عادات پر 20 مفید رہنما مضامین
       </p>
       <div class="articles-grid">
@@ -1369,18 +1368,18 @@
 
   <div id="page-pedometer" class="page">
     <div class="card" style="background:linear-gradient(160deg, rgba(224,179,77,0.18) 0%, rgba(224,179,77,0.08) 100%); border:1px solid #e0b34d88;">
-      <div style="font-weight:800; color:#e0b34d; margin-bottom:6px;">⚠️ <span data-i18n="titlePedometerLimitWarning">Important — please read before starting</span></div>
-      <div class="note" data-i18n="notePedometerLimitWarning" style="color:#d9cdb8;">This pedometer only counts steps while your phone's screen is on and unlocked. If your screen turns off or the phone locks — even for a second — counting stops completely, whether or not you have internet. This is not a bug: it's a security restriction built into every phone's operating system (Android/iOS), and no website in the world can bypass it. For step tracking that works with your screen off or phone in your pocket, please use your phone's built-in app instead — Google Fit, Samsung Health, or Apple Health. This tool is best used as a quick, no-install check while you're actively using your phone.</div>
+      <div style="font-weight:800; color:#8a6d1f; margin-bottom:6px;">⚠️ <span data-i18n="titlePedometerLimitWarning">Important — please read before starting</span></div>
+      <div class="note" data-i18n="notePedometerLimitWarning" style="color:#6b6b7a;">This pedometer only counts steps while your phone's screen is on and unlocked. If your screen turns off or the phone locks — even for a second — counting stops completely, whether or not you have internet. This is not a bug: it's a security restriction built into every phone's operating system (Android/iOS), and no website in the world can bypass it. For step tracking that works with your screen off or phone in your pocket, please use your phone's built-in app instead — Google Fit, Samsung Health, or Apple Health. This tool is best used as a quick, no-install check while you're actively using your phone.</div>
     </div>
     <div class="card" style="text-align:center; padding:0; overflow:hidden;">
-      <div style="display:flex; background:#0a1128; border-bottom:1px solid #d4af3733;">
-        <div class="pedo-tab active" id="pedoTabDay" onclick="switchPedometerView('day')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#d4af37; border-bottom:3px solid #d4af37;">Day</div>
-        <div class="pedo-tab" id="pedoTabWeek" onclick="switchPedometerView('week')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#a99f8c; border-bottom:3px solid transparent;">Week</div>
-        <div class="pedo-tab" id="pedoTabMonth" onclick="switchPedometerView('month')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#a99f8c; border-bottom:3px solid transparent;">Month</div>
+      <div style="display:flex; background:#faf8f2; border-bottom:1px solid #d4af3733;">
+        <div class="pedo-tab active" id="pedoTabDay" onclick="switchPedometerView('day')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#8a6d1f; border-bottom:3px solid #d4af37;">Day</div>
+        <div class="pedo-tab" id="pedoTabWeek" onclick="switchPedometerView('week')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#6b6b7a; border-bottom:3px solid transparent;">Week</div>
+        <div class="pedo-tab" id="pedoTabMonth" onclick="switchPedometerView('month')" style="flex:1; padding:14px 4px; font-size:15px; font-weight:700; cursor:pointer; color:#6b6b7a; border-bottom:3px solid transparent;">Month</div>
       </div>
 
       <div style="padding:16px 16px 0;">
-      <div style="font-size:22px; font-weight:800; color:#f2e9dc; margin-bottom:6px; cursor:pointer;" id="pedometerDateLabel" onclick="openPedometerDatePicker()">📅 <span id="pedometerDateLabelText"></span></div>
+      <div style="font-size:22px; font-weight:800; color:#1a1a2e; margin-bottom:6px; cursor:pointer;" id="pedometerDateLabel" onclick="openPedometerDatePicker()">📅 <span id="pedometerDateLabelText"></span></div>
       <div id="pedometerRecordingBadge" style="display:none; align-items:center; justify-content:center; gap:6px; margin-bottom:10px;">
         <span style="width:10px; height:10px; border-radius:50%; background:#e74c3c; display:inline-block; animation:pedoBlink 1s infinite;"></span>
         <span style="font-size:13px; color:#e74c3c; font-weight:700;" data-i18n="labelRecordingLive">ریکارڈنگ جاری ہے</span>
@@ -1390,18 +1389,18 @@
 
       <div style="display:flex; justify-content:space-between; align-items:center;">
         <div style="text-align:right;">
-          <div style="font-size:15px; color:#a99f8c;" data-i18n="labelSteps">قدم</div>
+          <div style="font-size:15px; color:#6b6b7a;" data-i18n="labelSteps">قدم</div>
           <div style="font-size:34px;">🚶‍♂️</div>
         </div>
-        <div style="font-size:64px; font-weight:800; color:#d4af37; line-height:1;" id="pedometerStepCount">0</div>
+        <div style="font-size:64px; font-weight:800; color:#8a6d1f; line-height:1;" id="pedometerStepCount">0</div>
       </div>
 
       <div style="margin-top:14px;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-          <span style="font-size:12px; color:#a99f8c;" id="stepGoalLabel"></span>
-          <span style="font-size:12px; color:#d4af37; cursor:pointer;" onclick="editStepGoal()" data-i18n="btnEditStepGoal">✏️ Edit Goal</span>
+          <span style="font-size:12px; color:#6b6b7a;" id="stepGoalLabel"></span>
+          <span style="font-size:12px; color:#8a6d1f; cursor:pointer;" onclick="editStepGoal()" data-i18n="btnEditStepGoal">✏️ Edit Goal</span>
         </div>
-        <div style="height:10px; border-radius:5px; background:#0a1128; border:1px solid #d4af3733; overflow:hidden;">
+        <div style="height:10px; border-radius:5px; background:#faf8f2; border:1px solid #d4af3733; overflow:hidden;">
           <div id="stepGoalBar" style="height:100%; width:0%; background:#d4af37; transition:width 0.4s;"></div>
         </div>
       </div>
@@ -1409,53 +1408,53 @@
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:22px; border:1px solid #d4af3744; border-radius:10px; overflow:hidden;">
         <div style="padding:14px; border-bottom:1px solid #d4af3733; border-left:1px solid #d4af3733; display:flex; align-items:center; justify-content:center; gap:8px;">
           <span style="font-size:20px;">🔥</span>
-          <span style="font-size:20px; font-weight:700; color:#f2e9dc;" id="pedometerCalories">0</span>
-          <span style="font-size:13px; color:#a99f8c;" data-i18n="labelCaloriesShort">کیلوریز</span>
+          <span style="font-size:20px; font-weight:700; color:#1a1a2e;" id="pedometerCalories">0</span>
+          <span style="font-size:13px; color:#6b6b7a;" data-i18n="labelCaloriesShort">کیلوریز</span>
         </div>
         <div style="padding:14px; border-bottom:1px solid #d4af3733; display:flex; align-items:center; justify-content:center; gap:8px;">
           <span style="font-size:20px;">📏</span>
-          <span style="font-size:20px; font-weight:700; color:#f2e9dc;" id="pedometerDistance">0.00</span>
-          <span style="font-size:13px; color:#a99f8c;" data-i18n="unitKm">کلومیٹر</span>
+          <span style="font-size:20px; font-weight:700; color:#1a1a2e;" id="pedometerDistance">0.00</span>
+          <span style="font-size:13px; color:#6b6b7a;" data-i18n="unitKm">کلومیٹر</span>
         </div>
         <div style="padding:14px; border-left:1px solid #d4af3733; display:flex; align-items:center; justify-content:center; gap:8px;">
           <span style="font-size:20px;">⏱️</span>
-          <span style="font-size:18px; font-weight:700; color:#f2e9dc; direction:ltr;" id="pedometerTimer">00:00:00</span>
+          <span style="font-size:18px; font-weight:700; color:#1a1a2e; direction:ltr;" id="pedometerTimer">00:00:00</span>
         </div>
         <div style="padding:14px; display:flex; align-items:center; justify-content:center; gap:8px;">
           <span style="font-size:20px;">🚀</span>
-          <span style="font-size:20px; font-weight:700; color:#f2e9dc;" id="pedometerSpeed">0.0</span>
-          <span style="font-size:13px; color:#a99f8c;" data-i18n="labelSpeedUnit">کلومیٹر/گھنٹہ</span>
+          <span style="font-size:20px; font-weight:700; color:#1a1a2e;" id="pedometerSpeed">0.0</span>
+          <span style="font-size:13px; color:#6b6b7a;" data-i18n="labelSpeedUnit">کلومیٹر/گھنٹہ</span>
         </div>
       </div>
 
       <div style="margin-top:20px;">
-        <div style="font-size:13px; color:#a99f8c; text-align:right; margin-bottom:6px;" id="pedometerChartLabel" data-i18n="labelHourlyChart">آج کے قدم — گھنٹہ وار</div>
+        <div style="font-size:13px; color:#6b6b7a; text-align:right; margin-bottom:6px;" id="pedometerChartLabel" data-i18n="labelHourlyChart">آج کے قدم — گھنٹہ وار</div>
         <svg id="pedometerChart" viewBox="0 0 340 130" style="width:100%; height:130px; display:block;"></svg>
       </div>
 
       <button id="pedometerToggleBtn" onclick="togglePedometer()" style="margin-top:20px; width:100%; font-size:18px; padding:16px;" data-i18n="btnStartPedometer">🟢 شروع کریں</button>
       <div id="pedometerStatusMsg" class="note" style="margin-top:12px;"></div>
-      <button onclick="resetPedometerToday()" id="pedometerResetBtn" style="margin-top:10px; width:100%; background:#7a2e2e;" data-i18n="btnResetPedometer">آج کا شمار صاف کریں</button>
+      <button onclick="resetPedometerToday()" id="pedometerResetBtn" style="margin-top:10px; width:100%; background:#7a2e2e; color:#fff;" data-i18n="btnResetPedometer">آج کا شمار صاف کریں</button>
       <div style="height:16px;"></div>
       </div>
     </div>
 
     <div class="card" style="margin-top:16px;">
-      <div style="color:#d4af37; font-size:15px; margin-bottom:8px;" data-i18n="titlePedometerHow">یہ کیسے کام کرتا ہے؟</div>
+      <div style="color:#8a6d1f; font-size:15px; margin-bottom:8px;" data-i18n="titlePedometerHow">یہ کیسے کام کرتا ہے؟</div>
       <div class="note" data-i18n="notePedometerHow1">1) "شروع کریں" دبائیں اور اگر فون اجازت مانگے تو "Allow" پر کلک کریں</div>
       <div class="note" data-i18n="notePedometerHow2">2) فون کو جیب میں یا ہاتھ میں لے کر عام رفتار سے چلیں</div>
       <div class="note" data-i18n="notePedometerHow3">3) قدم خودکار طور پر گنے جاتے رہیں گے، چاہے آپ سائٹ کی کوئی اور سکرین بھی دیکھ رہے ہوں</div>
       <div class="note" data-i18n="notePedometerHow4">4) روزانہ رات 12 بجے شمار خودکار طور پر نئے دن کے لیے صفر ہو جاتا ہے</div>
-      <div class="note" style="margin-top:8px; color:#e0b34d;" data-i18n="notePedometerNote">نوٹ: یہ اندازہ ہے، طبی آلہ نہیں۔ کچھ فون/براؤزر (خصوصاً کمپیوٹر) میں یہ سینسر دستیاب نہیں ہوتا۔</div>
-      <div class="note" style="margin-top:8px; color:#e0b34d;" data-i18n="notePedometerScreenOn">اہم: قدم گنتی کے لیے فون کی سکرین آن رہنی ضروری ہے — سکرین بند/لاک ہونے پر گنتی رک جائے گی۔ سائٹ خود بخود سکرین کو آن رکھنے کی کوشش کرتی ہے، لیکن اگر آپ خود پاور بٹن سے فون لاک کریں تو یہ رک جائے گی۔</div>
+      <div class="note" style="margin-top:8px; color:#8a6d1f;" data-i18n="notePedometerNote">نوٹ: یہ اندازہ ہے، طبی آلہ نہیں۔ کچھ فون/براؤزر (خصوصاً کمپیوٹر) میں یہ سینسر دستیاب نہیں ہوتا۔</div>
+      <div class="note" style="margin-top:8px; color:#8a6d1f;" data-i18n="notePedometerScreenOn">اہم: قدم گنتی کے لیے فون کی سکرین آن رہنی ضروری ہے — سکرین بند/لاک ہونے پر گنتی رک جائے گی۔ سائٹ خود بخود سکرین کو آن رکھنے کی کوشش کرتی ہے، لیکن اگر آپ خود پاور بٹن سے فون لاک کریں تو یہ رک جائے گی۔</div>
     </div>
   </div>
 
 
-  <div class="card" id="usageGuideCard" style="text-align:right; font-size:14.5px; color:#d9cdb8; line-height:1.9;">
+  <div class="card" id="usageGuideCard" style="text-align:right; font-size:14.5px; color:#6b6b7a; line-height:1.9;">
     <div onclick="toggleUsageGuide()" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
-      <span style="color:#d4af37; font-size:16px; font-weight:700;" data-i18n="titleUsageGuide">📖 ویب سائٹ استعمال کرنے کا مکمل طریقہ</span>
-      <span id="usageGuideArrow" style="color:#d4af37; font-size:18px;">▾</span>
+      <span style="color:#8a6d1f; font-size:16px; font-weight:700;" data-i18n="titleUsageGuide">📖 ویب سائٹ استعمال کرنے کا مکمل طریقہ</span>
+      <span id="usageGuideArrow" style="color:#8a6d1f; font-size:18px;">▾</span>
     </div>
     <div id="usageGuideBody" style="display:none; margin-top:14px;">
       <p style="margin-bottom:10px;"><b data-i18n="usageStep1Num">1)</b> <span data-i18n="usageStep1">ویب سائٹ کھلنے کے بعد سب سے پہلے اوپر 🌐 Language بٹن دبا کر اپنی پسندیدہ زبان منتخب کریں۔ پھر نیچے اپنا وزن، قد، عمر، جنس اور روزمرہ کام کاج منتخب کر کے "حساب لگائیں" دبائیں — آپ کو اپنا BMI، روزانہ کیلوریز کی ضرورت اور وزن کم کرنے کا ہدف مل جائے گا۔</span></p>
@@ -1469,10 +1468,10 @@
     </div>
   </div>
 
-  <div class="card" id="faqCard" style="text-align:right; font-size:14.5px; color:#d9cdb8; line-height:1.9;">
+  <div class="card" id="faqCard" style="text-align:right; font-size:14.5px; color:#6b6b7a; line-height:1.9;">
     <div onclick="toggleFAQ()" role="button" aria-label="Toggle FAQ" style="cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
-      <span style="color:#d4af37; font-size:16px; font-weight:700;" data-i18n="titleFAQ">❓ Frequently Asked Questions</span>
-      <span id="faqArrow" style="color:#d4af37; font-size:18px;">▾</span>
+      <span style="color:#8a6d1f; font-size:16px; font-weight:700;" data-i18n="titleFAQ">❓ Frequently Asked Questions</span>
+      <span id="faqArrow" style="color:#8a6d1f; font-size:18px;">▾</span>
     </div>
     <div id="faqBody" style="display:none; margin-top:14px;">
       <p style="margin-bottom:10px;"><b data-i18n="faqQ1">Q1</b><br><span data-i18n="faqA1">A1</span></p>
@@ -1483,53 +1482,53 @@
     </div>
   </div>
 
-  <div class="card" id="testimonialsCard" style="text-align:right; font-size:14.5px; color:#d9cdb8;">
-    <div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:14px;" data-i18n="titleTestimonials">💬 What Our Users Say</div>
+  <div class="card" id="testimonialsCard" style="text-align:right; font-size:14.5px; color:#6b6b7a;">
+    <div style="color:#8a6d1f; font-size:16px; font-weight:700; margin-bottom:14px;" data-i18n="titleTestimonials">💬 What Our Users Say</div>
 
-    <div style="background:#101d42; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden;">
+    <div style="background:#ffffff; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden;">
       <div aria-hidden="true" style="color:#d4af3740; font-size:46px; line-height:1; position:absolute; top:-4px; inset-inline-start:14px; font-family:Georgia, 'Times New Roman', serif;">&#8220;</div>
-      <div style="color:#f2e9dc; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial1Text">"Testimonial 1"</div>
+      <div style="color:#1a1a2e; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial1Text">"Testimonial 1"</div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:10px; border-top:1px solid #d4af3722;">
-        <span style="color:#d4af37; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
-        <span style="color:#d4af37; font-weight:700; font-size:13px;" data-i18n="testimonial1Name">— Name</span>
+        <span style="color:#8a6d1f; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
+        <span style="color:#8a6d1f; font-weight:700; font-size:13px;" data-i18n="testimonial1Name">— Name</span>
       </div>
     </div>
 
-    <div style="background:#101d42; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden;">
+    <div style="background:#ffffff; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; margin-bottom:12px; position:relative; overflow:hidden;">
       <div aria-hidden="true" style="color:#d4af3740; font-size:46px; line-height:1; position:absolute; top:-4px; inset-inline-start:14px; font-family:Georgia, 'Times New Roman', serif;">&#8220;</div>
-      <div style="color:#f2e9dc; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial2Text">"Testimonial 2"</div>
+      <div style="color:#1a1a2e; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial2Text">"Testimonial 2"</div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:10px; border-top:1px solid #d4af3722;">
-        <span style="color:#d4af37; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
-        <span style="color:#d4af37; font-weight:700; font-size:13px;" data-i18n="testimonial2Name">— Name</span>
+        <span style="color:#8a6d1f; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
+        <span style="color:#8a6d1f; font-weight:700; font-size:13px;" data-i18n="testimonial2Name">— Name</span>
       </div>
     </div>
 
-    <div style="background:#101d42; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; position:relative; overflow:hidden;">
+    <div style="background:#ffffff; border:1px solid #d4af3733; border-radius:14px; padding:16px 18px; position:relative; overflow:hidden;">
       <div aria-hidden="true" style="color:#d4af3740; font-size:46px; line-height:1; position:absolute; top:-4px; inset-inline-start:14px; font-family:Georgia, 'Times New Roman', serif;">&#8220;</div>
-      <div style="color:#f2e9dc; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial3Text">"Testimonial 3"</div>
+      <div style="color:#1a1a2e; font-size:14px; line-height:1.85; position:relative;" data-i18n="testimonial3Text">"Testimonial 3"</div>
       <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px; padding-top:10px; border-top:1px solid #d4af3722;">
-        <span style="color:#d4af37; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
-        <span style="color:#d4af37; font-weight:700; font-size:13px;" data-i18n="testimonial3Name">— Name</span>
+        <span style="color:#8a6d1f; letter-spacing:1px; font-size:12px;" aria-hidden="true">★★★★★</span>
+        <span style="color:#8a6d1f; font-weight:700; font-size:13px;" data-i18n="testimonial3Name">— Name</span>
       </div>
     </div>
   </div>
 
-  <div class="card" id="habitHeatmapCard" style="text-align:right; font-size:14.5px; color:#d9cdb8;">
-    <div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleHeatmap">📅 Activity Calendar</div>
+  <div class="card" id="habitHeatmapCard" style="text-align:right; font-size:14.5px; color:#6b6b7a;">
+    <div style="color:#8a6d1f; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleHeatmap">📅 Activity Calendar</div>
     <div class="note" data-i18n="noteHeatmap" style="margin-bottom:10px;">Days you logged food, water, or sleep — the darker the color, the more active you were</div>
     <div id="heatmapGrid" dir="ltr" style="display:grid; grid-template-columns:repeat(7, 1fr); gap:3px;"></div>
-    <div dir="ltr" style="display:flex; align-items:center; gap:6px; margin-top:10px; font-size:11px; color:#a99f8c; justify-content:flex-end;">
+    <div dir="ltr" style="display:flex; align-items:center; gap:6px; margin-top:10px; font-size:11px; color:#6b6b7a; justify-content:flex-end;">
       <span data-i18n="labelHeatmapLess">Less</span>
-      <span style="width:12px; height:12px; background:#1a2547; border-radius:2px; display:inline-block;"></span>
-      <span style="width:12px; height:12px; background:#4a5a8a; border-radius:2px; display:inline-block;"></span>
-      <span style="width:12px; height:12px; background:#7a8fd4; border-radius:2px; display:inline-block;"></span>
+      <span style="width:12px; height:12px; background:#f0ebe0; border:1px solid #e8e2d0; border-radius:2px; display:inline-block;"></span>
+      <span style="width:12px; height:12px; background:#e8d2a0; border-radius:2px; display:inline-block;"></span>
+      <span style="width:12px; height:12px; background:#dcb869; border-radius:2px; display:inline-block;"></span>
       <span style="width:12px; height:12px; background:#d4af37; border-radius:2px; display:inline-block;"></span>
       <span data-i18n="labelHeatmapMore">More</span>
     </div>
   </div>
 
-  <div class="card" id="achievementsCard" style="text-align:right; font-size:14.5px; color:#d9cdb8;">
-    <div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleAchievements">🏆 Achievements</div>
+  <div class="card" id="achievementsCard" style="text-align:right; font-size:14.5px; color:#6b6b7a;">
+    <div style="color:#8a6d1f; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleAchievements">🏆 Achievements</div>
     <div id="achievementsCardBody"></div>
   </div>
 
@@ -1538,17 +1537,17 @@
 
 
 
-  <div class="card" id="backupCard" style="text-align:right; font-size:14.5px; color:#d9cdb8; line-height:1.9;">
-    <div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleResetSection">🗑️ Reset Data</div>
+  <div class="card" id="backupCard" style="text-align:right; font-size:14.5px; color:#6b6b7a; line-height:1.9;">
+    <div style="color:#8a6d1f; font-size:16px; font-weight:700; margin-bottom:8px;" data-i18n="titleResetSection">🗑️ Reset Data</div>
     <div class="note" data-i18n="noteResetSection" style="margin-bottom:12px;">Your data is already saved automatically on this device. Use this only if you want to permanently delete everything and start fresh.</div>
-    <button onclick="resetAllUserData()" style="width:100%; background:#7a2e2e;" data-i18n="btnResetData">🗑️ Reset All Data</button>
+    <button onclick="resetAllUserData()" style="width:100%; background:#7a2e2e; color:#fff;" data-i18n="btnResetData">🗑️ Reset All Data</button>
   </div>
 
   <div id="page-progress" class="page" dir="ltr">
     <div class="card">
       <h2 data-i18n="titleProgress">Weekly Weight Progress</h2>
       <div class="note" data-i18n="progressNote">Log your weight regularly to see a weekly report and graph of your progress</div>
-      <button onclick="window.print()" style="margin-bottom:10px; background:transparent; border:1px solid #d4af37; color:#d4af37;" data-i18n="btnPrintReport">🖨️ Print Report</button>
+      <button onclick="window.print()" style="margin-bottom:10px; background:transparent; border:1px solid #d4af37; color:#8a6d1f;" data-i18n="btnPrintReport">🖨️ Print Report</button>
       <div class="stat" style="align-items:center; gap:8px;">
         <input type="date" id="progressDateInput" style="flex:1; padding:8px;" />
         <input type="number" id="progressWeightInput" step="0.1" min="0" placeholder="kg" style="width:80px; padding:8px; text-align:center;" />
@@ -1557,10 +1556,10 @@
       <div id="progressChartWrap" style="margin-top:16px;"></div>
       <div id="progressSummary" style="margin-top:12px;"></div>
       <div id="progressComparison" style="margin-top:12px;"></div>
-      <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="progressLogTitle">Weight Log</div>
+      <div style="color:#8a6d1f; font-size:16px; margin:16px 0 8px;" data-i18n="progressLogTitle">Weight Log</div>
       <div id="progressLogList"></div>
       <div class="note" id="progressEmptyMsg" data-i18n="progressEmptyMsg">No weight logged yet</div>
-      <button onclick="progressResetLog()" style="margin-top:14px; background:#7a2e2e;" data-i18n="progressResetBtn">Clear All Entries</button>
+      <button onclick="progressResetLog()" style="margin-top:14px; background:#7a2e2e; color:#fff;" data-i18n="progressResetBtn">Clear All Entries</button>
     </div>
   </div>
 
@@ -1570,14 +1569,14 @@
       <div class="note" data-i18n="noteWaterTracker">Track your daily water intake — staying hydrated helps with weight loss</div>
       <div style="text-align:center; margin:20px 0;">
         <div style="font-size:48px;">💧</div>
-        <div style="font-size:44px; font-weight:800; color:#d4af37;" id="waterGlassCount">0</div>
+        <div style="font-size:44px; font-weight:800; color:#8a6d1f;" id="waterGlassCount">0</div>
         <div class="note" data-i18n="labelGlassesToday">glasses today</div>
         <div class="note" id="waterGoalNote"></div>
         <div style="display:flex; gap:14px; justify-content:center; margin-top:16px;">
           <button onclick="waterRemoveGlass()" style="width:70px; font-size:22px;" aria-label="Remove a glass of water">−</button>
           <button onclick="waterAddGlass()" style="width:70px; font-size:22px;" aria-label="Add a glass of water">+</button>
         </div>
-        <button onclick="waterResetToday()" style="margin-top:16px; background:#7a2e2e; width:auto; padding:8px 18px;" data-i18n="btnResetToday">Reset today's count</button>
+        <button onclick="waterResetToday()" style="margin-top:16px; background:#7a2e2e; color:#fff; width:auto; padding:8px 18px;" data-i18n="btnResetToday">Reset today's count</button>
       </div>
     </div>
   </div>
@@ -1592,10 +1591,10 @@
         <button onclick="sleepAddEntry()" style="width:auto; padding:8px 14px; margin:0;" data-i18n="btnLogSleep">Log</button>
       </div>
       <div id="sleepAverage" style="margin-top:12px;"></div>
-      <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="sleepLogTitle">Sleep Log</div>
+      <div style="color:#8a6d1f; font-size:16px; margin:16px 0 8px;" data-i18n="sleepLogTitle">Sleep Log</div>
       <div id="sleepLogList"></div>
       <div class="note" id="sleepEmptyMsg" data-i18n="sleepEmptyMsg">No sleep logged yet</div>
-      <button onclick="sleepResetLog()" style="margin-top:14px; background:#7a2e2e;" data-i18n="sleepResetBtn">Clear All Entries</button>
+      <button onclick="sleepResetLog()" style="margin-top:14px; background:#7a2e2e; color:#fff;" data-i18n="sleepResetBtn">Clear All Entries</button>
     </div>
   </div>
 
@@ -1613,10 +1612,10 @@
         <input type="number" id="measureArm" step="0.1" placeholder="Arm (cm)" data-i18n-placeholder="labelArm" style="flex:1; padding:8px;" />
       </div>
       <button onclick="measurementAddEntry()" style="margin-top:10px;" data-i18n="btnAddMeasurement">Add Measurement</button>
-      <div style="color:#d4af37; font-size:16px; margin:16px 0 8px;" data-i18n="measurementLogTitle">Measurement Log</div>
+      <div style="color:#8a6d1f; font-size:16px; margin:16px 0 8px;" data-i18n="measurementLogTitle">Measurement Log</div>
       <div id="measurementLogList"></div>
       <div class="note" id="measurementEmptyMsg" data-i18n="measurementEmptyMsg">No measurements logged yet</div>
-      <button onclick="measurementResetLog()" style="margin-top:14px; background:#7a2e2e;" data-i18n="measurementResetBtn">Clear All Entries</button>
+      <button onclick="measurementResetLog()" style="margin-top:14px; background:#7a2e2e; color:#fff;" data-i18n="measurementResetBtn">Clear All Entries</button>
     </div>
   </div>
 
@@ -1633,7 +1632,7 @@
       </select>
       <input type="number" id="exerciseDuration" min="1" placeholder="Minutes" data-i18n-placeholder="labelDurationMin" style="width:100%; padding:10px; box-sizing:border-box;" />
       <button onclick="calcExerciseBurn()" style="margin-top:10px;" data-i18n="btnCalcBurn">Calculate</button>
-      <div id="exerciseBurnResult" style="margin-top:14px; font-size:20px; color:#d4af37; text-align:center;"></div>
+      <div id="exerciseBurnResult" style="margin-top:14px; font-size:20px; color:#8a6d1f; text-align:center;"></div>
     </div>
   </div>
 
@@ -1643,18 +1642,18 @@
       <div class="note" data-i18n="savedPlansNote">Each time you save your selected foods, it's added here with the date so you can check it anytime.</div>
       <div id="savedPlansList" style="margin-top:14px;"></div>
       <div class="note" id="savedPlansEmptyMsg" data-i18n="savedPlansEmptyMsg">No plans saved yet.</div>
-      <button onclick="clearSavedPlans()" style="margin-top:14px; background:#7a2e2e;" data-i18n="savedPlansClearBtn">Clear All Saved Plans</button>
+      <button onclick="clearSavedPlans()" style="margin-top:14px; background:#7a2e2e; color:#fff;" data-i18n="savedPlansClearBtn">Clear All Saved Plans</button>
     </div>
   </div>
 
   <div id="page-articles" class="page">
     <div class="toggle-row" style="display:flex; gap:10px; margin-bottom:18px;">
-      <button onclick="showArticleLang('ur')" id="artToggleUr" style="flex:1; margin:0; background:linear-gradient(145deg,#d4af37,#a8842a); color:#0a1128;">اردو Articles</button>
-      <button onclick="showArticleLang('en')" id="artToggleEn" style="flex:1; margin:0; background:transparent; border:1px solid #d4af3766; color:#d4af37;">English Articles</button>
+      <button onclick="showArticleLang('ur')" id="artToggleUr" style="flex:1; margin:0; background:linear-gradient(145deg,#d4af37,#a8842a); color:#1a1a2e;">اردو Articles</button>
+      <button onclick="showArticleLang('en')" id="artToggleEn" style="flex:1; margin:0; background:transparent; border:1px solid #d4af3766; color:#8a6d1f;">English Articles</button>
     </div>
     <div class="card" id="articlesCardUr" dir="rtl">
       <h2>📚 اردو آرٹیکلز</h2>
-      <p style="text-align:center; color:#b8a888; font-size:14px; margin:-4px 0 18px;">وزن اور صحت سے متعلق 20 مضامین</p>
+      <p style="text-align:center; color:#6b6b7a; font-size:14px; margin:-4px 0 18px;">وزن اور صحت سے متعلق 20 مضامین</p>
       <div class="articles-grid">
         <a class="article-card" href="articles/Urdu/01-What-Is-BMI-In-Urdu.html"><span class="article-icon">⚖️</span><span class="article-title">بی ایم آئی کیا ہے؟</span><span class="article-arrow">&#8592;</span></a>
         <a class="article-card" href="articles/Urdu/02-Healthy-Weight-In-Urdu.html"><span class="article-icon">✅</span><span class="article-title">صحت مند وزن کیا ہے؟</span><span class="article-arrow">&#8592;</span></a>
@@ -1681,7 +1680,7 @@
 
     <div class="card" id="articlesCardEn" dir="ltr" style="display:none;">
       <h2>📚 English Articles</h2>
-      <p style="text-align:center; color:#b8a888; font-size:14px; margin:-4px 0 18px;">40 guides on BMI, calories, diet and weight loss</p>
+      <p style="text-align:center; color:#6b6b7a; font-size:14px; margin:-4px 0 18px;">40 guides on BMI, calories, diet and weight loss</p>
       <div class="articles-grid">
         <a class="article-card" href="articles/English/01-What-Is-BMI-Understanding-Body-Mass-Index-and-Its-Importance.html"><span class="article-icon">⚖️</span><span class="article-title">What Is BMI? Understanding Body Mass Index</span><span class="article-arrow">&#8594;</span></a>
         <a class="article-card" href="articles/English/02-How-To-Calculate-BMI-Step-by-Step-Guide.html"><span class="article-icon">🧮</span><span class="article-title">How To Calculate BMI: Step-by-Step Guide</span><span class="article-arrow">&#8594;</span></a>
@@ -1750,21 +1749,21 @@
 
 <div class="cookie-banner" id="cookieBanner" style="display:none;">
   <span data-i18n="cookieText">This website may use cookies from third-party advertising services (such as Google AdSense) to display ads.</span>
-  <a href="privacy.html" style="color:#d4af37; text-decoration:underline; font-size:12.5px; margin-inline-start:6px;" data-i18n="cookiePrivacyLink">Privacy Policy</a>
+  <a href="privacy.html" style="color:#8a6d1f; text-decoration:underline; font-size:12.5px; margin-inline-start:6px;" data-i18n="cookiePrivacyLink">Privacy Policy</a>
   <button onclick="acceptCookies()" data-i18n="cookieAccept" aria-label="Accept cookies">Accept</button>
-  <button onclick="rejectCookies()" data-i18n="cookieReject" aria-label="Reject cookies" style="background:#555; margin-inline-start:8px;">Reject</button>
+  <button onclick="rejectCookies()" data-i18n="cookieReject" aria-label="Reject cookies" style="background:#555; color:#fff; margin-inline-start:8px;">Reject</button>
 </div>
 
-<div id="pwaInstallBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:800; background:#101d42ee; backdrop-filter:blur(4px); border-top:1px solid #d4af3766; padding:12px 16px; align-items:center; justify-content:space-between; gap:10px;">
-  <span style="color:#f2e9dc; font-size:13.5px; flex:1;" data-i18n="pwaInstallText">📲 Install this app on your phone for quick, one-tap access!</span>
+<div id="pwaInstallBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:800; background:#fdf8ecee; backdrop-filter:blur(4px); border-top:1px solid #d4af3766; padding:12px 16px; align-items:center; justify-content:space-between; gap:10px;">
+  <span style="color:#1a1a2e; font-size:13.5px; flex:1;" data-i18n="pwaInstallText">📲 Install this app on your phone for quick, one-tap access!</span>
   <button onclick="triggerPwaInstall()" style="width:auto; padding:8px 16px; margin:0; flex-shrink:0;" data-i18n="pwaInstallBtn">Install</button>
-  <span onclick="dismissPwaInstall()" style="cursor:pointer; color:#a99f8c; font-size:20px; padding:0 4px;">✕</span>
+  <span onclick="dismissPwaInstall()" style="cursor:pointer; color:#6b6b7a; font-size:20px; padding:0 4px;">✕</span>
 </div>
 
 <div id="welcomePopupOverlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:900; align-items:center; justify-content:center; padding:20px;">
   <div class="card" style="max-width:380px; text-align:center;">
-    <div style="font-size:20px; font-weight:800; color:#d4af37; margin-bottom:10px;" data-i18n="titleWelcomePopup">🎉 Welcome!</div>
-    <div style="color:#d9cdb8; font-size:14.5px; line-height:1.8; margin-bottom:18px;" data-i18n="welcomePopupText">This free calculator helps you track your weight, food, steps, water and sleep.</div>
+    <div style="font-size:20px; font-weight:800; color:#8a6d1f; margin-bottom:10px;" data-i18n="titleWelcomePopup">🎉 Welcome!</div>
+    <div style="color:#6b6b7a; font-size:14.5px; line-height:1.8; margin-bottom:18px;" data-i18n="welcomePopupText">This free calculator helps you track your weight, food, steps, water and sleep.</div>
     <button onclick="closeWelcomePopup()" data-i18n="btnWelcomeClose">Okay, let's start</button>
   </div>
 </div>
@@ -1998,14 +1997,14 @@ function renderCustomFoodSuggestions(results) {
       img = '<img src="' + r.imageUrl + '" alt="' + (r.englishName || r.name || 'food') + '" style="width:36px; height:36px; border-radius:6px; object-fit:cover; flex-shrink:0;" onerror="this.style.display=\'none\'">';
     } else {
       if (r.id) pendingImageTargets.push({ id: r.id, englishName: r.englishName, domId: 'sugimg_' + i });
-      img = '<div id="sugimg_' + i + '" style="width:36px; height:36px; border-radius:6px; background:#0a112888; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">' + (r.emoji || '🍽️') + '</div>';
+      img = '<div id="sugimg_' + i + '" style="width:36px; height:36px; border-radius:6px; background:#f7f2e688; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0;">' + (r.emoji || '🍽️') + '</div>';
     }
     const subLine = r.alreadyAdded
-      ? '<span style="color:#e0b34d; font-weight:700;">✓ ' + alreadyAddedLabel + '</span>'
+      ? '<span style="color:#8a6d1f; font-weight:700;">✓ ' + alreadyAddedLabel + '</span>'
       : r.kcal + ' kcal / 100g';
-    return '<div onclick="pickCustomFoodSuggestion(' + i + ')" style="display:flex; align-items:center; gap:8px; padding:8px 10px; cursor:pointer; background:#0a1128cc; border-bottom:1px solid #d4af3722;">' +
+    return '<div onclick="pickCustomFoodSuggestion(' + i + ')" style="display:flex; align-items:center; gap:8px; padding:8px 10px; cursor:pointer; background:#f7f2e6cc; border-bottom:1px solid #d4af3722;">' +
       img +
-      '<div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#f2e9dc; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + r.name + '</div><div style="font-size:11px; color:#a99f8c;">' + subLine + '</div></div>' +
+      '<div style="flex:1; min-width:0;"><div style="font-size:13.5px; color:#1a1a2e; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + r.name + '</div><div style="font-size:11px; color:#6b6b7a;">' + subLine + '</div></div>' +
       '</div>';
   }).join('');
   box.style.display = 'block';
@@ -2273,7 +2272,7 @@ function buildFoodList() {
   const imageTargets = [];
   foodDB.forEach(section => {
     if (section.items.length === 0) return;
-    html += '<div style="color:#d4af37; font-size:16px; margin:14px 0 8px;">' + (groups[section.groupKey] || groupNames.en[section.groupKey] || groupNames.ur[section.groupKey] || section.groupKey) + '</div>';
+    html += '<div style="color:#8a6d1f; font-size:16px; margin:14px 0 8px;">' + (groups[section.groupKey] || groupNames.en[section.groupKey] || groupNames.ur[section.groupKey] || section.groupKey) + '</div>';
     section.items.forEach(food => {
       const qtyInput = document.getElementById('qty_' + food.id);
       const existingQty = qtyInput ? qtyInput.value : 0;
@@ -2385,7 +2384,7 @@ function calculateDiet() {
     compareEl.innerText = dm.msgRemainAll.replace('%CAL%', Math.round(remainCal)).replace('%PROTEIN%', Math.round(remainProtein)).replace('%FAT%', Math.round(remainFat)).replace('%CARB%', Math.round(remainCarb));
 
     // Build "remaining foods" status per nutrient
-    let statusHtml = '<div style="color:#d4af37; font-size:16px; margin-bottom:8px;">' + dm.statusTitle + '</div>';
+    let statusHtml = '<div style="color:#8a6d1f; font-size:16px; margin-bottom:8px;">' + dm.statusTitle + '</div>';
     const rows = [
       { label: groups.protein, remain: remainProtein, unit: dm.unitGram },
       { label: groups.carb, remain: remainCarb, unit: dm.unitGram },
@@ -2395,7 +2394,7 @@ function calculateDiet() {
     rows.forEach(r => {
       const status = r.remain <= 0 ? dm.statusFull : dm.statusRemaining.replace('%AMT%', Math.round(r.remain)).replace('%UNIT%', r.unit);
       const color = r.remain <= 0 ? '#e07a5f' : '#d4af37';
-      statusHtml += '<div class="stat"><span style="font-weight:bold; color:#f2e9dc;">' + r.label + '</span><span style="color:' + color + '; font-weight:bold;">' + status + '</span></div>';
+      statusHtml += '<div class="stat"><span style="font-weight:bold; color:#1a1a2e;">' + r.label + '</span><span style="color:' + color + '; font-weight:bold;">' + status + '</span></div>';
     });
     statusEl.innerHTML = statusHtml;
   } else {
@@ -2684,7 +2683,7 @@ function buildDiaryFoodSelect() {
       });
     }
     if (!availableItems.length) return;
-    html += '<div style="padding:6px 10px; font-size:12px; color:#d4af37; background:#0a1128;">' + (groups[section.groupKey] || groupNames.en[section.groupKey] || groupNames.ur[section.groupKey] || section.groupKey) + '</div>';
+    html += '<div style="padding:6px 10px; font-size:12px; color:#8a6d1f; background:#faf8f2;">' + (groups[section.groupKey] || groupNames.en[section.groupKey] || groupNames.ur[section.groupKey] || section.groupKey) + '</div>';
     availableItems.forEach(food => {
       if (food.id === diarySelectedFoodId) stillAvailable = true;
       const color = foodCardColors[colorIdx3 % foodCardColors.length];
@@ -2697,13 +2696,13 @@ function buildDiaryFoodSelect() {
         if (!food.customName) imageTargets.push({ id: food.id, englishName: foodNames.en[food.id] || food.id });
         img = '<div id="diaryopt_' + food.id + '" style="width:32px; height:32px; border-radius:6px; background:' + color + '55; display:flex; align-items:center; justify-content:center; font-size:16px; flex-shrink:0;">' + getFoodEmoji(food.id) + '</div>';
       }
-      html += '<div onclick="selectDiaryFood(\'' + food.id + '\')" style="display:flex; align-items:center; gap:8px; padding:8px 10px; cursor:pointer; background:#0a1128cc; border-bottom:1px solid #d4af3722;">' +
+      html += '<div onclick="selectDiaryFood(\'' + food.id + '\')" style="display:flex; align-items:center; gap:8px; padding:8px 10px; cursor:pointer; background:#f7f2e6cc; border-bottom:1px solid #d4af3722;">' +
         img +
-        '<div style="flex:1; min-width:0; color:#f2e9dc; font-size:13.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + label + ' <span style="color:#a99f8c; font-size:11px;">(' + units[food.unitKey] + ')</span></div>' +
+        '<div style="flex:1; min-width:0; color:#1a1a2e; font-size:13.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">' + label + ' <span style="color:#6b6b7a; font-size:11px;">(' + units[food.unitKey] + ')</span></div>' +
         '</div>';
     });
   });
-  itemsEl.innerHTML = html || '<div style="padding:10px; color:#a99f8c; font-size:13px;">' + (dict.diaryEmptyMsg || '') + '</div>';
+  itemsEl.innerHTML = html || '<div style="padding:10px; color:#6b6b7a; font-size:13px;">' + (dict.diaryEmptyMsg || '') + '</div>';
   if (!stillAvailable) diarySelectedFoodId = '';
   updateDiaryFoodPickerLabel();
   loadRealFoodImages(imageTargets, 'diaryopt_');
@@ -2820,8 +2819,8 @@ function diaryRenderLog() {
     const name = (foodMeta[e.id] && foodMeta[e.id].food.customName) || names[e.id] || foodNames.en[e.id] || foodNames.ur[e.id] || e.id;
     const unit = meta ? units[meta.food.unitKey] : '';
     html += '<div class="diary-log-row">' +
-      '<span class="entry-text"><span style="color:#a99f8c; font-size:12px;">' + e.time + '</span>&nbsp; ' + name +
-      ' <span style="color:#a99f8c; font-size:13px;">(' + formatFoodAmount(e.qty, unit) + ')</span></span>' +
+      '<span class="entry-text"><span style="color:#6b6b7a; font-size:12px;">' + e.time + '</span>&nbsp; ' + name +
+      ' <span style="color:#6b6b7a; font-size:13px;">(' + formatFoodAmount(e.qty, unit) + ')</span></span>' +
       '<span class="delete-btn" onclick="diaryDeleteEntry(' + idx + ')">✕</span>' +
       '</div>';
   });
@@ -2996,10 +2995,10 @@ function savedPlansRender() {
     const dateLabel = isNaN(dateObj) ? plan.dateISO : dateObj.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
     const foodsHtml = plan.foods.map(f => '<div class="stat"><span>' + f.name + '</span><span class="val">' + f.amount + '</span></div>').join('');
     html += '<div class="card" style="margin-bottom:14px; padding:14px;">' +
-      '<div style="color:#d4af37; font-weight:bold; margin-bottom:8px;">' + dateLabel + '</div>' +
+      '<div style="color:#8a6d1f; font-weight:bold; margin-bottom:8px;">' + dateLabel + '</div>' +
       '<div class="stat"><span data-i18n-skip>' + (dict.labelTotalCal || 'Total Calories') + '</span><span class="val">' + plan.totalCal + '</span></div>' +
       foodsHtml +
-      '<button onclick="deleteSavedPlan(' + idx + ')" style="margin-top:10px; background:#7a2e2e; padding:6px 12px; width:auto;">' + (dict.savedPlanDeleteBtn || 'Delete') + '</button>' +
+      '<button onclick="deleteSavedPlan(' + idx + ')" style="margin-top:10px; background:#7a2e2e; color:#fff; padding:6px 12px; width:auto;">' + (dict.savedPlanDeleteBtn || 'Delete') + '</button>' +
       '</div>';
   });
   listEl.innerHTML = html;
@@ -3034,18 +3033,18 @@ function progressBuildSvg() {
 
   const points = data.map((e, i) => (padL + i * xStep).toFixed(1) + ',' + yScale(e.weight).toFixed(1)).join(' ');
 
-  let svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" style="width:100%; height:auto; background:#0e1a3d; border-radius:8px;">';
-  svg += '<line x1="' + padL + '" y1="' + padT + '" x2="' + padL + '" y2="' + (h - padB) + '" stroke="#8a93ad55" stroke-width="1"/>';
-  svg += '<line x1="' + padL + '" y1="' + (h - padB) + '" x2="' + (w - padR) + '" y2="' + (h - padB) + '" stroke="#8a93ad55" stroke-width="1"/>';
-  svg += '<text x="2" y="' + (padT + 4) + '" fill="#a99f8c" font-size="9">' + maxW.toFixed(1) + '</text>';
-  svg += '<text x="2" y="' + (h - padB + 4) + '" fill="#a99f8c" font-size="9">' + minW.toFixed(1) + '</text>';
-  svg += '<polyline points="' + points + '" fill="none" stroke="#d4af37" stroke-width="2"/>';
+  let svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" style="width:100%; height:auto; background:#faf8f2; border-radius:8px;">';
+  svg += '<line x1="' + padL + '" y1="' + padT + '" x2="' + padL + '" y2="' + (h - padB) + '" stroke="#33333333" stroke-width="1"/>';
+  svg += '<line x1="' + padL + '" y1="' + (h - padB) + '" x2="' + (w - padR) + '" y2="' + (h - padB) + '" stroke="#33333333" stroke-width="1"/>';
+  svg += '<text x="2" y="' + (padT + 4) + '" fill="#6b6b7a" font-size="9">' + maxW.toFixed(1) + '</text>';
+  svg += '<text x="2" y="' + (h - padB + 4) + '" fill="#6b6b7a" font-size="9">' + minW.toFixed(1) + '</text>';
+  svg += '<polyline points="' + points + '" fill="none" stroke="#a8842a" stroke-width="2"/>';
   data.forEach((e, i) => {
     const x = padL + i * xStep, y = yScale(e.weight);
-    svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="#d4af37"/>';
+    svg += '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="3" fill="#a8842a"/>';
   });
-  svg += '<text x="' + padL + '" y="' + (h - 4) + '" fill="#a99f8c" font-size="9">' + data[0].date.slice(5) + '</text>';
-  svg += '<text x="' + Math.max(padL, w - padR - 32) + '" y="' + (h - 4) + '" fill="#a99f8c" font-size="9">' + data[n - 1].date.slice(5) + '</text>';
+  svg += '<text x="' + padL + '" y="' + (h - 4) + '" fill="#6b6b7a" font-size="9">' + data[0].date.slice(5) + '</text>';
+  svg += '<text x="' + Math.max(padL, w - padR - 32) + '" y="' + (h - 4) + '" fill="#6b6b7a" font-size="9">' + data[n - 1].date.slice(5) + '</text>';
   svg += '</svg>';
   return svg;
 }
@@ -3061,11 +3060,11 @@ function progressBuildSummary() {
   if (daysDiff > 0) {
     const weeklyRate = totalLossKg / (daysDiff / 7);
     const lossLabel = totalLossKg >= 0 ? (dict.progressActualLoss || 'Actual weight lost') : (dict.progressActualGain || 'Weight gained');
-    html += '<div class="stat"><span style="font-weight:bold; color:#f2e9dc;">' + lossLabel + '</span><span class="val">' + Math.abs(totalLossKg).toFixed(1) + ' kg</span></div>';
-    html += '<div class="stat"><span style="font-weight:bold; color:#f2e9dc;">' + (dict.progressWeeklyRate || 'Weekly rate') + '</span><span class="val">' + weeklyRate.toFixed(2) + ' kg/' + (dict.progressPerWeek || 'week') + '</span></div>';
+    html += '<div class="stat"><span style="font-weight:bold; color:#1a1a2e;">' + lossLabel + '</span><span class="val">' + Math.abs(totalLossKg).toFixed(1) + ' kg</span></div>';
+    html += '<div class="stat"><span style="font-weight:bold; color:#1a1a2e;">' + (dict.progressWeeklyRate || 'Weekly rate') + '</span><span class="val">' + weeklyRate.toFixed(2) + ' kg/' + (dict.progressPerWeek || 'week') + '</span></div>';
   }
   if (savedTarget && savedTarget.weeklyLossWithWalkKg) {
-    html += '<div class="stat"><span style="font-weight:bold; color:#f2e9dc;">' + (dict.progressExpectedRate || 'Expected weekly loss') + '</span><span class="val" style="color:#d4af37;">' + savedTarget.weeklyLossWithWalkKg.toFixed(2) + ' kg/' + (dict.progressPerWeek || 'week') + '</span></div>';
+    html += '<div class="stat"><span style="font-weight:bold; color:#1a1a2e;">' + (dict.progressExpectedRate || 'Expected weekly loss') + '</span><span class="val" style="color:#8a6d1f;">' + savedTarget.weeklyLossWithWalkKg.toFixed(2) + ' kg/' + (dict.progressPerWeek || 'week') + '</span></div>';
   }
   return html;
 }
@@ -3087,7 +3086,7 @@ function progressBuildComparison() {
   const lastAvg = avg(lastWeekEntries);
   const diff = thisAvg - lastAvg;
   const diffColor = diff <= 0 ? '#4caf50' : '#d9534f';
-  let html = '<div style="color:#d4af37; font-size:16px; font-weight:700; margin-bottom:8px;">' + (dict.titleComparison || en.titleComparison) + '</div>';
+  let html = '<div style="color:#8a6d1f; font-size:16px; font-weight:700; margin-bottom:8px;">' + (dict.titleComparison || en.titleComparison) + '</div>';
   html += '<div class="stat"><span>' + (dict.labelLastWeekAvg || en.labelLastWeekAvg) + '</span><span class="val">' + lastAvg.toFixed(1) + ' kg</span></div>';
   html += '<div class="stat"><span>' + (dict.labelThisWeekAvg || en.labelThisWeekAvg) + '</span><span class="val">' + thisAvg.toFixed(1) + ' kg</span></div>';
   html += '<div class="stat"><span>' + (dict.labelWeekDiff || en.labelWeekDiff) + '</span><span class="val" style="color:' + diffColor + ';">' + (diff > 0 ? '+' : '') + diff.toFixed(1) + ' kg</span></div>';
@@ -3117,7 +3116,7 @@ function progressRender() {
   const sorted = [...weightLog].sort((a, b) => b.date.localeCompare(a.date));
   sorted.forEach((entry) => {
     const realIdx = weightLog.indexOf(entry);
-    html += '<div class="stat"><span style="font-weight:bold; color:#f2e9dc;">' + entry.date + '</span>' +
+    html += '<div class="stat"><span style="font-weight:bold; color:#1a1a2e;">' + entry.date + '</span>' +
       '<span class="val">' + entry.weight + ' ' + (dm.unitKg || 'kg') + '</span>' +
       '<span onclick="progressDeleteEntry(' + realIdx + ')" style="cursor:pointer; color:#e07a5f; font-weight:bold; padding:0 8px;">✕</span></div>';
   });
@@ -3536,9 +3535,9 @@ function renderHabitHeatmap() {
     if (dateStr === todayDateStrGlobal() && diaryEntries2.length > 0) score++;
     days.push({ date: dateStr, score: score });
   }
-  const colors = ['#1a2547', '#4a5a8a', '#7a8fd4', '#d4af37'];
+  const colors = ['#f0ebe0', '#e8d2a0', '#dcb869', '#d4af37'];
   grid.innerHTML = days.map(d =>
-    '<div title="' + d.date + '" style="aspect-ratio:1; border-radius:2px; background:' + colors[Math.min(d.score, 3)] + ';"></div>'
+    '<div title="' + d.date + '" style="aspect-ratio:1; border-radius:2px; background:' + colors[Math.min(d.score, 3)] + '; border:1px solid ' + (d.score === 0 ? '#e8e2d0' : 'transparent') + ';"></div>'
   ).join('');
 }
 
@@ -3554,7 +3553,7 @@ function renderAchievementsCard() {
     const name = dict[m.nameKey] || en[m.nameKey] || m.nameKey;
     html += '<div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid #d4af3722; opacity:' + (isUnlocked ? '1' : '0.4') + ';">' +
       '<span style="font-size:24px;">' + m.icon + '</span>' +
-      '<span style="flex:1;">' + name + (isUnlocked ? '' : ' — <span style="font-size:12px; color:#a99f8c;">' + (dict.achLockedNote || en.achLockedNote) + '</span>') + '</span>' +
+      '<span style="flex:1;">' + name + (isUnlocked ? '' : ' — <span style="font-size:12px; color:#6b6b7a;">' + (dict.achLockedNote || en.achLockedNote) + '</span>') + '</span>' +
       '</div>';
   });
   el.innerHTML = html;
@@ -3910,7 +3909,7 @@ function switchPedometerView(mode) {
   ['day', 'week', 'month'].forEach(m => {
     const tab = document.getElementById('pedoTab' + m.charAt(0).toUpperCase() + m.slice(1));
     if (tab) {
-      tab.style.color = (m === mode) ? '#d4af37' : '#a99f8c';
+      tab.style.color = (m === mode) ? '#d4af37' : '#6b6b7a';
       tab.style.borderBottom = (m === mode) ? '3px solid #d4af37' : '3px solid transparent';
     }
   });
@@ -4022,7 +4021,7 @@ function renderPedometerChart(hourlyData) {
   let axisLabels = '';
   [0, 6, 12, 18, 23].forEach(hr => {
     const x = 4 + hr * (barWidth + barGap) + barWidth / 2;
-    axisLabels += '<text x="' + x.toFixed(1) + '" y="124" font-size="9" fill="#a99f8c" text-anchor="middle">' + hr + '</text>';
+    axisLabels += '<text x="' + x.toFixed(1) + '" y="124" font-size="9" fill="#6b6b7a" text-anchor="middle">' + hr + '</text>';
   });
   svg.innerHTML = '<line x1="4" y1="' + chartBottom + '" x2="' + (w - 4) + '" y2="' + chartBottom + '" stroke="#d4af3733" stroke-width="1"></line>' + bars + axisLabels;
 }
@@ -4042,7 +4041,7 @@ function renderPedometerAggregateChart(dailyTotals) {
     const y = chartBottom - barH;
     bars += '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + barWidth.toFixed(1) + '" height="' + barH.toFixed(1) + '" rx="2" fill="#d4af37" opacity="' + (d.steps > 0 ? '0.9' : '0.15') + '"></rect>';
     const dayNum = parseInt(d.date.split('-')[2], 10);
-    labels += '<text x="' + (x + barWidth / 2).toFixed(1) + '" y="124" font-size="9" fill="#a99f8c" text-anchor="middle">' + dayNum + '</text>';
+    labels += '<text x="' + (x + barWidth / 2).toFixed(1) + '" y="124" font-size="9" fill="#6b6b7a" text-anchor="middle">' + dayNum + '</text>';
   });
   svg.innerHTML = '<line x1="4" y1="' + chartBottom + '" x2="' + (w - 4) + '" y2="' + chartBottom + '" stroke="#d4af3733" stroke-width="1"></line>' + bars + labels;
 }
@@ -4286,7 +4285,7 @@ function showArticleLang(lang) {
     urBtn.style.color = '#0a1128';
     urBtn.style.border = 'none';
     enBtn.style.background = 'transparent';
-    enBtn.style.color = '#d4af37';
+    enBtn.style.color = '#8a6d1f';
     enBtn.style.border = '1px solid #d4af3766';
   } else {
     enCard.style.display = '';
@@ -4295,7 +4294,7 @@ function showArticleLang(lang) {
     enBtn.style.color = '#0a1128';
     enBtn.style.border = 'none';
     urBtn.style.background = 'transparent';
-    urBtn.style.color = '#d4af37';
+    urBtn.style.color = '#8a6d1f';
     urBtn.style.border = '1px solid #d4af3766';
   }
 }
