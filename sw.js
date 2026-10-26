@@ -1,4 +1,4 @@
-const CACHE_NAME = 'motapa-calculator-v1';
+const CACHE_NAME = 'motapa-calculator-v2';
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -38,7 +38,7 @@ self.addEventListener('fetch', (event) => {
     // This never touches localStorage (diary, saved plans, weight log,
     // language) which is stored separately on the user's own device.
     event.respondWith(
-      fetch(event.request)
+      fetch(event.request, { cache: 'no-store' })
         .then((response) => {
           const responseClone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
