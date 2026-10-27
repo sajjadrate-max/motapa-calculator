@@ -10,7 +10,7 @@ android {
         applicationId "com.motapacalculator.app"
         minSdk 23
         targetSdk 36
-        versionCode (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInteger()
+        versionCode((System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInteger())
         versionName "1.0"
     }
 
