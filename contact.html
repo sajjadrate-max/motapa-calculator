@@ -60,6 +60,33 @@ button.submit-btn {
   box-shadow: 0 4px 14px rgba(0,0,0,0.4); backdrop-filter: blur(4px);
 }
 .corner-home-btn .nav-icon { font-size: 14px; }
+.lang-select-wrap {
+  position: fixed; top: 14px; right: 14px; z-index: 500;
+}
+#langDisplay {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  padding: 7px 12px; font-size: 12.5px; border-radius: 20px; max-width: 120px;
+  border: 1px solid #d4af3755; background: #fdf8ecee; color: #8a6d1f;
+  cursor: pointer; font-weight: 600; box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  backdrop-filter: blur(4px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+#langCurrentName { max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#langDropdownPanel {
+  display: none; position: fixed; top: 54px; right: 14px; left: 14px; width: auto;
+  max-width: 280px; margin-left: auto; background: #ffffff; border: 1px solid #e8e2d0;
+  border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 700;
+  padding: 10px; max-height: 320px; flex-direction: column;
+}
+#langDropdownPanel.open { display: flex; }
+#langSearchInput {
+  width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid #d4af3744;
+  background: #faf8f2; color: #1a1a2e; font-size: 14px; font-family: inherit; margin-bottom: 8px;
+}
+#langListItems { overflow-y: auto; max-height: 250px; }
+.lang-item { padding: 9px 10px; font-size: 14px; color: #1a1a2e; border-radius: 8px; cursor: pointer; text-align: left; }
+.lang-item:hover, .lang-item:active { background: #fdf8ec; }
+.lang-item.selected { color: #8a6d1f; font-weight: bold; }
+.lang-no-results { padding: 12px; text-align: center; color: #6b6b7a; font-size: 13px; }
 </style>
 <meta property="og:title" content="Contact Us | Motapa Calculator">
 <meta property="og:description" content="Get in touch with the Motapa Calculator team for questions, feedback, or suggestions about the free weight loss calculator.">
@@ -100,6 +127,13 @@ button.submit-btn {
 </script>
 </head>
 <body>
+<div class="lang-select-wrap">
+  <div id="langDisplay" onclick="toggleLangDropdown()" role="button" aria-label="Change language">🌐 <span id="langCurrentName">Lang</span></div>
+  <div id="langDropdownPanel">
+    <input type="text" id="langSearchInput" placeholder="Search language... / زبان تلاش کریں" oninput="filterLangList()" />
+    <div id="langListItems"></div>
+  </div>
+</div>
 <div class="container">
   <a class="back-link" href="/" id="backLink">&larr; Back to Motapa Calculator</a>
   <h1 id="pageH1">Contact Us</h1>
@@ -225,5 +259,183 @@ if (contactForm) {
   </div>
 </div>
 <a class="corner-home-btn" href="/"><span class="nav-icon">🏠</span><span>Home</span></a>
+<script>
+(function() {
+const contactLanguageList = [
+  { code: 'ur', name: '🇵🇰 اردو (Urdu)' },
+  { code: 'en', name: '🇬🇧 English' },
+  { code: 'ar', name: '🇸🇦 العربية (Arabic)' },
+  { code: 'ar-ae', name: '🇦🇪 العربية (الإمارات)' },
+  { code: 'ar-sa', name: '🇸🇦 العربية (السعودية)' },
+  { code: 'ar-bh', name: '🇧🇭 العربية (البحرين)' },
+  { code: 'ar-qa', name: '🇶🇦 العربية (قطر)' },
+  { code: 'ar-kw', name: '🇰🇼 العربية (الكويت)' },
+  { code: 'fa', name: '🇮🇷 فارسی (Persian)' },
+  { code: 'hi', name: '🇮🇳 हिन्दी (Hindi)' },
+  { code: 'bn', name: '🇧🇩 বাংলা (Bengali)' },
+  { code: 'pa', name: '🇮🇳 ਪੰਜਾਬੀ (Punjabi)' },
+  { code: 'ps', name: '🇦🇫 پښتو (Pashto)' },
+  { code: 'fr', name: '🇫🇷 Français (French)' },
+  { code: 'es', name: '🇪🇸 Español (Spanish)' },
+  { code: 'pt', name: '🇵🇹 Português (Portuguese)' },
+  { code: 'it', name: '🇮🇹 Italiano (Italian)' },
+  { code: 'de', name: '🇩🇪 Deutsch (German)' },
+  { code: 'nl', name: '🇳🇱 Nederlands (Dutch)' },
+  { code: 'ru', name: '🇷🇺 Русский (Russian)' },
+  { code: 'uk', name: '🇺🇦 Українська (Ukrainian)' },
+  { code: 'pl', name: '🇵🇱 Polski (Polish)' },
+  { code: 'el', name: '🇬🇷 Ελληνικά (Greek)' },
+  { code: 'tr', name: '🇹🇷 Türkçe (Turkish)' },
+  { code: 'id', name: '🇮🇩 Bahasa Indonesia' },
+  { code: 'th', name: '🇹🇭 ไทย (Thai)' },
+  { code: 'vi', name: '🇻🇳 Tiếng Việt (Vietnamese)' },
+  { code: 'ja', name: '🇯🇵 日本語 (Japanese)' },
+  { code: 'ko', name: '🇰🇷 한국어 (Korean)' },
+  { code: 'zh', name: '🇨🇳 中文 (Chinese)' },
+  { code: 'sw', name: '🇰🇪 Kiswahili (Swahili)' },
+  { code: 'he', name: '🇮🇱 עברית (Hebrew)' },
+  { code: 'ro', name: '🇷🇴 Română (Romanian)' },
+  { code: 'hu', name: '🇭🇺 Magyar (Hungarian)' },
+  { code: 'cs', name: '🇨🇿 Čeština (Czech)' },
+  { code: 'sv', name: '🇸🇪 Svenska (Swedish)' },
+  { code: 'fi', name: '🇫🇮 Suomi (Finnish)' },
+  { code: 'ms', name: '🇲🇾 Bahasa Melayu (Malay)' },
+  { code: 'tl', name: '🇵🇭 Filipino (Tagalog)' },
+  { code: 'af', name: '🇿🇦 Afrikaans' },
+  { code: 'zu', name: '🇿🇦 isiZulu (Zulu)' },
+  { code: 'ha', name: '🇳🇬 Hausa' },
+  { code: 'am', name: '🇪🇹 አማርኛ (Amharic)' },
+  { code: 'uz', name: '🇺🇿 Oʻzbekcha (Uzbek)' },
+  { code: 'mn', name: '🇲🇳 Монгол (Mongolian)' },
+  { code: 'da', name: '🇩🇰 Dansk (Danish)' },
+  { code: 'no', name: '🇳🇴 Norsk (Norwegian)' },
+  { code: 'bg', name: '🇧🇬 Български (Bulgarian)' },
+  { code: 'hr', name: '🇭🇷 Hrvatski (Croatian)' },
+  { code: 'sr', name: '🇷🇸 Српски (Serbian)' },
+  { code: 'sk', name: '🇸🇰 Slovenčina (Slovak)' },
+  { code: 'sl', name: '🇸🇮 Slovenščina (Slovenian)' },
+  { code: 'lt', name: '🇱🇹 Lietuvių (Lithuanian)' },
+  { code: 'lv', name: '🇱🇻 Latviešu (Latvian)' },
+  { code: 'et', name: '🇪🇪 Eesti (Estonian)' },
+  { code: 'ka', name: '🇬🇪 ქართული (Georgian)' },
+  { code: 'hy', name: '🇦🇲 Հայերեն (Armenian)' },
+  { code: 'az', name: '🇦🇿 Azərbaycan (Azerbaijani)' },
+  { code: 'kk', name: '🇰🇿 Қазақша (Kazakh)' },
+  { code: 'ne', name: '🇳🇵 नेपाली (Nepali)' },
+  { code: 'si', name: '🇱🇰 සිංහල (Sinhala)' },
+  { code: 'my', name: '🇲🇲 မြန်မာ (Burmese)' },
+  { code: 'km', name: '🇰🇭 ខ្មែរ (Khmer)' },
+  { code: 'lo', name: '🇱🇦 ລາວ (Lao)' },
+  { code: 'ta', name: '🇮🇳 தமிழ் (Tamil)' },
+  { code: 'te', name: '🇮🇳 తెలుగు (Telugu)' },
+  { code: 'mr', name: '🇮🇳 मराठी (Marathi)' },
+  { code: 'gu', name: '🇮🇳 ગુજરાતી (Gujarati)' },
+  { code: 'kn', name: '🇮🇳 ಕನ್ನಡ (Kannada)' },
+  { code: 'ml', name: '🇮🇳 മലയാളം (Malayalam)' },
+  { code: 'or', name: '🇮🇳 ଓଡ଼ିଆ (Odia)' },
+  { code: 'as', name: '🇮🇳 অসমীয়া (Assamese)' },
+  { code: 'yo', name: '🇳🇬 Yorùbá (Yoruba)' },
+  { code: 'ig', name: '🇳🇬 Igbo' },
+  { code: 'om', name: '🇪🇹 Afaan Oromoo (Oromo)' },
+  { code: 'ceb', name: '🇵🇭 Cebuano' },
+  { code: 'ku', name: '🇮🇶 Kurdî (Kurdish)' },
+  { code: 'so', name: '🇸🇴 Soomaali (Somali)' },
+  { code: 'mg', name: '🇲🇬 Malagasy' },
+  { code: 'xh', name: '🇿🇦 isiXhosa (Xhosa)' },
+  { code: 'st', name: '🇱🇸 Sesotho' },
+  { code: 'wo', name: '🇸🇳 Wolof' },
+  { code: 'ln', name: '🇨🇩 Lingála (Lingala)' },
+  { code: 'rw', name: '🇷🇼 Ikinyarwanda (Kinyarwanda)' },
+  { code: 'sn', name: '🇿🇼 chiShona (Shona)' },
+];
+  var currentLang = window.__pageLang || 'en';
+  function buildLangList(filter) {
+    const container = document.getElementById('langListItems');
+    const q = (filter || '').trim().toLowerCase();
+    const filtered = contactLanguageList.filter(l => !q || l.name.toLowerCase().includes(q) || l.code.toLowerCase().includes(q));
+    if (filtered.length === 0) {
+      container.innerHTML = '<div class="lang-no-results">No matching language</div>';
+      return;
+    }
+    container.innerHTML = filtered.map(l =>
+      '<div class="lang-item' + (l.code === currentLang ? ' selected' : '') + '" onclick="selectLanguage(\'' + l.code + '\')">' + l.name + '</div>'
+    ).join('');
+  }
+  window.filterLangList = function() {
+    buildLangList(document.getElementById('langSearchInput').value);
+  };
+  window.toggleLangDropdown = function() {
+    const panel = document.getElementById('langDropdownPanel');
+    const isOpen = panel.classList.contains('open');
+    if (isOpen) {
+      panel.classList.remove('open');
+    } else {
+      buildLangList('');
+      document.getElementById('langSearchInput').value = '';
+      panel.classList.add('open');
+      document.getElementById('langSearchInput').focus();
+    }
+  };
+  window.selectLanguage = function(code) {
+    try { localStorage.setItem('siteLang', code); } catch(e) {}
+    location.reload();
+  };
+  const curNameEl = document.getElementById('langCurrentName');
+  if (curNameEl) {
+    const found = contactLanguageList.find(l => l.code === currentLang);
+    curNameEl.textContent = found ? found.name : currentLang.toUpperCase();
+  }
+  document.addEventListener('click', function(e) {
+    const wrap = document.querySelector('.lang-select-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+      document.getElementById('langDropdownPanel').classList.remove('open');
+    }
+  });
+})();
+</script>
+<script>
+// ---------- Pull-to-refresh ----------
+(function() {
+  var startY = 0, pulling = false, indicator = null;
+  function getIndicator() {
+    if (indicator) return indicator;
+    indicator = document.createElement('div');
+    indicator.style.cssText = 'position:fixed; top:0; left:0; right:0; text-align:center; padding:10px; font-size:13px; font-weight:700; color:#8a6d1f; background:#fdf8ecdd; backdrop-filter:blur(4px); transform:translateY(-100%); transition:transform 0.15s; z-index:2000; pointer-events:none;';
+    indicator.textContent = '⬇️ Pull to refresh';
+    document.body.appendChild(indicator);
+    return indicator;
+  }
+  document.addEventListener('touchstart', function(e) {
+    if (window.scrollY === 0) {
+      startY = e.touches[0].clientY;
+      pulling = true;
+    } else {
+      pulling = false;
+    }
+  }, { passive: true });
+  document.addEventListener('touchmove', function(e) {
+    if (!pulling) return;
+    var dy = e.touches[0].clientY - startY;
+    if (dy > 10) {
+      var ind = getIndicator();
+      var pct = Math.min(dy / 90, 1);
+      ind.style.transform = 'translateY(' + (-100 + pct * 100) + '%)';
+      ind.textContent = pct >= 1 ? '🔄 Release to refresh' : '⬇️ Pull to refresh';
+    }
+  }, { passive: true });
+  document.addEventListener('touchend', function(e) {
+    if (!pulling) return;
+    pulling = false;
+    if (indicator) {
+      var transform = indicator.style.transform;
+      var atFull = transform.indexOf('translateY(0') !== -1;
+      indicator.style.transform = 'translateY(-100%)';
+      if (atFull) {
+        setTimeout(function() { location.reload(); }, 80);
+      }
+    }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
