@@ -1,16 +1,31 @@
-const CACHE_NAME = 'motapa-calculator-v7';
+const CACHE_NAME = 'motapa-calculator-v8';
 const APP_SHELL = [
   '/',
   '/index.html',
+  '/about.html',
+  '/contact.html',
+  '/terms.html',
+  '/privacy.html',
+  '/disclaimer.html',
+  '/motapa-calculator.html',
+  '/404.html',
+  '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
+  '/icon-512-maskable.png',
   '/apple-touch-icon.png',
-  '/favicon-32x32.png'
+  '/favicon-32x32.png',
+  '/og-image.png'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL))
+    caches.open(CACHE_NAME).then((cache) =>
+      // Cache each shell file independently so one failed/missing file
+      // (e.g. a slow first deploy) doesn't block the whole app from
+      // becoming available offline.
+      Promise.all(APP_SHELL.map((url) => cache.add(url).catch(() => {})))
+    )
   );
   self.skipWaiting();
 });
