@@ -1834,6 +1834,12 @@ function renderStreakBanner() {
 (function initSiteSettings() {
   let savedLang = null;
   try { savedLang = localStorage.getItem('siteLang'); } catch(e) {}
+  if (!savedLang && typeof window.__MOTAPA_DEFAULT_LANG__ === 'string' && translations[window.__MOTAPA_DEFAULT_LANG__]) {
+    // Per-URL default for the /lang/<code>/ SEO landing pages: honor the
+    // language the visitor explicitly searched/clicked for, ahead of a
+    // generic browser-locale guess, but never ahead of their own saved choice.
+    savedLang = window.__MOTAPA_DEFAULT_LANG__;
+  }
   if (!savedLang) {
     let browserLang = 'en';
     try { browserLang = (navigator.language || navigator.userLanguage || 'en').split('-')[0].toLowerCase(); } catch(e) {}
