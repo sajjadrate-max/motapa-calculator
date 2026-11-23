@@ -1,7 +1,8 @@
-const CACHE_NAME = 'motapa-calculator-v8';
+const CACHE_NAME = 'motapa-calculator-v9';
 const APP_SHELL = [
   '/',
   '/index.html',
+  '/app.js',
   '/about.html',
   '/contact.html',
   '/terms.html',
